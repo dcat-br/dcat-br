@@ -33,7 +33,7 @@
     <https://www.iana.org/assignments/media-types/application/zip> .
 
 # 7z
-<https://www.iana.org/assignments/media-types/application/x-7z-compressed> a skos:Concept ;
+<https://www.iana.org/assignments/media-types/application/x-7z-compressed> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
   skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
   skos:prefLabel "application/x-7z-compressed"@pt-BR ;
   skos:prefLabel "application/x-7z-compressed"@en ;
@@ -43,7 +43,7 @@
   dct:source <https://www.iana.org/assignments/media-types/application/x-7z-compressed> .
 
 # CSV
-<https://www.iana.org/assignments/media-types/text/csv> a skos:Concept ;
+<https://www.iana.org/assignments/media-types/text/csv> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
   skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
   skos:prefLabel "text/csv"@pt-BR ;
   skos:prefLabel "text/csv"@en ;
@@ -54,7 +54,7 @@
   rdfs:seeAlso <https://www.rfc-editor.org/rfc/rfc4180> .
 
 # DOC
-<https://www.iana.org/assignments/media-types/application/msword> a skos:Concept ;
+<https://www.iana.org/assignments/media-types/application/msword> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
   skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
   skos:prefLabel "application/msword"@pt-BR ;
   skos:prefLabel "application/msword"@en ;
@@ -64,7 +64,7 @@
   dct:source <https://www.iana.org/assignments/media-types/application/msword> .
 
 # DOCX
-<https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.wordprocessingml.document> a skos:Concept ;
+<https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.wordprocessingml.document> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
   skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
   skos:prefLabel "application/vnd.openxmlformats-officedocument.wordprocessingml.document"@pt-BR ;
   skos:prefLabel "application/vnd.openxmlformats-officedocument.wordprocessingml.document"@en ;
@@ -74,7 +74,7 @@
   dct:source <https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.wordprocessingml.document> .
 
 # GZ
-<https://www.iana.org/assignments/media-types/application/gzip> a skos:Concept ;
+<https://www.iana.org/assignments/media-types/application/gzip> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
   skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
   skos:prefLabel "application/gzip"@pt-BR ;
   skos:prefLabel "application/gzip"@en ;
@@ -85,7 +85,7 @@
   rdfs:seeAlso <https://www.rfc-editor.org/rfc/rfc1952> .
 
 # HTML
-<https://www.iana.org/assignments/media-types/text/html> a skos:Concept ;
+<https://www.iana.org/assignments/media-types/text/html> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
   skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
   skos:prefLabel "text/html"@pt-BR ;
   skos:prefLabel "text/html"@en ;
@@ -96,7 +96,7 @@
   rdfs:seeAlso <https://html.spec.whatwg.org/> .
 
 # JPEG
-<https://www.iana.org/assignments/media-types/image/jpeg> a skos:Concept ;
+<https://www.iana.org/assignments/media-types/image/jpeg> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
   skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
   skos:prefLabel "image/jpeg"@pt-BR ;
   skos:prefLabel "image/jpeg"@en ;
@@ -107,7 +107,7 @@
   rdfs:seeAlso <https://www.iso.org/standard/54989.html> .
 
 # JSON
-<https://www.iana.org/assignments/media-types/application/json> a skos:Concept ;
+<https://www.iana.org/assignments/media-types/application/json> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
   skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
   skos:prefLabel "application/json"@pt-BR ;
   skos:prefLabel "application/json"@en ;
@@ -120,7 +120,7 @@
   rdfs:seeAlso <https://www.rfc-editor.org/rfc/rfc8259> .
 
 # PDF
-<https://www.iana.org/assignments/media-types/application/pdf> a skos:Concept ;
+<https://www.iana.org/assignments/media-types/application/pdf> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
   skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
   skos:prefLabel "application/pdf"@pt-BR ;
   skos:prefLabel "application/pdf"@en ;
@@ -131,7 +131,7 @@
   rdfs:seeAlso <https://www.iso.org/standard/51502.html> .
 
 # PNG
-<https://www.iana.org/assignments/media-types/image/png> a skos:Concept ;
+<https://www.iana.org/assignments/media-types/image/png> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
   skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
   skos:prefLabel "image/png"@pt-BR ;
   skos:prefLabel "image/png"@en ;
@@ -142,7 +142,7 @@
   rdfs:seeAlso <https://www.w3.org/TR/PNG/> .
 
 # RAR
-<https://www.iana.org/assignments/media-types/application/x-rar-compressed> a skos:Concept ;
+<https://www.iana.org/assignments/media-types/application/x-rar-compressed> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
   skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
   skos:prefLabel "application/x-rar-compressed"@pt-BR ;
   skos:prefLabel "application/x-rar-compressed"@en ;
@@ -152,7 +152,7 @@
   dct:source <https://www.iana.org/assignments/media-types/application/x-rar-compressed> .
 
 # RDF
-<https://www.iana.org/assignments/media-types/application/rdf+xml> a skos:Concept ;
+<https://www.iana.org/assignments/media-types/application/rdf+xml> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
   skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
   skos:prefLabel "application/rdf+xml"@pt-BR ;
   skos:prefLabel "application/rdf+xml"@en ;
@@ -163,7 +163,7 @@
   rdfs:seeAlso <https://www.w3.org/TR/rdf-syntax-grammar/> .
 
 # TXT
-<https://www.iana.org/assignments/media-types/text/plain> a skos:Concept ;
+<https://www.iana.org/assignments/media-types/text/plain> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
   skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
   skos:prefLabel "text/plain"@pt-BR ;
   skos:prefLabel "text/plain"@en ;
@@ -174,7 +174,7 @@
   rdfs:seeAlso <https://www.rfc-editor.org/rfc/rfc2046> .
 
 # WSDL
-<https://www.iana.org/assignments/media-types/application/wsdl+xml> a skos:Concept ;
+<https://www.iana.org/assignments/media-types/application/wsdl+xml> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
   skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
   skos:prefLabel "application/wsdl+xml"@pt-BR ;
   skos:prefLabel "application/wsdl+xml"@en ;
@@ -185,7 +185,7 @@
   rdfs:seeAlso <https://www.w3.org/TR/wsdl20/> .
 
 # XLS
-<https://www.iana.org/assignments/media-types/application/vnd.ms-excel> a skos:Concept ;
+<https://www.iana.org/assignments/media-types/application/vnd.ms-excel> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
   skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
   skos:prefLabel "application/vnd.ms-excel"@pt-BR ;
   skos:prefLabel "application/vnd.ms-excel"@en ;
@@ -195,7 +195,7 @@
   dct:source <https://www.iana.org/assignments/media-types/application/vnd.ms-excel> .
 
 # XLSX
-<https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet> a skos:Concept ;
+<https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
   skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
   skos:prefLabel "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"@pt-BR ;
   skos:prefLabel "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"@en ;
@@ -205,7 +205,7 @@
   dct:source <https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet> .
 
 # XML
-<https://www.iana.org/assignments/media-types/application/xml> a skos:Concept ;
+<https://www.iana.org/assignments/media-types/application/xml> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
   skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
   skos:prefLabel "application/xml"@pt-BR ;
   skos:prefLabel "application/xml"@en ;
@@ -216,7 +216,7 @@
   rdfs:seeAlso <https://www.w3.org/XML/> .
 
 # ZIP
-<https://www.iana.org/assignments/media-types/application/zip> a skos:Concept ;
+<https://www.iana.org/assignments/media-types/application/zip> a skos:Concept, dct:MediaType, dct:MediaTypeOrExtent ;
   skos:inScheme <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
   skos:prefLabel "application/zip"@pt-BR ;
   skos:prefLabel "application/zip"@en ;

@@ -69,4 +69,160 @@
     <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/urbanismo"/>
   </rdf:Description>
 
+  <rdf:Description rdf:about="https://dcat-br.github.io/dcat-br/vocabularies/themes/abastecimento">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://dcat-br.github.io/dcat-br/vocabularies/themes/administracao">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://dcat-br.github.io/dcat-br/vocabularies/themes/agropecuaria-pesca-e-extrativismo">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://dcat-br.github.io/dcat-br/vocabularies/themes/comercio-e-servicos">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://dcat-br.github.io/dcat-br/vocabularies/themes/comunicacoes">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://dcat-br.github.io/dcat-br/vocabularies/themes/cultura">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://dcat-br.github.io/dcat-br/vocabularies/themes/defesa-nacional">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://dcat-br.github.io/dcat-br/vocabularies/themes/economia-e-financas">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://dcat-br.github.io/dcat-br/vocabularies/themes/educacao">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://dcat-br.github.io/dcat-br/vocabularies/themes/energia">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://dcat-br.github.io/dcat-br/vocabularies/themes/esporte-e-lazer">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://dcat-br.github.io/dcat-br/vocabularies/themes/habitacao">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://dcat-br.github.io/dcat-br/vocabularies/themes/industria">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://dcat-br.github.io/dcat-br/vocabularies/themes/infraestrutura-e-fomento">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://dcat-br.github.io/dcat-br/vocabularies/themes/meio-ambiente">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://dcat-br.github.io/dcat-br/vocabularies/themes/pesquisa-e-desenvolvimento">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://dcat-br.github.io/dcat-br/vocabularies/themes/planejamento-e-gestao">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://dcat-br.github.io/dcat-br/vocabularies/themes/previdencia-social">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://dcat-br.github.io/dcat-br/vocabularies/themes/protecao-social">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://dcat-br.github.io/dcat-br/vocabularies/themes/relacoes-internacionais">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://dcat-br.github.io/dcat-br/vocabularies/themes/saneamento">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://dcat-br.github.io/dcat-br/vocabularies/themes/saude">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://dcat-br.github.io/dcat-br/vocabularies/themes/seguranca-e-ordem-publica">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://dcat-br.github.io/dcat-br/vocabularies/themes/trabalho">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://dcat-br.github.io/dcat-br/vocabularies/themes/transportes">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://dcat-br.github.io/dcat-br/vocabularies/themes/urbanismo">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/themes/"/>
+  </rdf:Description>
+
 </rdf:RDF>

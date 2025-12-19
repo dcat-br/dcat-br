@@ -36,6 +36,8 @@
   </skos:ConceptScheme>
 
   <skos:Concept rdf:about="https://www.iana.org/assignments/media-types/application/x-7z-compressed">
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaType"/>
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaTypeOrExtent"/>
     <skos:inScheme rdf:resource="https://dcat-br.gov.br/vocabularies/formato/esquema"/>
     <skos:prefLabel xml:lang="pt-BR">application/x-7z-compressed</skos:prefLabel>
     <skos:prefLabel xml:lang="en">application/x-7z-compressed</skos:prefLabel>
@@ -46,6 +48,8 @@
   </skos:Concept>
 
   <skos:Concept rdf:about="https://www.iana.org/assignments/media-types/application/json">
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaType"/>
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaTypeOrExtent"/>
     <skos:inScheme rdf:resource="https://dcat-br.gov.br/vocabularies/formato/esquema"/>
     <skos:prefLabel xml:lang="pt-BR">application/json</skos:prefLabel>
     <skos:prefLabel xml:lang="en">application/json</skos:prefLabel>
@@ -59,6 +63,8 @@
   </skos:Concept>
 
   <skos:Concept rdf:about="https://www.iana.org/assignments/media-types/text/csv">
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaType"/>
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaTypeOrExtent"/>
     <skos:inScheme rdf:resource="https://dcat-br.gov.br/vocabularies/formato/esquema"/>
     <skos:prefLabel xml:lang="pt-BR">text/csv</skos:prefLabel>
     <skos:prefLabel xml:lang="en">text/csv</skos:prefLabel>
@@ -70,6 +76,8 @@
   </skos:Concept>
 
   <skos:Concept rdf:about="https://www.iana.org/assignments/media-types/application/msword">
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaType"/>
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaTypeOrExtent"/>
     <skos:inScheme rdf:resource="https://dcat-br.gov.br/vocabularies/formato/esquema"/>
     <skos:prefLabel xml:lang="pt-BR">application/msword</skos:prefLabel>
     <skos:prefLabel xml:lang="en">application/msword</skos:prefLabel>
@@ -80,6 +88,8 @@
   </skos:Concept>
 
   <skos:Concept rdf:about="https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaType"/>
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaTypeOrExtent"/>
     <skos:inScheme rdf:resource="https://dcat-br.gov.br/vocabularies/formato/esquema"/>
     <skos:prefLabel xml:lang="pt-BR">application/vnd.openxmlformats-officedocument.wordprocessingml.document</skos:prefLabel>
     <skos:prefLabel xml:lang="en">application/vnd.openxmlformats-officedocument.wordprocessingml.document</skos:prefLabel>
@@ -90,6 +100,8 @@
   </skos:Concept>
 
   <skos:Concept rdf:about="https://www.iana.org/assignments/media-types/application/gzip">
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaType"/>
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaTypeOrExtent"/>
     <skos:inScheme rdf:resource="https://dcat-br.gov.br/vocabularies/formato/esquema"/>
     <skos:prefLabel xml:lang="pt-BR">application/gzip</skos:prefLabel>
     <skos:prefLabel xml:lang="en">application/gzip</skos:prefLabel>
@@ -101,6 +113,8 @@
   </skos:Concept>
 
   <skos:Concept rdf:about="https://www.iana.org/assignments/media-types/text/html">
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaType"/>
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaTypeOrExtent"/>
     <skos:inScheme rdf:resource="https://dcat-br.gov.br/vocabularies/formato/esquema"/>
     <skos:prefLabel xml:lang="pt-BR">text/html</skos:prefLabel>
     <skos:prefLabel xml:lang="en">text/html</skos:prefLabel>
@@ -112,6 +126,8 @@
   </skos:Concept>
 
   <skos:Concept rdf:about="https://www.iana.org/assignments/media-types/image/jpeg">
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaType"/>
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaTypeOrExtent"/>
     <skos:inScheme rdf:resource="https://dcat-br.gov.br/vocabularies/formato/esquema"/>
     <skos:prefLabel xml:lang="pt-BR">image/jpeg</skos:prefLabel>
     <skos:prefLabel xml:lang="en">image/jpeg</skos:prefLabel>
@@ -123,6 +139,8 @@
   </skos:Concept>
 
   <skos:Concept rdf:about="https://www.iana.org/assignments/media-types/application/pdf">
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaType"/>
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaTypeOrExtent"/>
     <skos:inScheme rdf:resource="https://dcat-br.gov.br/vocabularies/formato/esquema"/>
     <skos:prefLabel xml:lang="pt-BR">application/pdf</skos:prefLabel>
     <skos:prefLabel xml:lang="en">application/pdf</skos:prefLabel>
@@ -134,6 +152,8 @@
   </skos:Concept>
 
   <skos:Concept rdf:about="https://www.iana.org/assignments/media-types/image/png">
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaType"/>
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaTypeOrExtent"/>
     <skos:inScheme rdf:resource="https://dcat-br.gov.br/vocabularies/formato/esquema"/>
     <skos:prefLabel xml:lang="pt-BR">image/png</skos:prefLabel>
     <skos:prefLabel xml:lang="en">image/png</skos:prefLabel>
@@ -145,6 +165,8 @@
   </skos:Concept>
 
   <skos:Concept rdf:about="https://www.iana.org/assignments/media-types/application/x-rar-compressed">
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaType"/>
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaTypeOrExtent"/>
     <skos:inScheme rdf:resource="https://dcat-br.gov.br/vocabularies/formato/esquema"/>
     <skos:prefLabel xml:lang="pt-BR">application/x-rar-compressed</skos:prefLabel>
     <skos:prefLabel xml:lang="en">application/x-rar-compressed</skos:prefLabel>
@@ -155,6 +177,8 @@
   </skos:Concept>
 
   <skos:Concept rdf:about="https://www.iana.org/assignments/media-types/application/rdf+xml">
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaType"/>
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaTypeOrExtent"/>
     <skos:inScheme rdf:resource="https://dcat-br.gov.br/vocabularies/formato/esquema"/>
     <skos:prefLabel xml:lang="pt-BR">application/rdf+xml</skos:prefLabel>
     <skos:prefLabel xml:lang="en">application/rdf+xml</skos:prefLabel>
@@ -166,6 +190,8 @@
   </skos:Concept>
 
   <skos:Concept rdf:about="https://www.iana.org/assignments/media-types/text/plain">
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaType"/>
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaTypeOrExtent"/>
     <skos:inScheme rdf:resource="https://dcat-br.gov.br/vocabularies/formato/esquema"/>
     <skos:prefLabel xml:lang="pt-BR">text/plain</skos:prefLabel>
     <skos:prefLabel xml:lang="en">text/plain</skos:prefLabel>
@@ -177,6 +203,8 @@
   </skos:Concept>
 
   <skos:Concept rdf:about="https://www.iana.org/assignments/media-types/application/wsdl+xml">
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaType"/>
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaTypeOrExtent"/>
     <skos:inScheme rdf:resource="https://dcat-br.gov.br/vocabularies/formato/esquema"/>
     <skos:prefLabel xml:lang="pt-BR">application/wsdl+xml</skos:prefLabel>
     <skos:prefLabel xml:lang="en">application/wsdl+xml</skos:prefLabel>
@@ -188,6 +216,8 @@
   </skos:Concept>
 
   <skos:Concept rdf:about="https://www.iana.org/assignments/media-types/application/vnd.ms-excel">
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaType"/>
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaTypeOrExtent"/>
     <skos:inScheme rdf:resource="https://dcat-br.gov.br/vocabularies/formato/esquema"/>
     <skos:prefLabel xml:lang="pt-BR">application/vnd.ms-excel</skos:prefLabel>
     <skos:prefLabel xml:lang="en">application/vnd.ms-excel</skos:prefLabel>
@@ -198,6 +228,8 @@
   </skos:Concept>
 
   <skos:Concept rdf:about="https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaType"/>
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaTypeOrExtent"/>
     <skos:inScheme rdf:resource="https://dcat-br.gov.br/vocabularies/formato/esquema"/>
     <skos:prefLabel xml:lang="pt-BR">application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</skos:prefLabel>
     <skos:prefLabel xml:lang="en">application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</skos:prefLabel>
@@ -208,6 +240,8 @@
   </skos:Concept>
 
   <skos:Concept rdf:about="https://www.iana.org/assignments/media-types/application/xml">
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaType"/>
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaTypeOrExtent"/>
     <skos:inScheme rdf:resource="https://dcat-br.gov.br/vocabularies/formato/esquema"/>
     <skos:prefLabel xml:lang="pt-BR">application/xml</skos:prefLabel>
     <skos:prefLabel xml:lang="en">application/xml</skos:prefLabel>
@@ -219,6 +253,8 @@
   </skos:Concept>
 
   <skos:Concept rdf:about="https://www.iana.org/assignments/media-types/application/zip">
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaType"/>
+    <rdf:type rdf:resource="http://purl.org/dc/terms/MediaTypeOrExtent"/>
     <skos:inScheme rdf:resource="https://dcat-br.gov.br/vocabularies/formato/esquema"/>
     <skos:prefLabel xml:lang="pt-BR">application/zip</skos:prefLabel>
     <skos:prefLabel xml:lang="en">application/zip</skos:prefLabel>

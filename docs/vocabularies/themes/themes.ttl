@@ -49,3 +49,136 @@
     <https://dcat-br.github.io/dcat-br/vocabularies/themes/trabalho>, 
     <https://dcat-br.github.io/dcat-br/vocabularies/themes/transportes>, 
     <https://dcat-br.github.io/dcat-br/vocabularies/themes/urbanismo> .
+
+# Definições dos conceitos individuais para validação SHACL
+# Cada conceito é declarado como skos:Concept com skos:inScheme
+
+<https://dcat-br.github.io/dcat-br/vocabularies/themes/abastecimento>
+  a skos:Concept ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/vocabularies/themes/> ;
+  skos:topConceptOf <https://dcat-br.github.io/dcat-br/vocabularies/themes/> .
+
+<https://dcat-br.github.io/dcat-br/vocabularies/themes/administracao>
+  a skos:Concept ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/vocabularies/themes/> ;
+  skos:topConceptOf <https://dcat-br.github.io/dcat-br/vocabularies/themes/> .
+
+<https://dcat-br.github.io/dcat-br/vocabularies/themes/agropecuaria-pesca-e-extrativismo>
+  a skos:Concept ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/vocabularies/themes/> ;
+  skos:topConceptOf <https://dcat-br.github.io/dcat-br/vocabularies/themes/> .
+
+<https://dcat-br.github.io/dcat-br/vocabularies/themes/comercio-e-servicos>
+  a skos:Concept ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/vocabularies/themes/> ;
+  skos:topConceptOf <https://dcat-br.github.io/dcat-br/vocabularies/themes/> .
+
+<https://dcat-br.github.io/dcat-br/vocabularies/themes/comunicacoes>
+  a skos:Concept ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/vocabularies/themes/> ;
+  skos:topConceptOf <https://dcat-br.github.io/dcat-br/vocabularies/themes/> .
+
+<https://dcat-br.github.io/dcat-br/vocabularies/themes/cultura>
+  a skos:Concept ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/vocabularies/themes/> ;
+  skos:topConceptOf <https://dcat-br.github.io/dcat-br/vocabularies/themes/> .
+
+<https://dcat-br.github.io/dcat-br/vocabularies/themes/defesa-nacional>
+  a skos:Concept ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/vocabularies/themes/> ;
+  skos:topConceptOf <https://dcat-br.github.io/dcat-br/vocabularies/themes/> .
+
+<https://dcat-br.github.io/dcat-br/vocabularies/themes/economia-e-financas>
+  a skos:Concept ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/vocabularies/themes/> ;
+  skos:topConceptOf <https://dcat-br.github.io/dcat-br/vocabularies/themes/> .
+
+<https://dcat-br.github.io/dcat-br/vocabularies/themes/educacao>
+  a skos:Concept ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/vocabularies/themes/> ;
+  skos:topConceptOf <https://dcat-br.github.io/dcat-br/vocabularies/themes/> .
+
+<https://dcat-br.github.io/dcat-br/vocabularies/themes/energia>
+  a skos:Concept ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/vocabularies/themes/> ;
+  skos:topConceptOf <https://dcat-br.github.io/dcat-br/vocabularies/themes/> .
+
+<https://dcat-br.github.io/dcat-br/vocabularies/themes/esporte-e-lazer>
+  a skos:Concept ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/vocabularies/themes/> ;
+  skos:topConceptOf <https://dcat-br.github.io/dcat-br/vocabularies/themes/> .
+
+<https://dcat-br.github.io/dcat-br/vocabularies/themes/habitacao>
+  a skos:Concept ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/vocabularies/themes/> ;
+  skos:topConceptOf <https://dcat-br.github.io/dcat-br/vocabularies/themes/> .
+
+<https://dcat-br.github.io/dcat-br/vocabularies/themes/industria>
+  a skos:Concept ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/vocabularies/themes/> ;
+  skos:topConceptOf <https://dcat-br.github.io/dcat-br/vocabularies/themes/> .
+
+<https://dcat-br.github.io/dcat-br/vocabularies/themes/infraestrutura-e-fomento>
+  a skos:Concept ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/vocabularies/themes/> ;
+  skos:topConceptOf <https://dcat-br.github.io/dcat-br/vocabularies/themes/> .
+
+<https://dcat-br.github.io/dcat-br/vocabularies/themes/meio-ambiente>
+  a skos:Concept ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/vocabularies/themes/> ;
+  skos:topConceptOf <https://dcat-br.github.io/dcat-br/vocabularies/themes/> .
+
+<https://dcat-br.github.io/dcat-br/vocabularies/themes/pesquisa-e-desenvolvimento>
+  a skos:Concept ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/vocabularies/themes/> ;
+  skos:topConceptOf <https://dcat-br.github.io/dcat-br/vocabularies/themes/> .
+
+<https://dcat-br.github.io/dcat-br/vocabularies/themes/planejamento-e-gestao>
+  a skos:Concept ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/vocabularies/themes/> ;
+  skos:topConceptOf <https://dcat-br.github.io/dcat-br/vocabularies/themes/> .
+
+<https://dcat-br.github.io/dcat-br/vocabularies/themes/previdencia-social>
+  a skos:Concept ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/vocabularies/themes/> ;
+  skos:topConceptOf <https://dcat-br.github.io/dcat-br/vocabularies/themes/> .
+
+<https://dcat-br.github.io/dcat-br/vocabularies/themes/protecao-social>
+  a skos:Concept ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/vocabularies/themes/> ;
+  skos:topConceptOf <https://dcat-br.github.io/dcat-br/vocabularies/themes/> .
+
+<https://dcat-br.github.io/dcat-br/vocabularies/themes/relacoes-internacionais>
+  a skos:Concept ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/vocabularies/themes/> ;
+  skos:topConceptOf <https://dcat-br.github.io/dcat-br/vocabularies/themes/> .
+
+<https://dcat-br.github.io/dcat-br/vocabularies/themes/saneamento>
+  a skos:Concept ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/vocabularies/themes/> ;
+  skos:topConceptOf <https://dcat-br.github.io/dcat-br/vocabularies/themes/> .
+
+<https://dcat-br.github.io/dcat-br/vocabularies/themes/saude>
+  a skos:Concept ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/vocabularies/themes/> ;
+  skos:topConceptOf <https://dcat-br.github.io/dcat-br/vocabularies/themes/> .
+
+<https://dcat-br.github.io/dcat-br/vocabularies/themes/seguranca-e-ordem-publica>
+  a skos:Concept ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/vocabularies/themes/> ;
+  skos:topConceptOf <https://dcat-br.github.io/dcat-br/vocabularies/themes/> .
+
+<https://dcat-br.github.io/dcat-br/vocabularies/themes/trabalho>
+  a skos:Concept ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/vocabularies/themes/> ;
+  skos:topConceptOf <https://dcat-br.github.io/dcat-br/vocabularies/themes/> .
+
+<https://dcat-br.github.io/dcat-br/vocabularies/themes/transportes>
+  a skos:Concept ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/vocabularies/themes/> ;
+  skos:topConceptOf <https://dcat-br.github.io/dcat-br/vocabularies/themes/> .
+
+<https://dcat-br.github.io/dcat-br/vocabularies/themes/urbanismo>
+  a skos:Concept ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/vocabularies/themes/> ;
+  skos:topConceptOf <https://dcat-br.github.io/dcat-br/vocabularies/themes/> .
