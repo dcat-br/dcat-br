@@ -467,12 +467,6 @@
         sh:severity sh:Violation ;
         sh:message "dct:creator deve ser um recurso (URI/IRI ou nó anônimo) representando o criador do conjunto de dados."@pt-BR
     ], [
-        sh:path dct:license ;
-        sh:maxCount 1 ;
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:severity sh:Violation ;
-        sh:message "dct:license deve ter no máximo 1 valor e ser um recurso (URI/IRI ou nó anônimo)."@pt-BR
-    ], [
         sh:path dct:issued ;
         sh:maxCount 1 ;
         sh:node :DateOrDateTimeDataType_Shape ;
