@@ -1,0 +1,18 @@
+# robots.txt para DCAT-BR
+# Permite que todos os crawlers indexem o site
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://dcat-br.github.io/dcat-br/sitemap.xml
+
+# Desabilitar indexação de arquivos temporários e de sistema
+Disallow: /assets/js/
+Disallow: /*.json$
+Disallow: /*.csv$
+
+# Permitir CSS e imagens
+Allow: /assets/css/
+Allow: /assets/images/
+
