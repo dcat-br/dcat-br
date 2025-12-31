@@ -1,0 +1,6 @@
+https://www.iana.org/assignments/media-types/text/csv,csv
+https://www.iana.org/assignments/media-types/application/json,json
+https://www.iana.org/assignments/media-types/application/rdf+xml,rdf
+https://www.iana.org/assignments/media-types/application/vnd.ms-excel,xls
+https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,xlsx
+https://www.iana.org/assignments/media-types/application/xml,xml

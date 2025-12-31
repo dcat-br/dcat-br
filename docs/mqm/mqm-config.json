@@ -91,7 +91,7 @@
               "label": "Vocabulário de tema",
               "description": "Verifica se algum dos Vocabulários Controlados de Referência (VCR) foi usado para tema.",
               "weight": 10,
-              "vocabularies": ["themes"]
+              "vocabularies": ["https://dcat-br.github.io/dcat-br/docs/vocabularies/themes/themes.csv"]
             }
           ]
         },
@@ -190,7 +190,7 @@
               "label": "Formato/tipo de mídia de vocabulário",
               "description": "Verifica se o formato e o tipo de mídia pertencem a um vocabulário controlado (ex: lista IANA).",
               "weight": 10,
-              "vocabularies": ["formato", "iana"]
+              "vocabularies": ["https://dcat-br.github.io/dcat-br/docs/vocabularies/formato/formatos.csv"]
             },
             {
               "id": "dct_format_nonproprietary",
@@ -198,9 +198,7 @@
               "label": "Não proprietário",
               "description": "Verifica se o formato da distribuição é não proprietário, utilizando um vocabulário de referência.",
               "weight": 20,
-              "check": {
-                "vocabulary": "non_proprietary"
-              }
+              "vocabularies": ["https://dcat-br.github.io/dcat-br/docs/vocabularies/formato/non_proprietary_formats.csv"]
             },
             {
               "id": "dct_format_machine_readable",
@@ -208,9 +206,7 @@
               "label": "Legível por máquina",
               "description": "Verifica se o formato da distribuição é legível por máquina, utilizando um vocabulário de referência.",
               "weight": 20,
-              "check": {
-                "vocabulary": "machine_readable"
-              }
+              "vocabularies": ["https://dcat-br.github.io/dcat-br/docs/vocabularies/formato/machine_readable_formats.csv"]
             }
           ]
         },
@@ -272,7 +268,7 @@
               "label": "Vocabulário da licença",
               "description": "Incentiva o uso do VCR para licenças para evitar informações incorretas.",
               "weight": 10,
-              "vocabularies": ["vcr-lu"]
+              "vocabularies": ["https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-LU/licensa-uso.csv"]
             }
           ]
         },
@@ -297,7 +293,7 @@
               "label": "Vocabulário das restrições de acesso",
               "description": "Verifica se o VCR para direitos de acesso é utilizado.",
               "weight": 5,
-              "vocabularies": ["sei"]
+              "vocabularies": ["https://dcat-br.github.io/dcat-br/docs/vocabularies/SEI/sei.csv"]
             }
           ]
         },
