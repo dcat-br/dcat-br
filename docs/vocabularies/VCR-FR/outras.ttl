@@ -1,9 +1,9 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 
-<http://purl.org/dcat-br/docs/vocabularies/VCR-FR/OUTRAS>
+<https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-FR/OUTRAS>
   a skos:Concept ;
-  skos:inScheme <http://purl.org/dcat-br/docs/vocabularies/VCR-FR> ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-FR> ;
   skos:prefLabel "Outras"@pt-BR ;
   skos:prefLabel "Others"@en ;
   skos:definition "Outras frequências não especificadas."@pt-BR ;

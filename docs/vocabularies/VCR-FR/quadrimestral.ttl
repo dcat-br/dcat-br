@@ -1,9 +1,9 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 
-<http://purl.org/dcat-br/docs/vocabularies/VCR-FR/QUADRIMESTRAL>
+<https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-FR/QUADRIMESTRAL>
   a skos:Concept ;
-  skos:inScheme <http://purl.org/dcat-br/docs/vocabularies/VCR-FR> ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-FR/> ;
   skos:prefLabel "Quadrimestral"@pt-BR ;
   skos:prefLabel "Quadrimestral"@en ;
   skos:definition "O evento ocorre a cada quatro meses."@pt-BR ;
