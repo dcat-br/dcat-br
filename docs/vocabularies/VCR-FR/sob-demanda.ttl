@@ -8,7 +8,7 @@
   skos:prefLabel "On demand"@en ;
   skos:definition "O evento ocorre sob demanda, quando necessário."@pt-BR ;
   skos:definition "The event occurs on demand, when necessary."@en ;
-  skos:exactMatch <https://dcat-br.gov.br/vocabularies/freq/onDemand> ;
+  skos:exactMatch <https://dcat-br.github.io/dcat-br/vocabularies/freq/onDemand> ;
   dc:identifier "SOB_DEMANDA" ;
   skos:notation "SOB_DEMANDA" .
 

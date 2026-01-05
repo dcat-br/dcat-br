@@ -3,14 +3,14 @@
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-<https://dcat-br.gov.br/vocabularies/VCR-LU/esquema> a skos:ConceptScheme ;
+<https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-LU/esquema> a skos:ConceptScheme ;
   dct:title "Vocabulário Controlado de Licença de Uso (VCR-LU) - DCAT-BR"@pt-BR ;
   dct:description "Vocabulário SKOS para descrever licenças de uso aplicadas a distribuições de dados em catálogos de dados públicos no Brasil. Inclui licenças Creative Commons e Open Data Commons."@pt-BR ;
   dct:issued "2025-12-11"^^xsd:date ;
   dct:modified "2025-12-11"^^xsd:date ;
   dct:language "pt-BR" ;
   dct:license <https://creativecommons.org/licenses/by/4.0/> ;
-  dct:publisher <https://dcat-br.gov.br/> ;
+  dct:publisher <https://dcat-br.github.io/dcat-br/docs/> ;
   dct:source <https://creativecommons.org/licenses/> ;
   dct:source <https://opendatacommons.org/licenses/> ;
   skos:hasTopConcept
@@ -21,8 +21,8 @@
 
 # Creative Commons CCZero (CC0-1.0)
 <https://creativecommons.org/publicdomain/zero/1.0/> a skos:Concept ;
-  skos:inScheme <https://dcat-br.gov.br/vocabularies/VCR-LU/esquema> ;
-  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/VCR-LU/esquema> ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-LU/esquema> ;
+  skos:topConceptOf <https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-LU/esquema> ;
   skos:prefLabel "Creative Commons CCZero"@pt-BR ;
   skos:prefLabel "Creative Commons CCZero"@en ;
   skos:notation "cc-zero" ;
@@ -34,8 +34,8 @@
 
 # Creative Commons Atribuição (CC-BY-4.0)
 <https://creativecommons.org/licenses/by/4.0/> a skos:Concept ;
-  skos:inScheme <https://dcat-br.gov.br/vocabularies/VCR-LU/esquema> ;
-  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/VCR-LU/esquema> ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-LU/esquema> ;
+  skos:topConceptOf <https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-LU/esquema> ;
   skos:prefLabel "Creative Commons Atribuição"@pt-BR ;
   skos:prefLabel "Creative Commons Attribution"@en ;
   skos:notation "cc-by" ;
@@ -47,8 +47,8 @@
 
 # Open Database License (ODbL-1.0)
 <https://opendatacommons.org/licenses/odbl/1-0/> a skos:Concept ;
-  skos:inScheme <https://dcat-br.gov.br/vocabularies/VCR-LU/esquema> ;
-  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/VCR-LU/esquema> ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-LU/esquema> ;
+  skos:topConceptOf <https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-LU/esquema> ;
   skos:prefLabel "Licença Aberta para Bases de Dados (ODbL) do Open Data Commons"@pt-BR ;
   skos:prefLabel "Open Database License (ODbL) from Open Data Commons"@en ;
   skos:notation "odc-odbl" ;
@@ -60,8 +60,8 @@
 
 # Public Domain Dedication and License (PDDL-1.0)
 <https://opendatacommons.org/licenses/pddl/1-0/> a skos:Concept ;
-  skos:inScheme <https://dcat-br.gov.br/vocabularies/VCR-LU/esquema> ;
-  skos:topConceptOf <https://dcat-br.gov.br/vocabularies/VCR-LU/esquema> ;
+  skos:inScheme <https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-LU/esquema> ;
+  skos:topConceptOf <https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-LU/esquema> ;
   skos:prefLabel "Licença e Dedicação ao Domínio Público do Open Data Commons (PDDL)"@pt-BR ;
   skos:prefLabel "Public Domain Dedication and License (PDDL) from Open Data Commons"@en ;
   skos:notation "odc-pddl" ;

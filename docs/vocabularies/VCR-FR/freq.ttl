@@ -150,20 +150,20 @@ vcrfr:QUADRIMESTRAL
   a skos:Concept ;
   skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
   skos:prefLabel "Quadrimestral"@pt-BR ;
-  skos:exactMatch <https://dcat-br.gov.br/vocabularies/freq/quadrimestral> ;
+  skos:exactMatch <https://dcat-br.github.io/dcat-br/vocabularies/freq/quadrimestral> ;
 .
 
 vcrfr:SOB_DEMANDA
   a skos:Concept ;
   skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
   skos:prefLabel "Sob demanda"@pt-BR ;
-  skos:exactMatch <https://dcat-br.gov.br/vocabularies/freq/onDemand> ;
+  skos:exactMatch <https://dcat-br.github.io/dcat-br/vocabularies/freq/onDemand> ;
 .
 
 vcrfr:OUTRAS
   a skos:Concept ;
   skos:inScheme <http://purl.org/dcat-br/vocabularies/VCR-FR> ;
   skos:prefLabel "Outras"@pt-BR ;
-  skos:exactMatch <https://dcat-br.gov.br/vocabularies/freq/others> ;
+  skos:exactMatch <https://dcat-br.github.io/dcat-br/vocabularies/freq/others> ;
 .
     

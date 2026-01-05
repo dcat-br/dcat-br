@@ -24,7 +24,7 @@
     <!ENTITY dcatbr "http://purl.org/dcat-br/">
     <!ENTITY dcterms "http://purl.org/dc/terms/">
 
-    <!ENTITY documentation "https://dcat-br.gov.br/releases/1.0/dcat-br.html">
+    <!ENTITY documentation "https://dcat-br.github.io/dcat-br/docs/releases/1.0/">
     <!ENTITY documentationTitle "DCAT-BR 1.0.0">
 ]>
 <rdf:RDF

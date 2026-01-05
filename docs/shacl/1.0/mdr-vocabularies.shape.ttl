@@ -103,7 +103,7 @@
     rdfs:label "Restrição de Observância Legal"@pt-BR ;
     rdfs:label "Access Rights Restriction"@en ;
     sh:property [
-        sh:hasValue <https://dcat-br.gov.br/vocabularies/SEI/esquema> ;
+        sh:hasValue <https://dcat-br.github.io/dcat-br/docs/vocabularies/SEI/esquema> ;
         sh:minCount 1 ;
         sh:nodeKind sh:IRI ;
         sh:path skos:inScheme
@@ -117,7 +117,7 @@
     rdfs:label "Restrição de Formato"@pt-BR ;
     rdfs:label "Format Restriction"@en ;
     sh:property [
-        sh:hasValue <https://dcat-br.gov.br/vocabularies/formato/esquema> ;
+        sh:hasValue <https://dcat-br.github.io/dcat-br/docs/vocabularies/formato/esquema> ;
         sh:minCount 1 ;
         sh:nodeKind sh:IRI ;
         sh:path skos:inScheme
@@ -131,7 +131,7 @@
     rdfs:label "Restrição de Licença de Uso"@pt-BR ;
     rdfs:label "License Restriction"@en ;
     sh:property [
-        sh:hasValue <https://dcat-br.gov.br/vocabularies/VCR-LU/esquema> ;
+        sh:hasValue <https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-LU/esquema> ;
         sh:minCount 1 ;
         sh:nodeKind sh:IRI ;
         sh:path skos:inScheme

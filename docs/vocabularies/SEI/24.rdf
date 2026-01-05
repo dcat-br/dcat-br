@@ -6,12 +6,12 @@
   xmlns:dcterms="http://purl.org/dc/terms/"
   xmlns:dc11="http://purl.org/dc/elements/1.1/">
 
-  <rdf:Description rdf:about="https://dcat-br.gov.br/vocabularies/SEI/24">
+  <rdf:Description rdf:about="https://dcat-br.github.io/dcat-br/vocabularies/SEI/24">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 
     <!-- Ligação ao scheme -->
-    <skos:inScheme rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/esquema"/>
-    <skos:topConceptOf rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/esquema"/>
+    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/esquema"/>
+    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/esquema"/>
 
     <!-- Rótulos/descrições -->
     <skos:prefLabel xml:lang="pt-BR">Sigiloso - Segredo de Justiça no Processo Civil (Art. 189 da Lei 13.105/2015)</skos:prefLabel>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-         xmlns:fmtq="https://dcat-br.gov.br/vocabularies/formato/qualidade#">
+         xmlns:fmtq="https://dcat-br.github.io/dcat-br/docs/vocabularies/formato/qualidade#">
 
   <!-- text/csv -->
   <rdf:Description rdf:about="https://www.iana.org/assignments/media-types/text/csv">

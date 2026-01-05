@@ -8,7 +8,7 @@
   skos:prefLabel "Others"@en ;
   skos:definition "Outras frequências não especificadas."@pt-BR ;
   skos:definition "Other unspecified frequencies."@en ;
-  skos:exactMatch <https://dcat-br.gov.br/vocabularies/freq/others> ;
+  skos:exactMatch <https://dcat-br.github.io/dcat-br/vocabularies/freq/others> ;
   dc:identifier "OUTRAS" ;
   skos:notation "OUTRAS" .
 

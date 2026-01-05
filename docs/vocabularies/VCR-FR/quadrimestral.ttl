@@ -8,7 +8,7 @@
   skos:prefLabel "Quadrimestral"@en ;
   skos:definition "O evento ocorre a cada quatro meses."@pt-BR ;
   skos:definition "The event occurs every four months."@en ;
-  skos:exactMatch <https://dcat-br.gov.br/vocabularies/freq/quadrimestral> ;
+  skos:exactMatch <https://dcat-br.github.io/dcat-br/vocabularies/freq/quadrimestral> ;
   dc:identifier "QUADRIMESTRAL" ;
   skos:notation "QUADRIMESTRAL" .
 

@@ -19,7 +19,7 @@
     <skos:definition xml:lang="en">The event occurs on demand, when necessary.</skos:definition>
 
     <!-- Mapeamento para URI DCAT-BR -->
-    <skos:exactMatch rdf:resource="https://dcat-br.gov.br/vocabularies/freq/onDemand"/>
+    <skos:exactMatch rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/freq/onDemand"/>
 
     <!-- Identificadores -->
     <dcterms:identifier>SOB_DEMANDA</dcterms:identifier>

@@ -9,7 +9,7 @@
   xmlns:foaf="http://xmlns.com/foaf/0.1/">
 
   <!-- ConceptScheme (publicação no estilo DCAT-AP CH / EU) -->
-  <rdf:Description rdf:about="https://dcat-br.gov.br/vocabularies/SEI/esquema">
+  <rdf:Description rdf:about="https://dcat-br.github.io/dcat-br/vocabularies/SEI/esquema">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
 
@@ -36,7 +36,7 @@
     <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
 
     <!-- Publisher -->
-    <dcterms:publisher rdf:resource="https://dcat-br.gov.br/"/>
+    <dcterms:publisher rdf:resource="https://dcat-br.github.io/dcat-br/"/>
 
     <!-- Source -->
     <dcterms:source rdf:resource="https://dados.gov.br/dados/api/publico/conjuntos-dados/observancia-legal"/>
@@ -48,40 +48,40 @@
     <owl:versionInfo>2025-12-11</owl:versionInfo>
 
     <!-- Top concepts: referenciar por rdf:resource (sem "aninhamento") -->
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/1"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/2"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/3"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/4"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/5"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/6"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/7"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/8"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/9"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/10"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/11"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/12"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/13"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/14"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/15"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/16"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/17"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/18"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/19"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/20"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/21"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/22"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/23"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/24"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/25"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/26"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/27"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/28"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/29"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/30"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/31"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/32"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/33"/>
-    <skos:hasTopConcept rdf:resource="https://dcat-br.gov.br/vocabularies/SEI/34"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/1"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/2"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/3"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/4"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/5"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/6"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/7"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/8"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/9"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/10"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/11"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/12"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/13"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/14"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/15"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/16"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/17"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/18"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/19"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/20"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/21"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/22"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/23"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/24"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/25"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/26"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/27"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/28"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/29"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/30"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/31"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/32"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/33"/>
+    <skos:hasTopConcept rdf:resource="https://dcat-br.github.io/dcat-br/vocabularies/SEI/34"/>
   </rdf:Description>
 
 </rdf:RDF>

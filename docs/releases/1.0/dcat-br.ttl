@@ -44,7 +44,7 @@
     foaf:homepage <https://www.gov.br/gestao/pt-br>
   ] ;
   dc:license <https://creativecommons.org/licenses/by/4.0/> ;
-  dc:conformsTo <https://dcat-br.gov.br/releases/1.0/dcat-br.html> ;
+  dc:conformsTo <https://dcat-br.github.io/dcat-br/docs/releases/1.0/dcat-br.html> ;
   dc:creator [
     foaf:name "Juliano Leonardo Soares" ;
     foaf:homepage <https://www.linkedin.com/in/juliano-leonardo-soares/> ;
@@ -63,7 +63,7 @@
 #   Classes
 ####################################################
 
-<https://dcat-br.gov.br/releases/1.0/dcat-br.html> dc:title "DCAT-BR 1.0.0" .
+<https://dcat-br.github.io/dcat-br/docs/releases/1.0/dcat-br.html> dc:title "DCAT-BR 1.0.0" .
 dcat:Dataset
   dc:identifier "dcat:Dataset" ;
   rdfs:label "Conjunto de Dados"@pt-BR, "Dataset"@en ;

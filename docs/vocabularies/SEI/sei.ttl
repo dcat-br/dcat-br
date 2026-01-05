@@ -5,7 +5,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
-<https://dcat-br.gov.br/vocabularies/SEI/esquema>
+<https://dcat-br.github.io/dcat-br/vocabularies/SEI/esquema>
   a skos:ConceptScheme, owl:Ontology ;
   dc11:title "Vocabulário Controlado de Observância Legal (SEI) - DCAT-BR"@pt-BR, "Controlled Vocabulary for Legal Compliance (SEI) - DCAT-BR"@en ;
   dc11:description """
@@ -20,42 +20,42 @@
     foaf:name "Grupo de Trabalho DCAT-BR"
   ] ;
   dc:license <https://creativecommons.org/licenses/by/4.0/> ;
-  dc:publisher <https://dcat-br.gov.br/> ;
+  dc:publisher <https://dcat-br.github.io/dcat-br/> ;
   dc:source <https://dados.gov.br/dados/api/publico/conjuntos-dados/observancia-legal> ;
   dc:language "pt-BR" ;
   owl:versionInfo "2025-12-11" ;
   skos:hasTopConcept 
-    <https://dcat-br.gov.br/vocabularies/SEI/1>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/2>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/3>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/4>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/5>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/6>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/7>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/8>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/9>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/10>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/11>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/12>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/13>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/14>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/15>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/16>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/17>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/18>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/19>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/20>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/21>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/22>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/23>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/24>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/25>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/26>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/27>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/28>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/29>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/30>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/31>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/32>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/33>, 
-    <https://dcat-br.gov.br/vocabularies/SEI/34> .
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/1>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/2>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/3>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/4>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/5>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/6>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/7>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/8>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/9>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/10>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/11>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/12>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/13>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/14>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/15>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/16>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/17>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/18>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/19>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/20>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/21>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/22>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/23>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/24>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/25>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/26>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/27>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/28>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/29>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/30>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/31>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/32>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/33>, 
+    <https://dcat-br.github.io/dcat-br/vocabularies/SEI/34> .

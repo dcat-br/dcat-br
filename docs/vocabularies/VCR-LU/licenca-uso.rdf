@@ -5,14 +5,14 @@
          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
          xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 
-  <skos:ConceptScheme rdf:about="https://dcat-br.gov.br/vocabularies/VCR-LU/esquema">
+  <skos:ConceptScheme rdf:about="https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-LU/esquema">
     <dct:title xml:lang="pt-BR">Vocabulário Controlado de Licença de Uso (VCR-LU) - DCAT-BR</dct:title>
     <dct:description xml:lang="pt-BR">Vocabulário SKOS para descrever licenças de uso aplicadas a distribuições de dados em catálogos de dados públicos no Brasil. Inclui licenças Creative Commons e Open Data Commons.</dct:description>
     <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-12-11</dct:issued>
     <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-12-11</dct:modified>
     <dct:language>pt-BR</dct:language>
     <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-    <dct:publisher rdf:resource="https://dcat-br.gov.br/"/>
+    <dct:publisher rdf:resource="https://dcat-br.github.io/dcat-br/docs/"/>
     <dct:source rdf:resource="https://creativecommons.org/licenses/"/>
     <dct:source rdf:resource="https://opendatacommons.org/licenses/"/>
     
@@ -23,8 +23,8 @@
   </skos:ConceptScheme>
 
   <skos:Concept rdf:about="https://creativecommons.org/publicdomain/zero/1.0/">
-    <skos:inScheme rdf:resource="https://dcat-br.gov.br/vocabularies/VCR-LU/esquema"/>
-    <skos:topConceptOf rdf:resource="https://dcat-br.gov.br/vocabularies/VCR-LU/esquema"/>
+    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-LU/esquema"/>
+    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-LU/esquema"/>
     <skos:prefLabel xml:lang="pt-BR">Creative Commons CCZero</skos:prefLabel>
     <skos:prefLabel xml:lang="en">Creative Commons CCZero</skos:prefLabel>
     <skos:notation>cc-zero</skos:notation>
@@ -36,8 +36,8 @@
   </skos:Concept>
 
   <skos:Concept rdf:about="https://creativecommons.org/licenses/by/4.0/">
-    <skos:inScheme rdf:resource="https://dcat-br.gov.br/vocabularies/VCR-LU/esquema"/>
-    <skos:topConceptOf rdf:resource="https://dcat-br.gov.br/vocabularies/VCR-LU/esquema"/>
+    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-LU/esquema"/>
+    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-LU/esquema"/>
     <skos:prefLabel xml:lang="pt-BR">Creative Commons Atribuição</skos:prefLabel>
     <skos:prefLabel xml:lang="en">Creative Commons Attribution</skos:prefLabel>
     <skos:notation>cc-by</skos:notation>
@@ -49,8 +49,8 @@
   </skos:Concept>
 
   <skos:Concept rdf:about="https://opendatacommons.org/licenses/odbl/1-0/">
-    <skos:inScheme rdf:resource="https://dcat-br.gov.br/vocabularies/VCR-LU/esquema"/>
-    <skos:topConceptOf rdf:resource="https://dcat-br.gov.br/vocabularies/VCR-LU/esquema"/>
+    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-LU/esquema"/>
+    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-LU/esquema"/>
     <skos:prefLabel xml:lang="pt-BR">Licença Aberta para Bases de Dados (ODbL) do Open Data Commons</skos:prefLabel>
     <skos:prefLabel xml:lang="en">Open Database License (ODbL) from Open Data Commons</skos:prefLabel>
     <skos:notation>odc-odbl</skos:notation>
@@ -62,8 +62,8 @@
   </skos:Concept>
 
   <skos:Concept rdf:about="https://opendatacommons.org/licenses/pddl/1-0/">
-    <skos:inScheme rdf:resource="https://dcat-br.gov.br/vocabularies/VCR-LU/esquema"/>
-    <skos:topConceptOf rdf:resource="https://dcat-br.gov.br/vocabularies/VCR-LU/esquema"/>
+    <skos:inScheme rdf:resource="https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-LU/esquema"/>
+    <skos:topConceptOf rdf:resource="https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-LU/esquema"/>
     <skos:prefLabel xml:lang="pt-BR">Licença e Dedicação ao Domínio Público do Open Data Commons (PDDL)</skos:prefLabel>
     <skos:prefLabel xml:lang="en">Public Domain Dedication and License (PDDL) from Open Data Commons</skos:prefLabel>
     <skos:notation>odc-pddl</skos:notation>

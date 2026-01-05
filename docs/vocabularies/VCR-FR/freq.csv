@@ -5,6 +5,6 @@ http://purl.org/cld/freq/biweekly,QUINZENAL
 http://purl.org/cld/freq/weekly,SEMANAL
 http://purl.org/cld/freq/semiannual,SEMESTRAL
 http://purl.org/cld/freq/quarterly,TRIMESTRAL
-https://dcat-br.gov.br/vocabularies/freq/quadrimestral,QUADRIMESTRAL
-https://dcat-br.gov.br/vocabularies/freq/onDemand,SOB_DEMANDA
-https://dcat-br.gov.br/vocabularies/freq/others,OUTRAS
+https://dcat-br.github.io/dcat-br/vocabularies/freq/quadrimestral,QUADRIMESTRAL
+https://dcat-br.github.io/dcat-br/vocabularies/freq/onDemand,SOB_DEMANDA
+https://dcat-br.github.io/dcat-br/vocabularies/freq/others,OUTRAS
