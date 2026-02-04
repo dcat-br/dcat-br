@@ -1,59 +1,59 @@
 # DCAT-BR
 
-Perfil de Aplicação DCAT para Catálogos de Dados no Brasil
+DCAT Application Profile for Data Catalogues in Brazil
 
-## Sobre
+## About
 
-O DCAT-BR é um perfil de aplicação baseado no vocabulário [Data Catalogue Vocabulary (DCAT)](https://www.w3.org/TR/vocab-dcat-3/) da W3C, desenvolvido especificamente para descrever catálogos de dados públicos no Brasil.
+DCAT-BR is an application profile based on the W3C [Data Catalogue Vocabulary (DCAT)](https://www.w3.org/TR/vocab-dcat-3/), developed specifically to describe public data catalogues in Brazil.
 
-## Estrutura do Repositório
+## Repository Structure
 
 ```
 DCAT-BR/
-├── index.html              # Página principal do site
-├── CHANGELOG.md            # Histórico de mudanças
-├── releases.json           # Informações sobre releases
-├── assets/                 # Recursos estáticos
+├── index.html              # Main site page
+├── CHANGELOG.md            # Change history
+├── releases.json           # Release information
+├── assets/                 # Static resources
 │   ├── css/
-│   │   └── style.css       # Estilos do site
+│   │   └── style.css       # Site styles
 │   └── js/
-│       ├── main.js         # Scripts principais
-│       └── releases.js     # Carregamento de releases
+│       ├── main.js         # Main scripts
+│       └── releases.js     # Release loading
 ├── docs/
-│   ├── releases/           # Versões do DCAT-BR
+│   ├── releases/           # DCAT-BR versions
 │   │   └── 1.0/
-│   │       ├── index.html  # Página da versão
+│   │       ├── index.html  # Version page
 │   │       ├── dcat-br.html
 │   │       ├── dcat-br.pdf
 │   │       └── dcat-br.rdf
-│   ├── shacl/              # Arquivos SHACL
-│   └── vocabularies/       # Vocabulários controlados
-└── README.md               # Este arquivo
+│   ├── shacl/              # SHACL files
+│   └── vocabularies/       # Controlled vocabularies
+└── README.md               # This file
 ```
 
-## Como Adicionar uma Nova Versão
+## How to Add a New Version
 
-1. **Criar diretório da versão**:
+1. **Create version directory**:
    ```bash
    mkdir -p docs/releases/1.1
    ```
 
-2. **Adicionar arquivos da especificação**:
-   - `dcat-br.html` - Especificação em HTML
-   - `dcat-br.pdf` - Especificação em PDF
-   - `dcat-br.rdf` - Especificação em RDF
+2. **Add specification files**:
+   - `dcat-br.html` - HTML specification
+   - `dcat-br.pdf` - PDF specification
+   - `dcat-br.rdf` - RDF specification
 
-3. **Criar página da versão**:
-   - Copiar `docs/releases/1.0/index.html` para `docs/releases/1.1/index.html`
-   - Atualizar informações da versão
+3. **Create version page**:
+   - Copy `docs/releases/1.0/index.html` to `docs/releases/1.1/index.html`
+   - Update version information
 
-4. **Atualizar `releases.json`**:
+4. **Update `releases.json`**:
    ```json
    {
      "version": "1.1",
      "date": "2025-12-12",
      "status": "Recommendation",
-     "description": "Descrição da nova versão...",
+     "description": "Description of the new version...",
      "links": {
        "html": "docs/releases/1.1/dcat-br.html",
        "pdf": "docs/releases/1.1/dcat-br.pdf",
@@ -63,40 +63,40 @@ DCAT-BR/
    }
    ```
 
-5. **Atualizar `CHANGELOG.md`**:
-   - Adicionar entrada para a nova versão seguindo o formato existente
+5. **Update `CHANGELOG.md`**:
+   - Add an entry for the new version following the existing format
 
-6. **Atualizar `assets/js/releases.js`**:
-   - Adicionar a nova versão no array `releasesData.releases`
+6. **Update `assets/js/releases.js`**:
+   - Add the new version to the `releasesData.releases` array
 
-7. **Atualizar versão mais recente**:
-   - Atualizar o campo `latest` em `releases.json`
+7. **Update latest version**:
+   - Update the `latest` field in `releases.json`
 
-## Desenvolvimento Local
+## Local Development
 
-Para visualizar o site localmente:
+To view the site locally:
 
-1. Clone o repositório:
+1. Clone the repository:
    ```bash
    git clone https://github.com/dcat-br/dcat-br.git
    cd dcat-br
    ```
 
-2. Abra `index.html` em um navegador ou use um servidor local:
+2. Open `index.html` in a browser or use a local server:
    ```bash
    # Python 3
    python -m http.server 8000
    
-   # Node.js (com http-server)
+   # Node.js (with http-server)
    npx http-server
    ```
 
-3. Acesse `http://localhost:8000`
+3. Access `http://localhost:8000`
 
-## Contribuindo
+## Contributing
 
-Problemas encontrados ou sugestões podem ser submetidos como [issues](https://github.com/dcat-br/dcat-br/issues) no GitHub.
+Issues or suggestions can be submitted as [issues](https://github.com/dcat-br/dcat-br/issues) on GitHub.
 
-## Licença
+## License
 
-Copyright © 2025 DCAT-BR. Todo o material neste repositório é publicado sob a licença [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/), salvo menção explícita em contrário.
+Copyright © 2025 DCAT-BR. All material in this repository is published under the [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/) license, unless explicitly stated otherwise.
