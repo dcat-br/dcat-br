@@ -158,6 +158,60 @@
             color: white;
         }
 
+        .tab-content .level-section {
+            margin-bottom: 3rem;
+        }
+
+        .tab-content h4 {
+            color: var(--primary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .tab-content code {
+            background: var(--bg-light);
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        .tab-content .fair-badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-align: center;
+            min-width: 2.5rem;
+        }
+
+        .tab-content .fair-E {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .tab-content .fair-A {
+            background: #2196F3;
+            color: white;
+        }
+
+        .tab-content .fair-I {
+            background: #FF9800;
+            color: white;
+        }
+
+        .tab-content .fair-R {
+            background: #9C27B0;
+            color: white;
+        }
+
+        .tab-content .fair-C {
+            background: #F44336;
+            color: white;
+        }
+
         @media (max-width: 768px) {
             .tabs-nav {
                 flex-direction: column;
@@ -206,6 +260,7 @@
                 <button class="tab-btn active" data-tab="mqm">MQM</button>
                 <button class="tab-btn" data-tab="mqm-qt">MQM-QT</button>
                 <button class="tab-btn" data-tab="mqm-ql">MQM-QL</button>
+                <button class="tab-btn" data-tab="minimal-fields">Campos Mínimos</button>
             </div>
 
             <div id="mqm" class="tab-content active">
@@ -218,6 +273,10 @@
 
             <div id="mqm-ql" class="tab-content">
                 <!-- Conteúdo carregado dinamicamente de tabs/mqm-ql-tab.html -->
+            </div>
+
+            <div id="minimal-fields" class="tab-content">
+                <!-- Conteúdo carregado dinamicamente de tabs/minimal-fields-tab.html -->
             </div>
         </div>
     </main>
@@ -241,7 +300,8 @@
         const tabFiles = {
             'mqm': 'tabs/mqm-tab.html',
             'mqm-qt': 'tabs/mqm-qt-tab.html',
-            'mqm-ql': 'tabs/mqm-ql-tab.html'
+            'mqm-ql': 'tabs/mqm-ql-tab.html',
+            'minimal-fields': 'tabs/minimal-fields-tab.html'
         };
 
         // Cache para conteúdo já carregado

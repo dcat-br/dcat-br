@@ -1,0 +1,262 @@
+<h2>Campos Mínimos por Nível</h2>
+<p>
+    Esta seção apresenta os campos mínimos obrigatórios para cada nível de qualidade (Bronze, Prata e Ouro) 
+    conforme definido na Metodologia de Qualidade em Metadados (MQM).
+</p>
+<p>
+    <strong>Legenda FAIR+C:</strong> E = Encontrabilidade, A = Acessibilidade, I = Interoperabilidade, 
+    R = Reutilizabilidade, C = Contextualidade. Os valores entre parênteses indicam a pontuação máxima 
+    que o campo pode contribuir para a dimensão.
+</p>
+
+<!-- Nível Bronze -->
+<div class="level-section">
+    <h3>
+        <span class="badge badge-bronze">Bronze</span>
+        Campos Mínimos - Nível Bronze
+    </h3>
+    
+    <h4>Campos do Conjunto de Dados</h4>
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 30%;">Campo</th>
+                <th style="width: 45%;">Descrição</th>
+                <th style="width: 25%;">FAIR+C / Pontuação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>dcterms:title</code></td>
+                <td>Título do conjunto de dados é obrigatório.</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><code>dcterms:description</code></td>
+                <td>Descrição do conjunto de dados é obrigatório.</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><code>dcat:keyword</code></td>
+                <td>Deve conter no minimo uma palavra-chave.</td>
+                <td><span class="fair-badge fair-E">E</span> (20)</td>
+            </tr>
+            <tr>
+                <td><code>dcterms:publisher</code></td>
+                <td>Área técnica responsável pelo dado é obrigatório.</td>
+                <td><span class="fair-badge fair-R">R</span> (10)</td>
+            </tr>
+            <tr>
+                <td><code>dcat:contactPoint</code></td>
+                <td>E-mail da área técnica responsável é obrigatório.</td>
+                <td><span class="fair-badge fair-R">R</span> (20)</td>
+            </tr>
+            <tr>
+                <td><code>dcterms:accrualPeriodicity</code></td>
+                <td>Periodicidade de atualização é obrigatória.</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><code>dcterms:license</code></td>
+                <td>Licença de uso é obrigatória.</td>
+                <td><span class="fair-badge fair-R">R</span> (20+10)</td>
+            </tr>
+            <tr>
+                <td><code>dcterms:accessRights</code></td>
+                <td>Observância Legal é obrigatória.</td>
+                <td><span class="fair-badge fair-R">R</span> (10+5)</td>
+            </tr>
+            <tr>
+                <td><code>dcat:theme</code></td>
+                <td>Tema é obrigatório.</td>
+                <td><span class="fair-badge fair-E">E</span> (30+10)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Nível Prata -->
+<div class="level-section">
+    <h3>
+        <span class="badge badge-prata">Prata</span>
+        Campos Mínimos - Nível Prata
+    </h3>
+    
+    <h4>Campos do Conjunto de Dados</h4>
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 30%;">Campo</th>
+                <th style="width: 45%;">Descrição</th>
+                <th style="width: 25%;">FAIR+C / Pontuação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>dcterms:spatial</code></td>
+                <td>Cobertura espacial é obrigatória.</td>
+                <td><span class="fair-badge fair-E">E</span> (20)</td>
+            </tr>
+            <tr>
+                <td><code>dcat:endDate</code></td>
+                <td>Data final da cobertura temporal é obrigatória.</td>
+                <td><span class="fair-badge fair-E">E</span> (20)</td>
+            </tr>
+            <tr>
+                <td><code>dcat:startDate</code></td>
+                <td>Data inicial da cobertura temporal é obrigatória.</td>
+                <td><span class="fair-badge fair-E">E</span> (20)</td>
+            </tr>
+            <tr>
+                <td><code>dcatbr:dadosRacaEtnia</code></td>
+                <td>Distribuição de dados por raça/etnia é obrigatória.</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><code>dcatbr:dadosGenero</code></td>
+                <td>Distribuição de dados por gênero é obrigatória.</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h4>Campos dos Recursos</h4>
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 30%;">Campo</th>
+                <th style="width: 45%;">Descrição</th>
+                <th style="width: 25%;">FAIR+C / Pontuação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>dcat:title</code></td>
+                <td>Título do recurso é obrigatório.</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><code>dcat:description</code></td>
+                <td>Descrição do recurso é obrigatório.</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><code>dcat:accessURL</code></td>
+                <td>URL do recurso é obrigatório.</td>
+                <td><span class="fair-badge fair-A">A</span> (50)</td>
+            </tr>
+            <tr>
+                <td><code>dcaterms:type</code></td>
+                <td>tipo de recurso é obrigatório.</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><code>dcterms:format</code></td>
+                <td>Formato do recurso é obrigatório.</td>
+                <td><span class="fair-badge fair-I">I</span> (50+10+20+20)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Nível Ouro -->
+<div class="level-section">
+    <h3>
+        <span class="badge badge-ouro">Ouro</span>
+        Campos Mínimos - Nível Ouro
+    </h3>
+    
+    <h4>Campos do Conjunto de Dados</h4>
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 30%;">Campo</th>
+                <th style="width: 45%;">Descrição</th>
+                <th style="width: 25%;">FAIR+C / Pontuação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>dcat:spatialResolutionInMeters</code></td>
+                <td>Granularidade espacial em metros é obrigatória.</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><code>dcterms:accessRights</code></td>
+                <td>Resolução temporal é obrigatória.</td>
+                <td><span class="fair-badge fair-R">R</span> (10+5)</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h4>Campos dos Recursos</h4>
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 30%;">Campo</th>
+                <th style="width: 45%;">Descrição</th>
+                <th style="width: 25%;">FAIR+C / Pontuação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>dcat:byteSize</code></td>
+                <td>Tamanho do recurso é obrigatório.</td>
+                <td><span class="fair-badge fair-C">C</span> (10)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Campos FAIR+C não incluídos nos mínimos -->
+<div class="level-section">
+    <h3>
+        Campos FAIR+C Não Incluídos nos Campos Mínimos
+    </h3>
+    <p>
+        Esta tabela apresenta os campos avaliados nas métricas FAIR+C que não fazem parte dos campos mínimos obrigatórios, 
+        mas que contribuem para a pontuação total da qualidade dos metadados.
+    </p>
+    
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 30%;">Campo</th>
+                <th style="width: 45%;">Descrição</th>
+                <th style="width: 25%;">FAIR+C / Pontuação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>dct:temporal</code></td>
+                <td>Verifica se metadados temporais foram definidos, permitindo a filtragem de dados por período.</td>
+                <td><span class="fair-badge fair-E">E</span> (20)</td>
+            </tr>
+            <tr>
+                <td><code>dcat:downloadURL</code></td>
+                <td>A URL de transferência (dcat:downloadURL) deve ser um link direto para o download dos dados.</td>
+                <td><span class="fair-badge fair-A">A</span> (50)</td>
+            </tr>
+            <tr>
+                <td><code>dcat:mediaType</code></td>
+                <td>Especifica o tipo de mídia da distribuição (dcat:mediaType). Verifica se a propriedade está definida.</td>
+                <td><span class="fair-badge fair-I">I</span> (10+10)</td>
+            </tr>
+            <tr>
+                <td><code>dct:issued</code></td>
+                <td>A data em que o conjunto de dados ou a distribuição foi divulgado (dct:issued).</td>
+                <td><span class="fair-badge fair-C">C</span> (5)</td>
+            </tr>
+            <tr>
+                <td><code>dct:modified</code></td>
+                <td>A data em que o conjunto de dados ou a distribuição foi alterado pela última vez (dct:modified).</td>
+                <td><span class="fair-badge fair-C">C</span> (5)</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <p style="margin-top: 1.5rem; font-style: italic; color: #666;">
+        <strong>Nota:</strong> A validação SHACL (Conformidade com o DCAT-BR) também contribui com 30 pontos para a dimensão 
+        de Interoperabilidade, mas não é um campo específico, e sim uma validação geral dos metadados.
+    </p>
+</div>
