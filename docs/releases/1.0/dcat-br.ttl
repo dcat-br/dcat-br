@@ -45,14 +45,7 @@
   ] ;
   dc:license <https://creativecommons.org/licenses/by/4.0/> ;
   dc:conformsTo <https://dcat-br.github.io/dcat-br/docs/releases/1.0/dcat-br.html> ;
-  dc:creator [
-    foaf:name "Juliano Leonardo Soares" ;
-    foaf:homepage <https://www.linkedin.com/in/juliano-leonardo-soares/> ;
-    schema:affiliation [
-      foaf:name "CPQD" ;
-      foaf:homepage <https://cpqd.com.br>
-    ]
-  ] .
+.
 
 <https://creativecommons.org/licenses/by/4.0/>
   dc:title "Attribution 4.0 International (CC BY 4.0)" ;

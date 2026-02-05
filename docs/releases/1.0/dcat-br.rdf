@@ -97,15 +97,6 @@
                 <dct:title>&documentationTitle;</dct:title>
             </rdf:Description>
         </dct:conformsTo>
-
-        <dct:creator rdf:parseType="Resource">
-            <foaf:name>Juliano Leonardo Soares</foaf:name>
-            <foaf:homepage rdf:resource="https://www.linkedin.com/in/juliano-leonardo-soares/"/>
-            <schema:affiliation rdf:parseType="Resource">
-                <foaf:name>CPQD</foaf:name>
-                <foaf:homepage rdf:resource="https://cpqd.com.br"/>
-            </schema:affiliation>
-        </dct:creator>
     </owl:Ontology>
 
     <!-- ========================================================= -->
