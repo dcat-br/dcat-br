@@ -14,7 +14,7 @@ import os
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from csv_to_rdf import CsvToRdfService
-from api_to_rdf import ApiToRdfService
+from rdf_format import RdfFormatService
 from validate_rdf import ValidateRdfService
 
 
@@ -23,7 +23,7 @@ class CsvValidationPipeline:
     
     def __init__(self):
         self.csv_service = CsvToRdfService()
-        self.rdf_service = ApiToRdfService()
+        self.rdf_service = RdfFormatService()
         self.validation_service = ValidateRdfService()
     
     async def process_csv(
@@ -109,7 +109,7 @@ class CsvValidationPipeline:
                 errors.append(error_result)
                 print(f"  ✗ Error: {str(e)}")
         
-        # Salva resultados
+        # Save results
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         
         # Save full results to JSON

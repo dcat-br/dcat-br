@@ -1,66 +1,23 @@
-# Validation Scripts
+# DCAT-BR evaluation for Dados.gov.br
 
-## evaluate_csv_datasets.py
+**Scraping:** collect dataset metadata from the portal API. **Evaluation:** convert CSV to RDF and validate with DCAT-BR SHACL.
 
-Script to convert CSV to RDF, validate RDF using SHACL (DCAT-BR) and store results.
+## Scraping (2 steps)
 
-### Usage
-
-```bash
-# Process all datasets from CSV
-uv run scripts/evaluate_csv_datasets.py "path/to/file.csv"
-
-# Process only the first 10 datasets (useful for testing)
-uv run scripts/evaluate_csv_datasets.py "path/to/file.csv" --limit 10
-
-# Specify output directory
-uv run scripts/evaluate_csv_datasets.py "path/to/file.csv" --output-dir results
-```
-
-### Example
+1. **web_scrap.py** — Get metadata infos, output CSV: `id`, `nome`, `titulo`, `nomeOrganizacao`, `ultimaAtualizacaoDados`..
 
 ```bash
-cd DCAT-BR
-uv run scripts/evaluate_csv_datasets.py "path/to/datasets.csv" --limit 5 --output-dir results
+uv run python scripts/web_scrap.py 
 ```
 
-### Output
+Defaults: `set_list.py` → `lista_conjuntos.csv` (20 items, termo=aberto). `search_details.py` → reads that, writes `dados/dados_scraping.csv`.
 
-The script generates:
+## Evaluation
 
-1. **validation_results_TIMESTAMP.json**: Complete JSON file with all results, including:
-   - Execution metadata (total, valid, invalid)
-   - Full results per dataset (including RDF, SHACL errors and warnings)
-   - Processing errors
+**evaluate_csv_datasets.py** — CSV → RDF (Turtle) → SHACL validation. Output: `validation_results_*.json`, `validation_summary_*.csv`, `rdf_files/*.ttl`.
 
-2. **validation_summary_TIMESTAMP.csv**: CSV summary with:
-   - Dataset ID
-   - Title
-   - Organization
-   - Status (success/error)
-   - Valid (true/false)
-   - Error count
-   - Warning count
-   - Error list
-   - Warning list
-   - Processing errors (if any)
+```bash
+uv run python scripts/evaluate_csv_datasets.py "path/to/file.csv" [--limit N] [--output-dir dir]
+```
 
-3. **rdf_files/**: Directory with individual RDF files (.ttl) for each successfully processed dataset
-
-### CSV Structure
-
-The CSV must contain the following columns:
-
-- `id`: Unique identifier
-- `titulo`: Dataset title
-- `nome`: Dataset name/slug
-- `organizacao`: Organization name
-- `descricao`: Dataset description
-- `licenca`: License (e.g. odc-odbl)
-- `responsavel`: Technical contact
-- `emailResponsavel`: Contact email
-- `periodicidade`: Update frequency
-- `temas`: JSON array with themes
-- `tags`: JSON array with tags
-- `recursos`: JSON array with resources/distributions
-- Other fields as needed
+CSV must have columns like `id`, `titulo`, `nome`, `organizacao`, `descricao`, `recursos` (JSON), `temas`, `tags`, etc. — same format as scraping output or `dados_abertos_publicos_5k`.

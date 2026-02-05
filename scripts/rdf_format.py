@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-class ApiToRdfService:
+class RdfFormatService:
     """Service for api to rdf business logic"""
     
     def _get_extra_value(self, data: Dict[str, Any], key: str) -> Any:
