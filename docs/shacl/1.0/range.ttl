@@ -80,9 +80,9 @@
     sh:targetClass dcat:DataService ;
     sh:property [
         sh:path dct:accessRights ;
-        sh:class dct:RightsStatement ;
+        sh:or ( [ sh:class dct:RightsStatement ] [ sh:class skos:Concept ] ) ;
         sh:severity sh:Violation ;
-        sh:message "dct:accessRights (DataService) deve apontar para dct:RightsStatement."@pt-BR
+        sh:message "dct:accessRights (DataService) deve apontar para dct:RightsStatement ou skos:Concept (ex.: vocabulário SEI)."@pt-BR
     ], [
         sh:path dcat:contactPoint ;
         sh:class vcard:Kind ;
@@ -126,9 +126,9 @@
     sh:targetClass dcat:Dataset ;
     sh:property [
         sh:path dct:accessRights ;
-        sh:class dct:RightsStatement ;
+        sh:or ( [ sh:class dct:RightsStatement ] [ sh:class skos:Concept ] ) ;
         sh:severity sh:Violation ;
-        sh:message "dct:accessRights (Dataset) deve apontar para dct:RightsStatement."@pt-BR
+        sh:message "dct:accessRights (Dataset) deve apontar para dct:RightsStatement ou skos:Concept (ex.: vocabulário SEI)."@pt-BR
     ], [
         sh:path dct:accrualPeriodicity ;
         sh:class dct:Frequency ;
