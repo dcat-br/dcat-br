@@ -89,7 +89,7 @@
     rdfs:label "Restrição de Periodicidade"@pt-BR ;
     rdfs:label "Periodicity Restriction"@en ;
     sh:property [
-        sh:hasValue <https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-FR> ;
+        sh:in ( <https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-FR> <https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-FR/> ) ;
         sh:minCount 1 ;
         sh:nodeKind sh:IRI ;
         sh:path skos:inScheme
