@@ -276,13 +276,7 @@
         sh:nodeKind sh:BlankNodeOrIRI ;
         sh:severity sh:Violation ;
         sh:message "dct:rights deve ter no máximo 1 valor e ser um recurso (URI/IRI ou nó anônimo)."@pt-BR
-    ], [
-        sh:path dcat:byteSize ;
-        sh:maxCount 1 ;
-        sh:datatype xsd:decimal ;
-        sh:severity sh:Violation ;
-        sh:message "dcat:byteSize deve ter no máximo 1 valor do tipo xsd:decimal (bytes)."@pt-BR
-    ], [
+    ],  [
         sh:path spdx:checksum ;
         sh:maxCount 1 ;
         sh:nodeKind sh:BlankNodeOrIRI ;
