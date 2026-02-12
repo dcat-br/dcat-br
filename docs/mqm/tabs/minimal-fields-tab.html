@@ -1,262 +1,265 @@
-<h2>Campos Mínimos por Nível</h2>
+<h2>Campos Mínimos por Nível (Etapa 2 – Completude)</h2>
 <p>
-    Esta seção apresenta os campos mínimos obrigatórios para cada nível de qualidade (Bronze, Prata e Ouro) 
-    conforme definido na Metodologia de Qualidade em Metadados (MQM).
+    Esta seção apresenta os campos mínimos obrigatórios e a <strong>pontuação de completude</strong> para cada nível 
+    (Bronze, Prata e Ouro), conforme a Metodologia de Qualidade em Metadados (MQM). O preenchimento integral dos campos 
+    obrigatórios gera a pontuação de completude; o cálculo é cumulativo (Prata = Bronze + campos Prata; Ouro = Prata + campos Ouro).
+</p>
+<p>
+    <strong>Classificação final (FAIR+QC):</strong> Total = Pontuação FAIR+C (Etapa 3) + Pontuação de Completude (Etapa 2). 
+    Selo Sem Selo: Total &lt; 204; Bronze: Total ≥ 204 (completude 83); Prata: Total ≥ 304 (completude 125); Ouro: Total ≥ 471 (completude 130).
 </p>
 <p>
     <strong>Legenda FAIR+C:</strong> E = Encontrabilidade, A = Acessibilidade, I = Interoperabilidade, 
-    R = Reutilizabilidade, C = Contextualidade. Os valores entre parênteses indicam a pontuação máxima 
-    que o campo pode contribuir para a dimensão.
+    R = Reutilizabilidade, C = Contextualidade. Os valores entre parênteses indicam a pontuação na dimensão FAIR+C.
 </p>
 
 <!-- Nível Bronze -->
 <div class="level-section">
     <h3>
         <span class="badge badge-bronze">Bronze</span>
-        Campos Mínimos - Nível Bronze
+        Campos Mínimos – Nível Bronze (83 pontos de completude)
     </h3>
     
     <h4>Campos do Conjunto de Dados</h4>
     <table>
         <thead>
             <tr>
-                <th style="width: 30%;">Campo</th>
-                <th style="width: 45%;">Descrição</th>
-                <th style="width: 25%;">FAIR+C / Pontuação</th>
+                <th style="width: 28%;">Campo</th>
+                <th style="width: 42%;">Descrição</th>
+                <th style="width: 15%;">Completude (pts)</th>
+                <th style="width: 15%;">FAIR+C</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td><code>dcterms:title</code></td>
-                <td>Título do conjunto de dados é obrigatório.</td>
-                <td>-</td>
+                <td>Título: nome por extenso do conjunto de dados.</td>
+                <td>10</td>
+                <td><span class="fair-badge fair-E">E</span> (25)</td>
             </tr>
             <tr>
                 <td><code>dcterms:description</code></td>
-                <td>Descrição do conjunto de dados é obrigatório.</td>
-                <td>-</td>
+                <td>Descrição: resumo das principais informações e políticas públicas impactadas.</td>
+                <td>10</td>
+                <td><span class="fair-badge fair-E">E</span> (25)</td>
             </tr>
             <tr>
                 <td><code>dcat:keyword</code></td>
-                <td>Deve conter no minimo uma palavra-chave.</td>
-                <td><span class="fair-badge fair-E">E</span> (20)</td>
+                <td>Palavras-chave: termos para indexação e busca.</td>
+                <td>8</td>
+                <td>–</td>
+            </tr>
+            <tr>
+                <td><code>dcterms:creator</code></td>
+                <td>Organização: órgão responsável (vinculado ao SIORG).</td>
+                <td>5</td>
+                <td>–</td>
             </tr>
             <tr>
                 <td><code>dcterms:publisher</code></td>
-                <td>Área técnica responsável pelo dado é obrigatório.</td>
+                <td>Área técnica responsável: unidade administrativa responsável.</td>
+                <td>7</td>
                 <td><span class="fair-badge fair-R">R</span> (10)</td>
             </tr>
             <tr>
                 <td><code>dcat:contactPoint</code></td>
-                <td>E-mail da área técnica responsável é obrigatório.</td>
+                <td>E-mail de contato: canal de comunicação com a área técnica.</td>
+                <td>8</td>
                 <td><span class="fair-badge fair-R">R</span> (20)</td>
             </tr>
             <tr>
                 <td><code>dcterms:accrualPeriodicity</code></td>
-                <td>Periodicidade de atualização é obrigatória.</td>
-                <td>-</td>
+                <td>Periodicidade: frequência de atualização (usar vocabulário controlado).</td>
+                <td>10</td>
+                <td>–</td>
+            </tr>
+            <tr>
+                <td><code>dcat:version</code></td>
+                <td>Versão: indicação da versão (ex: SemVer).</td>
+                <td>2</td>
+                <td>–</td>
             </tr>
             <tr>
                 <td><code>dcterms:license</code></td>
-                <td>Licença de uso é obrigatória.</td>
-                <td><span class="fair-badge fair-R">R</span> (20+10)</td>
+                <td>Licença de uso: Creative Commons ou outra licença definida.</td>
+                <td>8</td>
+                <td><span class="fair-badge fair-R">R</span> (30)</td>
             </tr>
             <tr>
                 <td><code>dcterms:accessRights</code></td>
-                <td>Observância Legal é obrigatória.</td>
-                <td><span class="fair-badge fair-R">R</span> (10+5)</td>
+                <td>Observância legal: se o dado é público, restrito ou sigiloso.</td>
+                <td>8</td>
+                <td><span class="fair-badge fair-R">R</span> (15)</td>
             </tr>
             <tr>
                 <td><code>dcat:theme</code></td>
-                <td>Tema é obrigatório.</td>
-                <td><span class="fair-badge fair-E">E</span> (30+10)</td>
+                <td>Temas: categoria do Vocabulário Controlado do Governo Eletrônico (VCGE).</td>
+                <td>7</td>
+                <td><span class="fair-badge fair-E">E</span> (30)</td>
             </tr>
         </tbody>
     </table>
+    <p><strong>Total Bronze:</strong> 83 pontos de completude.</p>
 </div>
 
 <!-- Nível Prata -->
 <div class="level-section">
     <h3>
         <span class="badge badge-prata">Prata</span>
-        Campos Mínimos - Nível Prata
+        Campos Mínimos – Nível Prata (+42 pts, total 125)
     </h3>
     
     <h4>Campos do Conjunto de Dados</h4>
     <table>
         <thead>
             <tr>
-                <th style="width: 30%;">Campo</th>
-                <th style="width: 45%;">Descrição</th>
-                <th style="width: 25%;">FAIR+C / Pontuação</th>
+                <th style="width: 28%;">Campo</th>
+                <th style="width: 42%;">Descrição</th>
+                <th style="width: 15%;">Completude (pts)</th>
+                <th style="width: 15%;">FAIR+C</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td><code>dcterms:spatial</code></td>
-                <td>Cobertura espacial é obrigatória.</td>
-                <td><span class="fair-badge fair-E">E</span> (20)</td>
-            </tr>
-            <tr>
-                <td><code>dcat:endDate</code></td>
-                <td>Data final da cobertura temporal é obrigatória.</td>
+                <td>Cobertura espacial: extensão geográfica (ex.: links do IBGE).</td>
+                <td>5</td>
                 <td><span class="fair-badge fair-E">E</span> (20)</td>
             </tr>
             <tr>
                 <td><code>dcat:startDate</code></td>
-                <td>Data inicial da cobertura temporal é obrigatória.</td>
+                <td>Data inicial da cobertura temporal.</td>
+                <td>2</td>
                 <td><span class="fair-badge fair-E">E</span> (20)</td>
             </tr>
             <tr>
-                <td><code>dcatbr:dadosRacaEtnia</code></td>
-                <td>Distribuição de dados por raça/etnia é obrigatória.</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td><code>dcatbr:dadosGenero</code></td>
-                <td>Distribuição de dados por gênero é obrigatória.</td>
-                <td>-</td>
+                <td><code>dcat:endDate</code></td>
+                <td>Data final da cobertura temporal.</td>
+                <td>2</td>
+                <td><span class="fair-badge fair-E">E</span></td>
             </tr>
         </tbody>
     </table>
     
-    <h4>Campos dos Recursos</h4>
+    <h4>Campos dos Recursos (Distribuição)</h4>
     <table>
         <thead>
             <tr>
-                <th style="width: 30%;">Campo</th>
-                <th style="width: 45%;">Descrição</th>
-                <th style="width: 25%;">FAIR+C / Pontuação</th>
+                <th style="width: 28%;">Campo</th>
+                <th style="width: 42%;">Descrição</th>
+                <th style="width: 15%;">Completude (pts)</th>
+                <th style="width: 15%;">FAIR+C</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td><code>dcat:title</code></td>
-                <td>Título do recurso é obrigatório.</td>
-                <td>-</td>
+                <td>Título do recurso: nome do arquivo ou API.</td>
+                <td>9</td>
+                <td>–</td>
             </tr>
             <tr>
                 <td><code>dcat:description</code></td>
-                <td>Descrição do recurso é obrigatório.</td>
-                <td>-</td>
+                <td>Descrição do recurso: detalhes sobre o arquivo.</td>
+                <td>9</td>
+                <td>–</td>
             </tr>
             <tr>
                 <td><code>dcat:accessURL</code></td>
-                <td>URL do recurso é obrigatório.</td>
-                <td><span class="fair-badge fair-A">A</span> (50)</td>
+                <td>URL de acesso: link onde o recurso está hospedado.</td>
+                <td>9</td>
+                <td><span class="fair-badge fair-A">A</span> (100)</td>
             </tr>
             <tr>
-                <td><code>dcaterms:type</code></td>
-                <td>tipo de recurso é obrigatório.</td>
-                <td>-</td>
+                <td><code>dcterms:type</code></td>
+                <td>Tipo do recurso: arquivo (CSV, PDF) ou serviço (API).</td>
+                <td>3</td>
+                <td>–</td>
             </tr>
             <tr>
                 <td><code>dcterms:format</code></td>
-                <td>Formato do recurso é obrigatório.</td>
-                <td><span class="fair-badge fair-I">I</span> (50+10+20+20)</td>
+                <td>Formato: formato técnico (ex.: CSV, JSON) definido pela IANA.</td>
+                <td>3</td>
+                <td><span class="fair-badge fair-I">I</span> (15+40+40)</td>
             </tr>
         </tbody>
     </table>
+    <p><strong>Total Prata:</strong> 83 (Bronze) + 42 = 125 pontos de completude.</p>
 </div>
 
 <!-- Nível Ouro -->
 <div class="level-section">
     <h3>
         <span class="badge badge-ouro">Ouro</span>
-        Campos Mínimos - Nível Ouro
+        Campos Mínimos – Nível Ouro (+5 pts, total 130)
     </h3>
     
     <h4>Campos do Conjunto de Dados</h4>
     <table>
         <thead>
             <tr>
-                <th style="width: 30%;">Campo</th>
-                <th style="width: 45%;">Descrição</th>
-                <th style="width: 25%;">FAIR+C / Pontuação</th>
+                <th style="width: 28%;">Campo</th>
+                <th style="width: 42%;">Descrição</th>
+                <th style="width: 15%;">Completude (pts)</th>
+                <th style="width: 15%;">FAIR+C</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td><code>dcat:spatialResolutionInMeters</code></td>
-                <td>Granularidade espacial em metros é obrigatória.</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td><code>dcterms:accessRights</code></td>
-                <td>Resolução temporal é obrigatória.</td>
-                <td><span class="fair-badge fair-R">R</span> (10+5)</td>
+                <td>Granularidade espacial: nível de detalhe (ex.: municipal, estadual).</td>
+                <td>5</td>
+                <td><span class="fair-badge fair-C">C</span> (20)</td>
             </tr>
         </tbody>
     </table>
-    
-    <h4>Campos dos Recursos</h4>
-    <table>
-        <thead>
-            <tr>
-                <th style="width: 30%;">Campo</th>
-                <th style="width: 45%;">Descrição</th>
-                <th style="width: 25%;">FAIR+C / Pontuação</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><code>dcat:byteSize</code></td>
-                <td>Tamanho do recurso é obrigatório.</td>
-                <td><span class="fair-badge fair-C">C</span> (10)</td>
-            </tr>
-        </tbody>
-    </table>
+    <p><strong>Total Ouro:</strong> 125 (Prata) + 5 = 130 pontos de completude.</p>
 </div>
 
-<!-- Campos FAIR+C não incluídos nos mínimos -->
+<!-- Resumo FAIR+QC -->
 <div class="level-section">
     <h3>
-        Campos FAIR+C Não Incluídos nos Campos Mínimos
+        Critérios de Aprovação FAIR+QC
     </h3>
     <p>
-        Esta tabela apresenta os campos avaliados nas métricas FAIR+C que não fazem parte dos campos mínimos obrigatórios, 
-        mas que contribuem para a pontuação total da qualidade dos metadados.
+        A pontuação final (FAIR+QC) é a soma da pontuação FAIR+C (Etapa 3) com a pontuação de completude (Etapa 2). 
+        Campos não obrigatórios preenchidos na Etapa 2 não entram na somatória de completude.
     </p>
     
     <table>
         <thead>
             <tr>
-                <th style="width: 30%;">Campo</th>
-                <th style="width: 45%;">Descrição</th>
-                <th style="width: 25%;">FAIR+C / Pontuação</th>
+                <th>Selo Almejado</th>
+                <th>Completude Obrigatória</th>
+                <th>Faixa Total (Min – Max)</th>
+                <th>Critério de Aprovação</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><code>dct:temporal</code></td>
-                <td>Verifica se metadados temporais foram definidos, permitindo a filtragem de dados por período.</td>
-                <td><span class="fair-badge fair-E">E</span> (20)</td>
+                <td><span class="badge badge-sem-selo">Sem Selo</span></td>
+                <td>83</td>
+                <td>Até 203</td>
+                <td>Total &lt; 204</td>
             </tr>
             <tr>
-                <td><code>dcat:downloadURL</code></td>
-                <td>A URL de transferência (dcat:downloadURL) deve ser um link direto para o download dos dados.</td>
-                <td><span class="fair-badge fair-A">A</span> (50)</td>
+                <td><span class="badge badge-bronze">Bronze</span></td>
+                <td>83</td>
+                <td>204 a 303</td>
+                <td>Total ≥ 204</td>
             </tr>
             <tr>
-                <td><code>dcat:mediaType</code></td>
-                <td>Especifica o tipo de mídia da distribuição (dcat:mediaType). Verifica se a propriedade está definida.</td>
-                <td><span class="fair-badge fair-I">I</span> (10+10)</td>
+                <td><span class="badge badge-prata">Prata</span></td>
+                <td>125</td>
+                <td>304 a 470</td>
+                <td>Total ≥ 304</td>
             </tr>
             <tr>
-                <td><code>dct:issued</code></td>
-                <td>A data em que o conjunto de dados ou a distribuição foi divulgado (dct:issued).</td>
-                <td><span class="fair-badge fair-C">C</span> (5)</td>
-            </tr>
-            <tr>
-                <td><code>dct:modified</code></td>
-                <td>A data em que o conjunto de dados ou a distribuição foi alterado pela última vez (dct:modified).</td>
-                <td><span class="fair-badge fair-C">C</span> (5)</td>
+                <td><span class="badge badge-ouro">Ouro</span></td>
+                <td>130</td>
+                <td>471 a 530</td>
+                <td>Total ≥ 471</td>
             </tr>
         </tbody>
     </table>
-    
-    <p style="margin-top: 1.5rem; font-style: italic; color: #666;">
-        <strong>Nota:</strong> A validação SHACL (Conformidade com o DCAT-BR) também contribui com 30 pontos para a dimensão 
-        de Interoperabilidade, mas não é um campo específico, e sim uma validação geral dos metadados.
-    </p>
 </div>

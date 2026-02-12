@@ -1,6 +1,8 @@
 {
   "version": "1.0.0",
   "maxScore": 405,
+  "maxCompletude": 130,
+  "maxTotalFairQC": 535,
   "dimensions": {
     "encontrabilidade": {
       "maxScore": 100,
@@ -29,43 +31,69 @@
     }
   },
   "classifications": {
+    "Sem Selo": {
+      "minTotal": 0,
+      "maxTotal": 203,
+      "completude": 83,
+      "label": "Sem Selo (Insuficiente)",
+      "criterio": "Total < 204"
+    },
     "Bronze": {
-      "minScore": 121,
-      "maxScore": 220,
-      "label": "Bronze (Suficiente)"
+      "minTotal": 204,
+      "maxTotal": 303,
+      "completude": 83,
+      "label": "Bronze (Suficiente)",
+      "criterio": "Total >= 204"
     },
     "Prata": {
-      "minScore": 221,
-      "maxScore": 350,
-      "label": "Prata (Bom)"
+      "minTotal": 304,
+      "maxTotal": 470,
+      "completude": 125,
+      "label": "Prata (Bom)",
+      "criterio": "Total >= 304"
     },
     "Ouro": {
-      "minScore": 351,
-      "maxScore": 405,
-      "label": "Ouro (Excelente)"
-    },
-    "Sem Selo": {
-      "minScore": 0,
-      "maxScore": 120,
-      "label": "Sem Selo (Insuficiente)"
+      "minTotal": 471,
+      "maxTotal": 530,
+      "completude": 130,
+      "label": "Ouro (Excelente)",
+      "criterio": "Total >= 471"
     }
   },
   "metrics": {
     "encontrabilidade": [
       {
-        "id": "dcat_keyword_present",
-        "property": "dcat:keyword",
+        "id": "dcat_title_quality",
+        "property": "dcat:title",
         "dimension": "encontrabilidade",
         "validations": [
           {
-            "id": "dcat_keyword_is_present",
-            "type": "property_exists",
-            "label": "Utilização de palavra-chave",
-            "description": "As palavras-chave apoiam diretamente a pesquisa e aumentam a capacidade de descoberta. Verifica se dcat:keyword está definido.",
-            "weight": 20,
+            "id": "dcat_title_quality_check",
+            "type": "property_quality",
+            "label": "Título",
+            "description": "Detectar caracteres repetitivos e no mínimo 5 caracteres. Princípios FAIR: F2, F4.",
+            "weight": 25,
             "check": {
-              "minCount": 1,
-              "notEmpty": true
+              "minLength": 5,
+              "detectRepetitive": true
+            }
+          }
+        ]
+      },
+      {
+        "id": "dct_description_quality",
+        "property": "dcterms:description",
+        "dimension": "encontrabilidade",
+        "validations": [
+          {
+            "id": "dct_description_quality_check",
+            "type": "property_quality",
+            "label": "Descrição",
+            "description": "Detectar caracteres repetitivos e no mínimo 200 caracteres. Princípios FAIR: F2, R1.",
+            "weight": 25,
+            "check": {
+              "minLength": 200,
+              "detectRepetitive": true
             }
           }
         ]
@@ -74,23 +102,14 @@
         "id": "dcat_theme_present",
         "property": "dcat:theme",
         "dimension": "encontrabilidade",
+        "obrigatorio_em": "Bronze",
         "validations": [
-          {
-            "id": "dcat_theme_is_present",
-            "type": "property_exists",
-            "label": "Tema",
-            "description": "As categorias ajudam os usuários a explorar tematicamente os conjuntos de dados. Verifica se dcat:theme foi atribuído.",
-            "weight": 30,
-            "check": {
-              "minCount": 1
-            }
-          },
           {
             "id": "dcat_theme_vocabulary",
             "type": "vocabulary_check",
-            "label": "Vocabulário de tema",
-            "description": "Verifica se algum dos Vocabulários Controlados de Referência (VCR) foi usado para tema.",
-            "weight": 10,
+            "label": "Tema",
+            "description": "Verifica se algum dos temas utilizados pertence ao VCR (Vocabulário Controlado de Referência). Princípios FAIR: F4, I2.",
+            "weight": 30,
             "vocabularies": [
               "https://dcat-br.github.io/dcat-br/docs/vocabularies/themes/themes.csv"
             ]
@@ -101,12 +120,13 @@
         "id": "dct_spatial_present",
         "property": "dct:spatial",
         "dimension": "encontrabilidade",
+        "obrigatorio_em": "Prata",
         "validations": [
           {
-            "id": "dct_spatial_is_present",
-            "type": "property_exists",
+            "id": "dct_spatial_vocabulary",
+            "type": "vocabulary_check",
             "label": "Pesquisa espacial",
-            "description": "A informação espacial habilita os usuários a encontrar o conjunto de dados com uma pesquisa espacial. Verifica se dct:spatial foi definido.",
+            "description": "Cobertura espacial pertence ao VCR. Princípios FAIR: F2, I3.",
             "weight": 20,
             "check": {
               "minCount": 1
@@ -116,22 +136,24 @@
       },
       {
         "id": "dct_temporal_present",
-        "property": "dct:temporal",
+        "property": "dcat:startDate",
         "dimension": "encontrabilidade",
+        "obrigatorio_em": "Prata",
         "validations": [
           {
-            "id": "dct_temporal_is_present",
+            "id": "dct_temporal_valid",
             "type": "temporal_check",
             "label": "Pesquisa temporal",
-            "description": "Verifica se metadados temporais (ex: dct:temporal, dcat:startDate, dcat:endDate) foram definidos, permitindo a filtragem de dados por período.",
+            "description": "dcat:startDate e dcat:endDate em ISO 8601 válido, com início ≤ fim. Princípios FAIR: F2.",
             "weight": 20,
             "check": {
               "properties": [
-                "dct:temporal",
                 "dcat:startDate",
                 "dcat:endDate"
               ],
-              "minCount": 1
+              "minCount": 1,
+              "iso8601": true,
+              "startBeforeEnd": true
             }
           }
         ]
@@ -142,53 +164,20 @@
         "id": "dcat_accessURL_valid",
         "property": "dcat:accessURL",
         "dimension": "acessibilidade",
+        "obrigatorio_em": "Prata",
         "validations": [
           {
             "id": "dcat_accessURL_is_valid",
             "type": "url_check",
             "label": "Acessibilidade da URL de acesso",
-            "description": "A URL de acesso (dcat:accessURL) pode levar diretamente aos dados ou a uma página com mais informações. A URL é verificada via requisição HTTP, esperando um código de estado entre 200 e 300.",
-            "weight": 50,
+            "description": "Protocolo padronizado (HTTP/HTTPS) e resposta válida (2xx/3xx). Princípios FAIR: A1, A1.1, A2.",
+            "weight": 100,
             "check": {
               "minCount": 1,
               "statusCodes": [
-                200,
-                201,
-                202,
-                203,
-                204,
-                205,
-                206,
-                207,
-                208,
-                226,
-                300,
-                301,
-                302,
-                303,
-                304,
-                305,
-                306,
-                307,
-                308
+                200, 201, 202, 203, 204, 205, 206, 207, 208, 226,
+                300, 301, 302, 303, 304, 305, 306, 307, 308
               ]
-            }
-          }
-        ]
-      },
-      {
-        "id": "dcat_downloadURL_present",
-        "property": "dcat:downloadURL",
-        "dimension": "acessibilidade",
-        "validations": [
-          {
-            "id": "dcat_downloadURL_is_present",
-            "type": "property_exists",
-            "label": "URL de transferência",
-            "description": "A URL de transferência (dcat:downloadURL) deve ser um link direto para o download dos dados. Verifica se a propriedade foi definida.",
-            "weight": 50,
-            "check": {
-              "minCount": 1
             }
           }
         ]
@@ -196,26 +185,17 @@
     ],
     "interoperabilidade": [
       {
-        "id": "dct_format_present",
+        "id": "dct_format_vocabulary",
         "property": "dct:format",
         "dimension": "interoperabilidade",
+        "obrigatorio_em": "Prata",
         "validations": [
           {
-            "id": "dct_format_is_present",
-            "type": "property_exists",
-            "label": "Formato",
-            "description": "Especifica o formato do arquivo da distribuição (dct:format). Verifica se a propriedade está definida.",
-            "weight": 50,
-            "check": {
-              "minCount": 1
-            }
-          },
-          {
-            "id": "dct_format_vocabulary",
+            "id": "dct_format_vocabulary_check",
             "type": "vocabulary_check",
-            "label": "Formato/tipo de mídia de vocabulário",
-            "description": "Verifica se o formato e o tipo de mídia pertencem a um vocabulário controlado (ex: lista IANA).",
-            "weight": 10,
+            "label": "Formato",
+            "description": "Formato pertence ao vocabulário controlado (ex: lista IANA). Princípios FAIR: I1, I2.",
+            "weight": 15,
             "vocabularies": [
               "https://dcat-br.github.io/dcat-br/docs/vocabularies/formato/formatos.csv"
             ]
@@ -223,9 +203,9 @@
           {
             "id": "dct_format_nonproprietary",
             "type": "format_check",
-            "label": "Não proprietário",
-            "description": "Verifica se o formato da distribuição é não proprietário, utilizando um vocabulário de referência.",
-            "weight": 20,
+            "label": "Formato não proprietário",
+            "description": "Classificação por VCR (não proprietário). Princípios FAIR: I1.",
+            "weight": 40,
             "vocabularies": [
               "https://dcat-br.github.io/dcat-br/docs/vocabularies/formato/non_proprietary_formats.csv"
             ]
@@ -233,9 +213,9 @@
           {
             "id": "dct_format_machine_readable",
             "type": "format_check",
-            "label": "Legível por máquina",
-            "description": "Verifica se o formato da distribuição é legível por máquina, utilizando um vocabulário de referência.",
-            "weight": 20,
+            "label": "Formato legível por máquina",
+            "description": "Classificação por VCR (machine-readable). Princípios FAIR: I1.",
+            "weight": 40,
             "vocabularies": [
               "https://dcat-br.github.io/dcat-br/docs/vocabularies/formato/machine_readable_formats.csv"
             ]
@@ -246,60 +226,34 @@
         "id": "dcat_mediaType_present",
         "property": "dcat:mediaType",
         "dimension": "interoperabilidade",
+        "obrigatorio_em": "Prata",
         "validations": [
           {
-            "id": "dcat_mediaType_is_present",
-            "type": "property_exists",
+            "id": "dcat_mediaType_consistent",
+            "type": "vocabulary_check",
             "label": "Tipo de mídia",
-            "description": "Especifica o tipo de mídia da distribuição (dcat:mediaType). Verifica se a propriedade está definida.",
-            "weight": 10,
-            "check": {
-              "minCount": 1
-            }
-          }
-        ]
-      },
-      {
-        "id": "dcat_br_compliance",
-        "property": "rdf:type",
-        "dimension": "interoperabilidade",
-        "validations": [
-          {
-            "id": "dcat_br_compliance_shacl",
-            "type": "shacl_validation",
-            "label": "Conformidade com o DCAT-BR",
-            "description": "Valida se os metadados estão em conformidade com as regras do DCAT-BR, usando um serviço de validação SHACL.",
-            "weight": 30,
-            "check": {
-              "profile": "dcat-br",
-              "maxViolations": 0
-            }
+            "description": "Formato em VCR com mapeamento consistente para mediaType (ex.: CSV→text/csv). Penaliza divergências (ex.: format=CSV + mediaType=application/pdf). Princípios FAIR: I1, I2.",
+            "weight": 15,
+            "vocabularies": [
+              "https://dcat-br.github.io/dcat-br/docs/vocabularies/formato/formatos.csv"
+            ]
           }
         ]
       }
     ],
     "reutilizabilidade": [
       {
-        "id": "dct_license_present",
+        "id": "dct_license_vocabulary",
         "property": "dct:license",
         "dimension": "reutilizabilidade",
+        "obrigatorio_em": "Bronze",
         "validations": [
           {
-            "id": "dct_license_is_present",
-            "type": "property_exists",
-            "label": "Informações da licença",
-            "description": "Uma licença (dct:license) é informação valiosa para a reutilização. Verifica se a propriedade está definida.",
-            "weight": 20,
-            "check": {
-              "minCount": 1
-            }
-          },
-          {
-            "id": "dct_license_vocabulary",
+            "id": "dct_license_vocabulary_check",
             "type": "vocabulary_check",
             "label": "Vocabulário da licença",
-            "description": "Incentiva o uso do VCR para licenças para evitar informações incorretas.",
-            "weight": 10,
+            "description": "Licença em vocabulário controlado. Princípios FAIR: R1.1.",
+            "weight": 30,
             "vocabularies": [
               "https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-LU/licensa-uso.csv"
             ]
@@ -307,26 +261,17 @@
         ]
       },
       {
-        "id": "dct_accessRights_present",
+        "id": "dct_accessRights_vocabulary",
         "property": "dct:accessRights",
         "dimension": "reutilizabilidade",
+        "obrigatorio_em": "Bronze",
         "validations": [
           {
-            "id": "dct_accessRights_is_present",
-            "type": "property_exists",
-            "label": "Restrições de acesso",
-            "description": "Indica se o acesso aos dados (dct:accessRights) é público ou restrito. Verifica se a propriedade está definida.",
-            "weight": 10,
-            "check": {
-              "minCount": 1
-            }
-          },
-          {
-            "id": "dct_accessRights_vocabulary",
+            "id": "dct_accessRights_vocabulary_check",
             "type": "vocabulary_check",
-            "label": "Vocabulário das restrições de acesso",
-            "description": "Verifica se o VCR para direitos de acesso é utilizado.",
-            "weight": 5,
+            "label": "Observância Legal (Access Rights)",
+            "description": "Valor em vocabulário controlado (SEI). Princípios FAIR: R1.1, R1.",
+            "weight": 15,
             "vocabularies": [
               "https://dcat-br.github.io/dcat-br/docs/vocabularies/SEI/sei.csv"
             ]
@@ -337,12 +282,13 @@
         "id": "dcat_contactPoint_present",
         "property": "dcat:contactPoint",
         "dimension": "reutilizabilidade",
+        "obrigatorio_em": "Bronze",
         "validations": [
           {
             "id": "dcat_contactPoint_is_present",
             "type": "property_exists",
             "label": "Ponto de contato",
-            "description": "Contém informações sobre quem consultar em caso de dúvidas (dcat:contactPoint). Verifica se a propriedade está definida.",
+            "description": "Contato vinculável ao SIORG (departamento) e e-mail com domínio institucional compatível com órgão. Princípios FAIR: R1.2.",
             "weight": 20,
             "check": {
               "minCount": 1
@@ -354,12 +300,13 @@
         "id": "dct_publisher_present",
         "property": "dct:publisher",
         "dimension": "reutilizabilidade",
+        "obrigatorio_em": "Bronze",
         "validations": [
           {
-            "id": "dct_publisher_is_present",
+            "id": "dct_publisher_siorg",
             "type": "property_exists",
             "label": "Publicador",
-            "description": "A pessoa ou organização que publicou os dados (dct:publisher). Verifica se a propriedade está definida.",
+            "description": "SIORG resolvível e consistência com organização/área técnica (não contraditórios). Princípios FAIR: R1.2.",
             "weight": 10,
             "check": {
               "minCount": 1
@@ -370,50 +317,17 @@
     ],
     "contextualidade": [
       {
-        "id": "dcat_byteSize_present",
-        "property": "dcat:byteSize",
+        "id": "dcat_spatialResolutionInMeters",
+        "property": "dcat:spatialResolutionInMeters",
         "dimension": "contextualidade",
+        "obrigatorio_em": "Ouro",
         "validations": [
           {
-            "id": "dcat_byteSize_is_present",
-            "type": "property_exists",
-            "label": "Tamanho do arquivo",
-            "description": "Especifica o tamanho do arquivo em bytes (dcat:byteSize). Verifica se a propriedade está definida.",
-            "weight": 10,
-            "check": {
-              "minCount": 1
-            }
-          }
-        ]
-      },
-      {
-        "id": "dct_issued_present",
-        "property": "dct:issued",
-        "dimension": "contextualidade",
-        "validations": [
-          {
-            "id": "dct_issued_is_present",
-            "type": "property_exists",
-            "label": "Data de emissão",
-            "description": "A data em que o conjunto de dados ou a distribuição foi divulgado (dct:issued). Verifica se a propriedade está definida.",
-            "weight": 5,
-            "check": {
-              "minCount": 1
-            }
-          }
-        ]
-      },
-      {
-        "id": "dct_modified_present",
-        "property": "dct:modified",
-        "dimension": "contextualidade",
-        "validations": [
-          {
-            "id": "dct_modified_is_present",
-            "type": "property_exists",
-            "label": "Data de alteração",
-            "description": "A data em que o conjunto de dados ou a distribuição foi alterado pela última vez (dct:modified). Verifica se a propriedade está definida.",
-            "weight": 5,
+            "id": "dcat_spatialResolution_vocabulary",
+            "type": "vocabulary_check",
+            "label": "Granularidade espacial",
+            "description": "Granularidade em lista controlada (município/UF/país ou resolução em metros). Princípios FAIR: F2, I3, C.",
+            "weight": 20,
             "check": {
               "minCount": 1
             }
@@ -422,110 +336,45 @@
       }
     ]
   },
-  "minimun_fields": [
-    {
-      "bronze": {
-        "dcterms:title": {
-          "required": true,
-          "description": "Título do conjunto de dados é obrigatório."
-        },
-        "dcterms:description": {
-          "required": true,
-          "description": "Descrição do conjunto de dados é obrigatório."
-        },
-        "dcat:keyword": {
-          "required": true,
-          "description": "Deve conter no minimo uma palavra-chave."
-        },
-        "dcterms:publisher": {
-          "required": true,
-          "description": "Área técnica responsável pelo dado é obrigatório."
-        },
-        "dcat:contactPoint": {
-          "required": true,
-          "description": "E-mail da área técnica responsável é obrigatório."
-        },
-        "dcterms:accrualPeriodicity": {
-          "required": true,
-          "description": "Periodicidade de atualização é obrigatória."
-        },
-        "dcterms:license": {
-          "required": true,
-          "description": "Licença de uso é obrigatória."
-        },
-        "dcterms:accessRights": {
-          "required": true,
-          "description": "Observância Legal é obrigatória."
-        },
-        "dcat:theme": {
-          "required": true,
-          "description": "Tema é obrigatório."
-        }
+  "completude": {
+    "bronze": {
+      "totalPoints": 83,
+      "fields": {
+        "dcterms:title": { "points": 10, "required": true, "description": "Título: nome por extenso do conjunto de dados." },
+        "dcterms:description": { "points": 10, "required": true, "description": "Descrição: resumo das principais informações e políticas públicas impactadas." },
+        "dcat:keyword": { "points": 8, "required": true, "description": "Palavras-chave: termos para indexação e busca." },
+        "dcterms:creator": { "points": 5, "required": true, "description": "Organização: órgão responsável (vinculado ao SIORG)." },
+        "dcterms:publisher": { "points": 7, "required": true, "description": "Área técnica responsável: unidade administrativa responsável." },
+        "dcat:contactPoint": { "points": 8, "required": true, "description": "E-mail de contato: canal de comunicação com a área técnica." },
+        "dcterms:accrualPeriodicity": { "points": 10, "required": true, "description": "Periodicidade: frequência de atualização (usar vocabulário controlado)." },
+        "dcat:version": { "points": 2, "required": true, "description": "Versão: indicação da versão (ex: SemVer)." },
+        "dcterms:license": { "points": 8, "required": true, "description": "Licença de uso: Creative Commons ou outra licença definida." },
+        "dcterms:accessRights": { "points": 8, "required": true, "description": "Observância legal: se o dado é público, restrito ou sigiloso." },
+        "dcat:theme": { "points": 7, "required": true, "description": "Temas: categoria extraída do Vocabulário Controlado do Governo Eletrônico (VCGE)." }
+      }
+    },
+    "prata": {
+      "totalPoints": 125,
+      "additionalPoints": 42,
+      "datasetFields": {
+        "dcterms:spatial": { "points": 5, "required": true, "description": "Cobertura espacial: extensão geográfica dos dados (ex: links do IBGE)." },
+        "dcat:startDate": { "points": 2, "required": true, "description": "Cobertura temporal: data inicial do período coberto pelos dados." },
+        "dcat:endDate": { "points": 2, "required": true, "description": "Cobertura temporal: data final do período coberto pelos dados." }
       },
-      "prata": {
-        "dcterms:spatial": {
-          "required": true,
-          "description": "Cobertura espacial é obrigatória."
-        },
-        "dcat:endDate": {
-          "required": true,
-          "description": "Data final da cobertura temporal é obrigatória."
-        },
-        "dcat:startDate": {
-          "required": true,
-          "description": "Data inicial da cobertura temporal é obrigatória."
-        },
-        "dcatbr:dadosRacaEtnia": {
-          "required": true,
-          "description": "Distribuição é obrigatória."
-        },
-        "dcatbr:dadosGenero": {
-          "required": true,
-          "description": "Distribuição é obrigatória."
-        },
-        "resources": [
-          {
-            "dcat:title": {
-              "required": true,
-              "description": "Título do recurso é obrigatório."
-            },
-            "dcat:description": {
-              "required": true,
-              "description": "Descrição do recurso é obrigatório."
-            },
-            "dcat:accessURL": {
-              "required": true,
-              "description": "URL do recurso é obrigatório."
-            },
-            "dcaterms:type": {
-              "required": true,
-              "description": "Formato do recurso é obrigatório."
-            },
-            "dcterms:format": {
-              "required": true,
-              "description": "Formato do recurso é obrigatório."
-            }
-          }
-        ]
-      },
-      "ouro": {
-        "dcat:spatialResolutionInMeters": {
-          "required": true,
-          "description": "Granularidade espacial em metros é obrigatória."
-        },
-        "dcterms:accessRights": {
-          "required": true,
-          "description": "Resolução temporal é obrigatória."
-        },
-        "resources": [
-          {
-            "dcat:byteSize": {
-              "required": true,
-              "description": "Tamanho do recurso é obrigatório."
-            }
-          }
-        ]
+      "resourceFields": {
+        "dcat:title": { "points": 9, "required": true, "description": "Título do recurso: nome específico do arquivo ou API." },
+        "dcat:description": { "points": 9, "required": true, "description": "Descrição do recurso: detalhes sobre o arquivo específico." },
+        "dcat:accessURL": { "points": 9, "required": true, "description": "URL de acesso: link onde o recurso está hospedado." },
+        "dcterms:type": { "points": 3, "required": true, "description": "Tipo do recurso: se é arquivo (CSV, PDF) ou serviço (API)." },
+        "dcterms:format": { "points": 3, "required": true, "description": "Formato: formato técnico (ex: CSV, JSON) definido pela IANA." }
+      }
+    },
+    "ouro": {
+      "totalPoints": 130,
+      "additionalPoints": 5,
+      "datasetFields": {
+        "dcat:spatialResolutionInMeters": { "points": 5, "required": true, "description": "Granularidade espacial: nível de detalhe (ex: municipal, estadual)." }
       }
     }
-  ]
+  }
 }

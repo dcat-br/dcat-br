@@ -7,7 +7,12 @@
 
 <h3>Metodologia de Avaliação</h3>
 <p>
-    A avaliação é feita com base em métricas de qualidade, que são classificadas em cinco dimensões:
+    O processo segue uma lógica sequencial restritiva: (1) <strong>Etapa 1</strong> – Validação de conformidade estrutural DCAT-BR; 
+    (2) <strong>Etapa 2</strong> – Validação de campos obrigatórios e pontuação de completude; (3) <strong>Etapa 3</strong> – Aderência aos princípios FAIR+C. 
+    A falha em uma etapa interrompe a avaliação. A classificação final usa <strong>FAIR+QC = Pontuação FAIR+C + Pontuação de Completude (Etapa 2)</strong>.
+</p>
+<p>
+    As métricas de qualidade estão classificadas em cinco dimensões:
 </p>
 <ul>
     <li><strong>Encontrabilidade:</strong> Facilita a descoberta dos dados através de mecanismos de busca</li>
@@ -17,9 +22,9 @@
     <li><strong>Contextualidade:</strong> Fornece informações contextuais sobre os dados</li>
 </ul>
 
-<p>Em cada dimensão é avaliado um conjunto de indicadores que são classificados em pontos, totalizando a pontuação máxima de cada dimensão.</p>
+<p>Em cada dimensão é avaliado um conjunto de indicadores em pontos, totalizando no máximo 405 pontos (FAIR+C).</p>
 
-<h3>Encontrabilidade (Findable) - Máximo: 100 pontos</h3>
+<h3>Encontrabilidade (Findable) – Máximo: 100 pontos</h3>
 <p>
     Avalia a eficácia com que os metadados ajudam pessoas e máquinas a encontrar os conjuntos de dados.
 </p>
@@ -27,66 +32,69 @@
     <thead>
         <tr>
             <th>Indicador</th>
+            <th>DCAT-BR</th>
             <th>Descrição</th>
             <th>Peso</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>Utilização de Palavra-chave</td>
-            <td>Verifica se dcat:keyword está definido.</td>
-            <td>20</td>
+            <td>Título</td>
+            <td>dcat:title</td>
+            <td>Detectar caracteres repetitivos e no mínimo 5 caracteres. Princípios F2, F4.</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>Descrição</td>
+            <td>dcterms:description</td>
+            <td>Detectar caracteres repetitivos e no mínimo 200 caracteres. Princípios F2, R1.</td>
+            <td>25</td>
         </tr>
         <tr>
             <td>Tema</td>
-            <td>Verifica se dcat:theme foi atribuído, auxiliando na exploração temática.</td>
+            <td>dcat:theme</td>
+            <td>Verifica se algum dos temas utilizados pertence ao VCR. Princípios F4, I2. <a href="https://dcat-br.github.io/dcat-br/docs/vocabularies/themes/index.html" target="_blank">VCR-Temas</a></td>
             <td>30</td>
         </tr>
         <tr>
-            <td>Vocabulário de Tema (VCR)</td>
-            <td>Verifica se algum dos Vocabulários Controlados de Referência (VCR) foi usado para o tema. <a href="https://dcat-br.github.io/dcat-br/docs/vocabularies/themes/index.html" target="_blank">VCR-Temas</a></td>
-            <td>10</td>
-        </tr>
-        <tr>
-            <td>Pesquisa Espacial</td>
-            <td>Verifica se dcat:spatial foi definido, permitindo a pesquisa por localização.</td>
+            <td>Pesquisa espacial</td>
+            <td>dct:spatial</td>
+            <td>Pertence ao VCR. Princípios F2, I3.</td>
             <td>20</td>
         </tr>
         <tr>
-            <td>Pesquisa Temporal</td>
-            <td>Verifica se metadados temporais (e.g., dct:temporal) foram definidos.</td>
+            <td>Pesquisa temporal</td>
+            <td>dcat:startDate / dcat:endDate</td>
+            <td>ISO 8601 válido e início ≤ fim. Princípio F2.</td>
             <td>20</td>
         </tr>
     </tbody>
 </table>
 
-<h3>Acessibilidade (Accessible) - Máximo: 100 pontos</h3>
+<h3>Acessibilidade (Accessible) – Máximo: 100 pontos</h3>
 <p>
-    Garante que o conjunto de dados possa ser efetivamente acessado. Verifica a existência e a funcionalidade dos links.
+    Garante que o conjunto de dados possa ser efetivamente acessado (protocolo e resposta válida).
 </p>
 <table>
     <thead>
         <tr>
             <th>Indicador</th>
+            <th>DCAT-BR</th>
             <th>Descrição</th>
             <th>Peso</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>Acessibilidade da URL de Acesso</td>
-            <td>Verifica se a URL de acesso (dcat:accessURL) responde corretamente (código 200-300).</td>
-            <td>50</td>
-        </tr>
-        <tr>
-            <td>URL de Transferência</td>
-            <td>Verifica se a URL de transferência (dcat:downloadURL) é um link direto para o download.</td>
-            <td>50</td>
+            <td>Acessibilidade da URL de acesso</td>
+            <td>dcat:accessURL</td>
+            <td>Protocolo padronizado (HTTP/HTTPS) e resposta válida (2xx/3xx). Princípios A1, A1.1, A2.</td>
+            <td>100</td>
         </tr>
     </tbody>
 </table>
 
-<h3>Interoperabilidade (Interoperable) - Máximo: 110 pontos</h3>
+<h3>Interoperabilidade (Interoperable) – Máximo: 110 pontos</h3>
 <p>
     Avalia a capacidade de os dados serem combinados e utilizados por diferentes aplicações (formatos padronizados e legibilidade por máquina).
 </p>
@@ -94,6 +102,7 @@
     <thead>
         <tr>
             <th>Indicador</th>
+            <th>DCAT-BR</th>
             <th>Descrição</th>
             <th>Peso</th>
         </tr>
@@ -101,38 +110,32 @@
     <tbody>
         <tr>
             <td>Formato</td>
-            <td>Verifica se o formato do arquivo (dct:format) está definido.</td>
-            <td>50</td>
+            <td>dct:format</td>
+            <td>Formato pertence ao vocabulário controlado (ex.: lista IANA). Princípios I1, I2. <a href="https://dcat-br.github.io/dcat-br/docs/vocabularies/formato/index.html" target="_blank">VCR-Formatos</a></td>
+            <td>15</td>
         </tr>
         <tr>
-            <td>Tipo de Mídia</td>
-            <td>Verifica se o tipo de mídia (dcat:mediaType) está definido.</td>
-            <td>10</td>
+            <td>Tipo de mídia</td>
+            <td>dcat:mediaType</td>
+            <td>Formato em VCR com mapeamento consistente para mediaType (ex.: CSV→text/csv). Penaliza divergências. Princípios I1, I2.</td>
+            <td>15</td>
         </tr>
         <tr>
-            <td>Formato/Tipo de Mídia de Vocabulário</td>
-            <td>Verifica se pertencem a um vocabulário controlado (e.g., lista IANA). <a href="https://dcat-br.github.io/dcat-br/docs/vocabularies/formato/index.html" target="_blank">VCR-Formatos</a></td>
-            <td>10</td>
+            <td>Formato não proprietário</td>
+            <td>dct:format</td>
+            <td>Classificação por VCR (não proprietário). Princípio I1.</td>
+            <td>40</td>
         </tr>
         <tr>
-            <td>Não Proprietário</td>
-            <td>Verifica se o formato da distribuição é não proprietário.</td>
-            <td>20</td>
-        </tr>
-        <tr>
-            <td>Legível por Máquina</td>
-            <td>Verifica se o formato é legível por máquina.</td>
-            <td>20</td>
-        </tr>
-        <tr>
-            <td>Conformidade com o DCAT-BR</td>
-            <td>Valida se os metadados estão em conformidade com as regras do DCAT-BR (via serviço de validação SHACL). <a href="https://dcat-br.github.io/dcat-br/docs/shacl/1.0/index.html" target="_blank">SHACL-DCAT-BR</a></td>
-            <td>30</td>
+            <td>Formato legível por máquina</td>
+            <td>dct:format</td>
+            <td>Classificação por VCR (machine-readable). Princípio I1.</td>
+            <td>40</td>
         </tr>
     </tbody>
 </table>
 
-<h3>Reutilizabilidade (Reusable) - Máximo: 75 pontos</h3>
+<h3>Reutilizabilidade (Reusable) – Máximo: 75 pontos</h3>
 <p>
     Depende da clareza das condições de uso dos dados (licenças, restrições e pontos de contato).
 </p>
@@ -140,109 +143,107 @@
     <thead>
         <tr>
             <th>Indicador</th>
+            <th>DCAT-BR</th>
             <th>Descrição</th>
             <th>Peso</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>Informações da Licença</td>
-            <td>Verifica se uma licença (dct:license) foi definida, essencial para a reutilização.</td>
-            <td>20</td>
+            <td>Vocabulário da licença</td>
+            <td>dct:license</td>
+            <td>Licença em vocabulário controlado. Princípio R1.1. <a href="https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-LU/index.html" target="_blank">VCR-LU</a></td>
+            <td>30</td>
         </tr>
         <tr>
-            <td>Vocabulário da Licença</td>
-            <td>Incentiva o uso de VCT para licenças para evitar informações incorretas. <a href="https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-LU/index.html" target="_blank">VCR-LU</a></td>
-            <td>10</td>
+            <td>Observância legal (Access Rights)</td>
+            <td>dct:accessRights</td>
+            <td>Valor em vocabulário controlado (SEI). Princípios R1.1, R1. <a href="https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-SEI/index.html" target="_blank">VCR-SEI</a></td>
+            <td>15</td>
         </tr>
         <tr>
-            <td>Restrições de Acesso</td>
-            <td>Verifica se os direitos de acesso (dct:accessRights) estão definidos (público ou restrito).</td>
-            <td>10</td>
-        </tr>
-        <tr>
-            <td>Vocabulário das Restrições de Acesso</td>
-            <td>Verifica se o VCT para direitos de acesso é utilizado. <a href="https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-SEI/index.html" target="_blank">VCR-SEI</a></td>
-            <td>5</td>
-        </tr>
-        <tr>
-            <td>Ponto de Contato</td>
-            <td>Verifica se o ponto de contato (dct:contactPoint) para dúvidas está definido.</td>
+            <td>Ponto de contato</td>
+            <td>dcat:contactPoint</td>
+            <td>Contato vinculável ao SIORG e e-mail com domínio institucional compatível com órgão. Princípio R1.2.</td>
             <td>20</td>
         </tr>
         <tr>
             <td>Publicador</td>
-            <td>Verifica se a organização/pessoa que publicou os dados (dct:publisher) está definida.</td>
+            <td>dcterms:publisher</td>
+            <td>SIORG resolvível e consistência com organização/área técnica. Princípio R1.2.</td>
             <td>10</td>
         </tr>
     </tbody>
 </table>
 
-<h3>Contextualidade (Contextuality) - Máximo: 15 pontos</h3>
+<h3>Contextualidade (Contextuality) – Máximo: 20 pontos</h3>
 <p>
-    Mede a presença de metadados que fornecem contexto adicional, facilitando a compreensão e o escopo dos dados.
+    Mede a presença de metadados que fornecem contexto adicional (granularidade espacial).
 </p>
 <table>
     <thead>
         <tr>
             <th>Indicador</th>
+            <th>DCAT-BR</th>
             <th>Descrição</th>
             <th>Peso</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>Tamanho do Arquivo</td>
-            <td>Especifica o tamanho do arquivo em bytes (dct:byteSize).</td>
-            <td>5</td>
-        </tr>
-        <tr>
-            <td>Data de Emissão</td>
-            <td>A data em que o conjunto de dados foi divulgado (dct:issued).</td>
-            <td>5</td>
-        </tr>
-        <tr>
-            <td>Data de Alteração</td>
-            <td>A data em que o conjunto de dados foi alterado pela última vez (dct:modified).</td>
-            <td>5</td>
+            <td>Granularidade espacial</td>
+            <td>dcat:spatialResolutionInMeters</td>
+            <td>Granularidade em lista controlada (município/UF/país ou resolução). Princípios F2, I3, C.</td>
+            <td>20</td>
         </tr>
     </tbody>
 </table>
 
-<h3>Classificação da Qualidade (Selo)</h3>
+<h3>Classificação da Qualidade (FAIR+QC)</h3>
 <p>
-    Com base na pontuação total obtida nas cinco dimensões (máximo de 405 pontos), a MQM classifica a qualidade dos metadados:
+    A pontuação final (FAIR+QC) é a soma da <strong>pontuação FAIR+C</strong> (máximo 405) com a <strong>pontuação de completude</strong> (Etapa 2). 
+    Com base no total, aplicam-se as faixas abaixo:
 </p>
 <table>
     <thead>
         <tr>
-            <th>Notação</th>
-            <th>Escala de Pontos</th>
+            <th>Selo</th>
+            <th>Completude Obrigatória</th>
+            <th>Faixa Total (Min – Max)</th>
+            <th>Critério</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td><span class="badge badge-ouro">Excelente – Selo Ouro</span></td>
-            <td>351 - 405</td>
+            <td>130</td>
+            <td>471 – 530</td>
+            <td>Total ≥ 471</td>
         </tr>
         <tr>
             <td><span class="badge badge-prata">Bom – Selo Prata</span></td>
-            <td>221 - 350</td>
+            <td>125</td>
+            <td>304 – 470</td>
+            <td>Total ≥ 304</td>
         </tr>
         <tr>
             <td><span class="badge badge-bronze">Suficiente – Selo Bronze</span></td>
-            <td>121 - 220</td>
+            <td>83</td>
+            <td>204 – 303</td>
+            <td>Total ≥ 204</td>
         </tr>
         <tr>
             <td><span class="badge badge-sem-selo">Insuficiente – Sem Selo</span></td>
-            <td>0 - 120</td>
+            <td>83</td>
+            <td>Até 203</td>
+            <td>Total &lt; 204</td>
         </tr>
     </tbody>
 </table>
 
 <h3>Selos por Dimensão (FAIR+C)</h3>
 <p>
-    Para cada dimensão que esteja completa, ou seja, com o máximo de pontuação possível, é emitido um selo representando o princípio em questão:
+    Para cada dimensão que esteja completa (máximo de pontuação possível), é emitido um selo representando o princípio:
 </p>
 <table>
     <thead>
@@ -281,9 +282,8 @@
         <tr>
             <td><strong>Contextualidade (C)</strong></td>
             <td><span style="background: #fd7e14; color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-weight: 600;">C</span></td>
-            <td>15 pontos</td>
-            <td>Obtém o selo quando alcança 15 pontos na dimensão de Contextualidade</td>
+            <td>20 pontos</td>
+            <td>Obtém o selo quando alcança 20 pontos na dimensão de Contextualidade</td>
         </tr>
     </tbody>
 </table>
-
