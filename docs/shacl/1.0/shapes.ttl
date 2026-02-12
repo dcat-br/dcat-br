@@ -366,11 +366,6 @@
         sh:severity sh:Violation ;
         sh:message "dct:license deve ter no máximo 1 valor e ser um recurso (URI/IRI ou nó anônimo)."@pt-BR
     ], [
-        sh:path dct:accessRights ;
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:severity sh:Violation ;
-        sh:message "dct:accessRights deve ser um recurso (URI/IRI ou nó anônimo) representando direitos de acesso."@pt-BR
-    ], [
         sh:path dcat:landingPage ;
         sh:nodeKind sh:BlankNodeOrIRI ;
         sh:severity sh:Violation ;
