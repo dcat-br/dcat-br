@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "maxScore": 405,
   "maxCompletude": 130,
+  "maxFairScore": 405,
   "maxTotalFairQC": 535,
   "dimensions": {
     "encontrabilidade": {
