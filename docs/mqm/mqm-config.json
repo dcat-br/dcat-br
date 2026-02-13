@@ -362,8 +362,8 @@
         "dcat:endDate": { "points": 2, "required": true, "description": "Cobertura temporal: data final do período coberto pelos dados." }
       },
       "resourceFields": {
-        "dcat:title": { "points": 9, "required": true, "description": "Título do recurso: nome específico do arquivo ou API." },
-        "dcat:description": { "points": 9, "required": true, "description": "Descrição do recurso: detalhes sobre o arquivo específico." },
+        "dct:title": { "points": 9, "required": true, "description": "Título do recurso: nome específico do arquivo ou API." },
+        "dct:description": { "points": 9, "required": true, "description": "Descrição do recurso: detalhes sobre o arquivo específico." },
         "dcat:accessURL": { "points": 9, "required": true, "description": "URL de acesso: link onde o recurso está hospedado." },
         "dcterms:type": { "points": 3, "required": true, "description": "Tipo do recurso: se é arquivo (CSV, PDF) ou serviço (API)." },
         "dcterms:format": { "points": 3, "required": true, "description": "Formato: formato técnico (ex: CSV, JSON) definido pela IANA." }
