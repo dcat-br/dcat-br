@@ -357,7 +357,7 @@
       "totalPoints": 125,
       "additionalPoints": 42,
       "datasetFields": {
-        "dcterms:spatial": { "points": 5, "required": true, "description": "Cobertura espacial: extensão geográfica dos dados (ex: links do IBGE)." },
+        "dct:spatial": { "points": 5, "required": true, "description": "Cobertura espacial: extensão geográfica dos dados (ex: links do IBGE)." },
         "dcat:startDate": { "points": 2, "required": true, "description": "Cobertura temporal: data inicial do período coberto pelos dados." },
         "dcat:endDate": { "points": 2, "required": true, "description": "Cobertura temporal: data final do período coberto pelos dados." }
       },
