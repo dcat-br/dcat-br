@@ -373,7 +373,7 @@
       "totalPoints": 130,
       "additionalPoints": 5,
       "datasetFields": {
-        "dcat:spatialResolutionInMeters": { "points": 5, "required": true, "description": "Granularidade espacial: nível de detalhe (ex: municipal, estadual)." }
+        "dcat:spatialResolutionInMeters": { "points": 5, "required": true, "description": "Granularidade espacial: nível de detalhe (ex: municipal, estadual). Ouro exige cumprir Bronze e Prata antes (Prata inclui dct:spatial)." }
       }
     }
   }
