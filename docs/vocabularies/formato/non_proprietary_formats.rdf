@@ -38,6 +38,11 @@
     <fmtq:isNonProprietary rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</fmtq:isNonProprietary>
   </rdf:Description>
 
+  <!-- application/pdf -->
+  <rdf:Description rdf:about="https://www.iana.org/assignments/media-types/application/pdf">
+    <fmtq:isNonProprietary rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</fmtq:isNonProprietary>
+  </rdf:Description>
+
   <!-- application/zip -->
   <rdf:Description rdf:about="https://www.iana.org/assignments/media-types/application/zip">
     <fmtq:isNonProprietary rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</fmtq:isNonProprietary>
