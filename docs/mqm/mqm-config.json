@@ -205,7 +205,7 @@
           },
           {
             "id": "dct_format_nonproprietary",
-            "type": "format_check",
+            "type": "vocabulary_check",
             "label": "Formato não proprietário",
             "description": "Classificação por VCR (não proprietário). Princípios FAIR: I1.",
             "weight": 40,
@@ -215,7 +215,7 @@
           },
           {
             "id": "dct_format_machine_readable",
-            "type": "format_check",
+            "type": "vocabulary_check",
             "label": "Formato legível por máquina",
             "description": "Classificação por VCR (machine-readable). Princípios FAIR: I1.",
             "weight": 40,
