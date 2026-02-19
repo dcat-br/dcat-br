@@ -99,7 +99,7 @@
         ]
       },
       {
-        "id": "dcat_theme_present",
+        "id": "dcat_theme",
         "property": "dcat:theme",
         "dimension": "encontrabilidade",
         "obrigatorio_em": "Bronze",
@@ -117,7 +117,7 @@
         ]
       },
       {
-        "id": "dct_spatial_present",
+        "id": "dct_spatial",
         "property": "dct:spatial",
         "dimension": "encontrabilidade",
         "obrigatorio_em": "Prata",
@@ -130,12 +130,15 @@
             "weight": 20,
             "check": {
               "minCount": 1
-            }
+            },
+            "vocabularies": [
+              "https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-CE/cobertura-espacial.csv"
+            ]
           }
         ]
       },
       {
-        "id": "dct_temporal_present",
+        "id": "dct_temporal",
         "property": "dcat:startDate",
         "dimension": "encontrabilidade",
         "obrigatorio_em": "Prata",
@@ -223,7 +226,7 @@
         ]
       },
       {
-        "id": "dcat_mediaType_present",
+        "id": "dcat_mediaType",
         "property": "dcat:mediaType",
         "dimension": "interoperabilidade",
         "obrigatorio_em": "Prata",
@@ -279,7 +282,7 @@
         ]
       },
       {
-        "id": "dcat_contactPoint_present",
+        "id": "dcat_contactPoint",
         "property": "dcat:contactPoint",
         "dimension": "reutilizabilidade",
         "obrigatorio_em": "Bronze",
@@ -297,7 +300,7 @@
         ]
       },
       {
-        "id": "dct_publisher_present",
+        "id": "dct_publisher",
         "property": "dct:publisher",
         "dimension": "reutilizabilidade",
         "obrigatorio_em": "Bronze",
@@ -330,7 +333,10 @@
             "weight": 20,
             "check": {
               "minCount": 1
-            }
+            },
+            "vocabularies": [
+              "https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-CE/cobertura-espacial.csv"
+            ]
           }
         ]
       }
