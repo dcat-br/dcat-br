@@ -66,6 +66,7 @@
         "id": "dcat_title_quality",
         "property": "dcat:title",
         "dimension": "encontrabilidade",
+        "evaluateOn": "dataset",
         "validations": [
           {
             "id": "dcat_title_quality_check",
@@ -84,6 +85,7 @@
         "id": "dct_description_quality",
         "property": "dcterms:description",
         "dimension": "encontrabilidade",
+        "evaluateOn": "dataset",
         "validations": [
           {
             "id": "dct_description_quality_check",
@@ -102,7 +104,7 @@
         "id": "dcat_theme",
         "property": "dcat:theme",
         "dimension": "encontrabilidade",
-        "obrigatorio_em": "Bronze",
+        "evaluateOn": "dataset",
         "validations": [
           {
             "id": "dcat_theme_vocabulary",
@@ -120,7 +122,7 @@
         "id": "dct_spatial",
         "property": "dct:spatial",
         "dimension": "encontrabilidade",
-        "obrigatorio_em": "Prata",
+        "evaluateOn": "dataset",
         "validations": [
           {
             "id": "dct_spatial_vocabulary",
@@ -141,7 +143,7 @@
         "id": "dct_temporal",
         "property": "dcat:startDate",
         "dimension": "encontrabilidade",
-        "obrigatorio_em": "Prata",
+        "evaluateOn": "dataset",
         "validations": [
           {
             "id": "dct_temporal_valid",
@@ -167,7 +169,7 @@
         "id": "dcat_accessURL_valid",
         "property": "dcat:accessURL",
         "dimension": "acessibilidade",
-        "obrigatorio_em": "Prata",
+        "evaluateOn": "resource",
         "validations": [
           {
             "id": "dcat_accessURL_is_valid",
@@ -191,7 +193,7 @@
         "id": "dct_format_vocabulary",
         "property": "dct:format",
         "dimension": "interoperabilidade",
-        "obrigatorio_em": "Prata",
+        "evaluateOn": "resource",
         "validations": [
           {
             "id": "dct_format_vocabulary_check",
@@ -229,7 +231,7 @@
         "id": "dcat_mediaType",
         "property": "dcat:mediaType",
         "dimension": "interoperabilidade",
-        "obrigatorio_em": "Prata",
+        "evaluateOn": "resource",
         "validations": [
           {
             "id": "dcat_mediaType_consistent",
@@ -249,7 +251,7 @@
         "id": "dct_license_vocabulary",
         "property": "dct:license",
         "dimension": "reutilizabilidade",
-        "obrigatorio_em": "Bronze",
+        "evaluateOn": "dataset",
         "validations": [
           {
             "id": "dct_license_vocabulary_check",
@@ -267,7 +269,7 @@
         "id": "dct_accessRights_vocabulary",
         "property": "dct:accessRights",
         "dimension": "reutilizabilidade",
-        "obrigatorio_em": "Bronze",
+        "evaluateOn": "dataset",
         "validations": [
           {
             "id": "dct_accessRights_vocabulary_check",
@@ -285,7 +287,7 @@
         "id": "dcat_contactPoint",
         "property": "dcat:contactPoint",
         "dimension": "reutilizabilidade",
-        "obrigatorio_em": "Bronze",
+        "evaluateOn": "dataset",
         "validations": [
           {
             "id": "dcat_contactPoint_is_present",
@@ -303,7 +305,7 @@
         "id": "dct_publisher",
         "property": "dct:publisher",
         "dimension": "reutilizabilidade",
-        "obrigatorio_em": "Bronze",
+        "evaluateOn": "dataset",
         "validations": [
           {
             "id": "dct_publisher_siorg",
@@ -323,7 +325,7 @@
         "id": "dcat_spatialResolutionInMeters",
         "property": "dcat:spatialResolutionInMeters",
         "dimension": "contextualidade",
-        "obrigatorio_em": "Ouro",
+        "evaluateOn": "dataset",
         "validations": [
           {
             "id": "dcat_spatialResolution_vocabulary",
