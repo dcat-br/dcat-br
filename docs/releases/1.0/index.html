@@ -18,6 +18,7 @@
       publishDate: "2025-12-12",
       previousPublishDate: "2025-12-12",
       previousMaturity: "base",
+      editorsLabel: "Editores",
       editors: [
         {
           name: "Juliano Leonardo Soares",
@@ -54,12 +55,7 @@
   <section id="abstract">
     <h2>Resumo</h2>
     <p>
-      O DCAT-BR é um perfil de aplicação do vocabulário <em>Data Catalog Vocabulary</em> (DCAT)
-      para descrever catálogos, conjuntos de dados, distribuições, serviços de dados e metadados
-      relacionados produzidos ou mantidos pelo setor público brasileiro e por entidades
-      vinculadas. A especificação define classes, propriedades e boas práticas para promover a
-      interoperabilidade semântica entre catálogos nacionais, federados e internacionais, bem
-      como para apoiar iniciativas de <em>open data</em> e <em>linked data</em>.
+      O DCAT-BR é um perfil de aplicação brasileiro do vocabulário <em>Data Catalog Vocabulary</em> (DCAT), utilizado para descrever catálogos de dados e seus recursos (conjuntos de dados e serviços de dados), desenvolvido primariamente para uso pelos portais de dados do setor público brasileiro e entidades vinculadas. A especificação define classes, propriedades e boas práticas para promover uma descrição padrão dos metadados, corroborando com a interoperabilidade semântica entre catálogos nacionais e internacionais, bem como para apoiar iniciativas de <em>open data</em> e <em>linked data</em>.
     </p>
   </section>
 
@@ -67,9 +63,7 @@
   <section id="sotd">
     <h2>Status deste documento</h2>
     <p>
-      Esta é a primeira recomendação oficial da versão 1.0 do vocabulário DCAT-BR, elaborada
-      pelo Grupo de Trabalho DCAT-BR. Futuras revisões seguirão o processo de governança de dados nacional, com participação
-      de órgãos federais, estaduais, municipais e entidades vinculadas.
+      Esta é a primeira versão oficial do vocabulário DCAT-BR, elaborada pelo Grupo de Trabalho DCAT-BR. Futuras revisões seguirão o processo de governança de dados nacional, com participaçãode órgãos federais, estaduais, municipais e entidades vinculadas.
     </p>
     <p>
       Comentários e propostas de alteração devem ser enviados por meio do repositório público
@@ -83,35 +77,32 @@
     <p>
       A disseminação de dados governamentais em múltiplas plataformas exige um vocabulário
       comum para descrição de metadados, de forma a viabilizar a descoberta, combinação e
-      reuso de conjuntos de dados em escala nacional. O vocabulário DCAT, criado pelo W3C,
-      fornece um modelo RDF para a descrição de catálogos de dados na Web, permitindo a
-      interoperabilidade entre diferentes portais.
+      reuso de conjuntos de dados em escala nacional. O vocabulário DCAT [[VOCAB-DCAT]], criado pelo World Wide Web Consortium (W3C), fornece um modelo RDF para a descrição de catálogos de dados na Web, permitindo a interoperabilidade entre diferentes portais.
     </p>
     <p>
-      O DCAT-BR especializa o DCAT (versão 3), alinhando-o às necessidades do contexto
-      brasileiro e às políticas de governança de dados e proteção de dados pessoais, como a
-      Lei Geral de Proteção de Dados (LGPD). Ele estabelece um conjunto de classes, propriedades
-      obrigatórias e opcionais, bem como vocabulários controlados, para descrever conjuntos de
-      dados do setor público de forma padronizada.
+      O DCAT-BR 1.0 especializa o Data Catalog Vocabulary (DCAT) versão 3 [[VOCAB-DCAT-3]], alinhando-o às necessidades do contexto brasileiro. Ele estabelece um conjunto de classes, propriedades obrigatórias e opcionais, bem como vocabulários controlados, para descrever conjuntos de dados do setor público de forma padronizada. O uso de agregadores de conteúdo como o <a href="https://dados.gov.br/home">Portal Brasileiro de Dados Abertos e Catálogo Nacional de Dados</a>, entre outros, garante o acesso através do uso do protocolo de forma agnóstica.
     </p>
     <p>
       O vocabulário também é projetado para ser utilizado por outros atores, como empresas,
-      academia e organizações da sociedade civil, desde que observadas as regras de adesão ao
-      ecossistema DCAT-BR.
+      academia e organizações da sociedade civil, desde que observadas <a href="#conformidade">as regras de adesão ao ecossistema DCAT-BR</a>.
     </p>
   </section>
-
-  <!-- Visão geral e objetivos -->
-  <section id="overview">
-    <h2>Visão geral do DCAT-BR</h2>
 
     <section id="objetivos">
       <h3>Objetivos</h3>
       <ul>
-        <li>Fornecer um perfil de vocabulário para catálogos de dados da administração pública brasileira.</li>
-        <li>Garantir interoperabilidade semântica com o DCAT e perfis internacionais.</li>
-        <li>Suportar a catalogação federada de conjuntos de dados e distribuições em múltiplas plataformas.</li>
-        <li>Promover a descoberta, reuso e integração de dados governamentais por pessoas e sistemas.</li>
+        <li>
+          Fornecer uma especificação comum para descrever os catálogos de dados da administração pública brasileira;
+        </li>
+        <li>
+          Garantir conformidade ao DCAT e interoperar com os demais perfis de aplicação internacionais;
+        </li>
+        <li>
+          Apoiar a catalogação federada de conjuntos de dados e distribuições em múltiplas plataformas;
+        </li>
+        <li>
+          Promover a descoberta, reuso e integração de dados governamentais por pessoas e sistemas.
+        </li>
       </ul>
     </section>
 
@@ -119,43 +110,91 @@
       <h3>Benefícios de uso</h3>
       <ul>
         <li>
-          Consistência na descrição de metadados em portais de dados,
-          agregadores de conteúdo e catálogos setoriais.
+          <b>Consistência na descrição</b>: os metadados seguem padrões uniformes, garantindo coerência entre portais de dados, agregadores de conteúdo e catálogos setoriais;
         </li>
         <li>
-          Facilidade para usuários identificarem quais conjuntos de dados existem, quem os mantém
-          e como podem ser acessados.
+          <b>Fomento do reuso dos dados</b>: os órgãos públicos, ao compartilhar informações sobre seus conjuntos de dados, facilitam a criação de novas soluções, serviços, políticas públicas e outras iniciativas por parte da sociedade civil, academia e setor privado; 
         </li>
         <li>
-          Incentivo ao reuso de dados por meio de metadados ricos, bem estruturados e
-          multilingues.
+          <b>Redução da redundância</b>: a aderência ao DCAT-BR proporciona maior visibilidade e organização dos conjuntos de dados, evitando a duplicação de esforços na sua descrição e publicação;
         </li>
         <li>
-          Adoção de padrões abertos e alinhamento com princípios de <em>Open Data</em> e
-          <em>Linked Data</em>.
+          <b>Promoção da interoperabilidade</b>: ao adotar um padrão internacional, seguido por vários portais de dados governamentais, os metadados tornam-se compatíveis com os princípios de <em>Open Data</em> e <em>Linked Data</em>.
         </li>
       </ul>
     </section>
-
-    <section id="escopo">
-      <h3>Escopo</h3>
-      <p>
-        O DCAT-BR aplica-se a conjuntos de dados geridos pelo setor público nas esferas federal,
-        estadual, distrital e municipal, bem como por entidades vinculadas. O padrão pode ser
-        utilizado por outros setores, desde que preservada a compatibilidade com as diretrizes
-        nacionais de catalogação.
-      </p>
-    </section>
   </section>
 
-  <!-- Governança -->
-  <section id="governanca" class="informative">
+  <!-- Conformidade -->
+  <section id="conformidade">
+    <h2>Conformidade</h2>
+    <p>
+      Assim como as seções marcadas como não normativas, todas as diretrizes de autoria, diagramas, 
+      exemplos e notas nesta especificação são não normativas. Todo o restante é normativo.
+    </p>
+    <h3>Requisitos do provedor de dados</h3>
+    <p>
+      Um catálogo, portal ou serviço declara conformidade com o DCAT-BR quando:
+    </p>
+    <ul>
+      <li>
+        para cada conjunto de dados descrito como <code>dcat:Dataset</code>, são fornecidos
+        todos os metadados marcados como obrigatórios nesta especificação;
+      </li>
+      <li>
+        as propriedades e classes RDF utilizadas pertencem aos <em>namespaces</em> (espaços de nomes) indicados na seção de <a href="#namespaces">prefixos e namespaces</a>;
+      </li>
+      <li>
+        quaisquer extensões locais são compatíveis com o modelo RDF e não contradizem as
+        definições desta especificação ou do DCAT v3, de modo a preservar a interoperabilidade semântica;
+      </li>
+      <li>
+        os dados podem ser serializados em formatos RDF padronizados, como Turtle ou RDF/XML.
+      </li>
+    </ul>
+    <h3>Requisitos do consumidor de dados</h3>
+      Uma aplicação que recebe metadados declara conformidade com o DCAT-BR quando:
+      </p>
+    <ul>
+      <li>
+        é capaz de processar metadados que utilizam as classes e propriedades definidas nesta
+        especificação, bem como as classes e propriedades do DCAT v3;
+      </li>
+    </ul>
+    <h3>Legislação nacional</h3>
+    <p>
+     A adoção do DCAT-BR como padrão nacional está apoiada em um conjunto de leis e decretos que tratam de transparência, dados abertos, governo digital, proteção de dados e interoperabilidade no setor público. Essas normas dispõe as condições necessárias para que os conjuntos de dados governamentais sejam organizados, compartilhados e reutilizados de forma padronizada.
+    </p>
+    <p>
+      Entre os principais instrumentos legais, destacam-se:
+    </p>
+    <ul>
+      <li>
+        Lei nº 12.527/2011 - Lei de Acesso à Informação;
+      </li>
+      <li>
+        Decreto nº 8.777/2016 - Política de dados abertos no âmbito da administração pública federal;
+      </li>
+      <li>
+        Decreto nº 10.046/2019 - Governança no compartilhamento de dados no âmbito da administração pública federal e institui o Comitê Central de Governança de Dados;
+      </li>
+      <li>
+        Lei nº 13.708/2018 - Lei Geral de Proteção de Dados (LGPD);
+      </li>
+      <li> 
+        Decreto nº 14.129/2021 - Lei de Governo Digital;
+      </li>
+      <li>
+        Decreto nº 12.198/2024 - Estratégia Federal de Governo Digital e a instituição da Infraestrutura Nacional de Dados.
+      </li>
+    </ul>  
+  </section>
+
+ <!-- Governança -->
+  <section id="governanca">
     <h2>Governança e manutenção</h2>
     <p>
-      O DCAT-BR é mantido com base na Política de Governança de Dados nacional. Alterações
-      na especificação são discutidas no Grupo de Trabalho DCAT-BR e comunicadas
-      publicamente, de modo a preservar a interoperabilidade entre implementações e a rede
-      federada de catálogos.
+      O DCAT-BR é mantido pelo Grupo de Trabalho DCAT-BR. Alterações na especificação são discutidas e comunicadas publicamente, de modo a preservar a interoperabilidade entre implementações e a rede federada de catálogos.
     </p>
     <p>
       O modelo de contribuição prevê:
@@ -168,42 +207,14 @@
     </ol>
   </section>
 
-  <!-- Conformidade -->
-  <section id="conformance">
-    <h2>Conformidade</h2>
-    <p>
-      Esta seção é normativa.
-    </p>
-    <p>
-      Um catálogo, portal ou serviço declara conformidade com o DCAT-BR quando:
-    </p>
-    <ul>
-      <li>
-        para cada conjunto de dados descrito como <code>dcat:Dataset</code>, são fornecidos
-        todos os metadados marcados como obrigatórios nesta especificação;
-      </li>
-      <li>
-        as propriedades e classes RDF utilizadas pertencem aos espaços de nomes indicados na
-        seção de <a href="#namespaces">prefixos e namespaces</a>;
-      </li>
-      <li>
-        quaisquer extensões locais são compatíveis com o modelo RDF e não contradizem as
-        definições desta especificação ou de DCAT;
-      </li>
-      <li>
-        os dados podem ser serializados em formatos RDF padronizados, como Turtle ou RDF/XML.
-      </li>
-    </ul>
-  </section>
-
   <!-- Modelo de informações -->
   <section id="modelo-informacao">
-    <h2>Modelo de informações do DCAT-BR</h2>
+    <h2>Modelo de informações</h2>
 
     <section id="classes">
       <h3>Classes principais</h3>
       <p>
-        O DCAT-BR utiliza e especializa classes do DCAT v3 e de vocabulários relacionados,
+        O DCAT-BR utiliza e especializa classes do DCAT 3 e de vocabulários relacionados,
         organizando o modelo em torno dos seguintes tipos de recursos:
       </p>
 
@@ -292,7 +303,7 @@
           <tr>
             <td><code>dcterms:spatial</code></td>
             <td>Área Geográfica</td>
-            <td>Deve indicar a área geográfica coberta pelo conjunto de dados, representando a extensão territorial à qual os dados se referem. (Selo de Qualidade: Ouro)</td>
+            <td>Deve indicar a área geográfica coberta pelo conjunto de dados, representando a extensão territorial à qual os dados se referem. (Selo de Qualidade: Prata)</td>
             <td><code>dcterms:Location</code></td>
           </tr>
           <tr>
@@ -330,49 +341,49 @@
           <tr>
             <td><code>dcterms:accessRights</code></td>
             <td>Observância Legal</td>
-            <td>Deve indicar se o conjunto de dados é público, restrito ou privado.</td>
+            <td>Deve indicar se o conjunto de dados é público, restrito ou privado. (Selo de Qualidade: Bronze)</td>
             <td><code>dcterms:RightsStatement</code></td>
           </tr>
           <tr>
             <td><code>dcat:contactPoint</code></td>
             <td>E-mail da Área Técnica Responsável</td>
-            <td>Deve indicar o e-mail de contato da área técnica responsável pelo conjunto de dados.</td>
+            <td>Deve indicar o e-mail de contato da área técnica responsável pelo conjunto de dados. (Selo de Qualidade: Bronze)</td>
             <td><code>vcard:Kind</code></td>
           </tr>
           <tr>
             <td><code>dcterms:creator</code></td>
             <td>Organização</td>
-            <td>Deve indicar qual área técnica do órgão/entidade é responsável pelo conjunto de dados.</td>
+            <td>Deve indicar qual área técnica do órgão/entidade é responsável pelo conjunto de dados. (Selo de Qualidade: Bronze)</td>
             <td><code>foaf:Agent</code></td>
           </tr>
           <tr>
             <td><code>dcterms:description</code></td>
             <td>Descrição</td>
-            <td>Descrição sobre o conjunto de dados, incluindo metadados que indiquem quais as Políticas Públicas ou serviços públicos impactados e metadados que descreva as principais informações do conjunto de dados.</td>
+            <td>Descrição sobre o conjunto de dados, incluindo metadados que indiquem quais as Políticas Públicas ou serviços públicos impactados e metadados que descreva as principais informações do conjunto de dados. (Selo de Qualidade: Bronze)</td>
             <td><code>rdfs:Literal</code></td>
           </tr>
           <tr>
             <td><code>dcat:keyword</code></td>
             <td>Palavras-Chave</td>
-            <td>Deve indicar palavras ou tags que resumem os principais aspectos do conjunto de dados.</td>
+            <td>Deve indicar palavras ou tags que resumem os principais aspectos do conjunto de dados. (Selo de Qualidade: Bronze)</td>
             <td><code>rdfs:Literal</code></td>
           </tr>
           <tr>
             <td><code>dcterms:license</code></td>
             <td>Licença de Uso</td>
-            <td>Deve selecionar sob qual espécie de licença o conjunto de dados será publicado de acordo com as definições apresentadas.</td>
+            <td>Deve selecionar sob qual espécie de licença o conjunto de dados será publicado de acordo com as definições apresentadas. (Selo de Qualidade: Bronze)</td>
             <td><code>dcterms:LicenseDocument</code></td>
           </tr>
           <tr>
             <td><code>dcat:theme</code></td>
             <td>Tema</td>
-            <td>Deve selecionar a área temática à qual o conjunto de dados esteja vinculado. Permite selecionar mais de uma opção.</td>
+            <td>Deve selecionar a área temática à qual o conjunto de dados esteja vinculado. Permite selecionar mais de uma opção. (Selo de Qualidade: Bronze)</td>
             <td><code>skos:Concept</code></td>
           </tr>
           <tr>
             <td><code>dcterms:title</code></td>
             <td>Título</td>
-            <td>Deve conter um nome dado ao Conjunto de Dados. O título deve ser escrito por extenso utilizando sigla após o final do título, caso exista. Este é um campo obrigatório.</td>
+            <td>Deve conter um nome dado ao Conjunto de Dados. O título deve ser escrito por extenso utilizando sigla após o final do título, caso exista. Este é um campo obrigatório. (Selo de Qualidade: Bronze)</td>
             <td><code>rdfs:Literal</code></td>
           </tr>
           <tr>
@@ -390,7 +401,7 @@
           <tr>
             <td><code>dcterms:publisher</code></td>
             <td>Área Técnica Responsável</td>
-            <td>Deve indicar qual área técnica do órgão/entidade é responsável pela disponibilização do conjunto de dados.</td>
+            <td>Deve indicar qual área técnica do órgão/entidade é responsável pela disponibilização do conjunto de dados. (Selo de Qualidade: Bronze)</td>
             <td><code>foaf:Agent</code></td>
           </tr>
           <tr>
@@ -430,51 +441,57 @@
             <td><code>dcat:Resource</code></td>
           </tr>
           <tr>
+            <td><code>dcat:isVersionOf</code></td>
+            <td>Versão Anterior</td>
+            <td>Deve indicar a versão anterior de um recurso em uma linhagem.</td>
+            <td><code>dcat:Resource</code></td>
+          </tr>
+          <tr>
             <td><code>adms:status</code></td>
             <td>Situação</td>
-            <td>Deve indicar o status do conjunto de dados (Ativo, Descontinuado, Em Construção, etc.). Recomenda-se utilizar um conceito SKOS de um vocabulário controlado. (Selo de Qualidade: Prata)</td>
+            <td>Deve indicar o status do conjunto de dados (Ativo, Descontinuado, Em Construção, etc.). Recomenda-se utilizar um conceito SKOS de um vocabulário controlado.</td>
             <td><code>skos:Concept</code></td>
           </tr>
           <tr>
             <td><code>dcterms:relation</code></td>
             <td>Relacionamento não Especificado</td>
-            <td>Deve indicar um conjunto de dados com uma relação não especificada com outro conjunto de dados catalogado. (Selo de Qualidade: Não utilizado nos Selos)</td>
+            <td>Deve indicar um conjunto de dados com uma relação não especificada com outro conjunto de dados catalogado.</td>
             <td><code>dcat:Resource</code></td>
           </tr>
           <tr>
             <td><code>dcat:qualifiedRelation</code></td>
             <td>Relacionamento</td>
-            <td>Link para uma descrição de um relacionamento com outro conjunto de dados. (Selo de Qualidade: Não utilizado nos Selos)</td>
+            <td>Link para uma descrição de um relacionamento com outro conjunto de dados.</td>
             <td><code>dcat:Relationship</code></td>
           </tr>
           <tr>
             <td><code>dcterms:hasPart</code></td>
             <td>Faz Parte</td>
-            <td>Deve indicar conjunto de dados incluído física ou logicamente no conjunto de dados descrito. (Selo de Qualidade: Ouro)</td>
+            <td>Deve indicar conjunto de dados incluído física ou logicamente no conjunto de dados descrito.</td>
             <td><code>dcat:Resource</code></td>
           </tr>
           <tr>
             <td><code>dcterms:isReferencedBy</code></td>
             <td>É Referenciado Por</td>
-            <td>Deve indicar recurso relacionado (ex.: publicação) que referencia, cita ou aponta para o conjunto de dados. Para descrição detalhada do relacionamento, utilizar dcat:qualifiedRelation. (Selo de Qualidade: Ouro)</td>
+            <td>Deve indicar recurso relacionado (ex.: publicação) que referencia, cita ou aponta para o conjunto de dados. Para descrição detalhada do relacionamento, utilizar dcat:qualifiedRelation.</td>
             <td><code>dcat:Resource</code></td>
           </tr>
           <tr>
             <td><code>dcat:previousVersion</code></td>
             <td>Versão Anterior</td>
-            <td>Deve indicar a versão anterior de um recurso em uma linhagem. (Selo de Qualidade: Não utilizado nos Selos)</td>
+            <td>Deve indicar a versão anterior de um recurso em uma linhagem.</td>
             <td><code>dcat:Resource</code></td>
           </tr>
           <tr>
             <td><code>dcterms:replaces</code></td>
             <td>Substituído Por</td>
-            <td>Deve indicar o conjunto de dados que é substituído pelo conjunto de dados descrito. (Selo de Qualidade: Ouro)</td>
+            <td>Deve indicar o conjunto de dados que é substituído pelo conjunto de dados descrito.</td>
             <td><code>dcat:Resource</code></td>
           </tr>
           <tr>
             <td><code>dcat:first</code></td>
             <td>Primeiro Recurso</td>
-            <td>Deve indicar o primeiro conjunto de dados em uma coleção ordenada ou série de conjuntos de dados à qual pertence o conjunto de dados atual. (Selo de Qualidade: Não utilizado nos Selos)</td>
+            <td>Deve indicar o primeiro conjunto de dados em uma coleção ordenada ou série de conjuntos de dados à qual pertence o conjunto de dados atual.</td>
             <td><code>dcat:Resource</code></td>
           </tr>
         </tbody>
@@ -494,25 +511,25 @@
           <tr>
             <td><code>dcat:accessURL</code></td>
             <td>URL de Acesso</td>
-            <td>Deve indicar o endereço da web onde o recurso está hospedado (arquivo, API ou serviço).</td>
+            <td>Deve indicar o endereço da web onde o recurso está hospedado (arquivo, API ou serviço). (Selo de Qualidade: Prata)</td>
             <td><code>rdfs:Resource</code></td>
           </tr>
           <tr>
             <td><code>dcterms:description</code></td>
             <td>Descrição do Recurso</td>
-            <td>Deve indicar a descrição do recurso do conjunto de dados, incluindo metadados que indiquem quais as Políticas Públicas ou serviços públicos impactados e metadados que descrevam as principais informações do conjunto de dados.</td>
+            <td>Deve indicar a descrição do recurso do conjunto de dados, incluindo metadados que indiquem quais as Políticas Públicas ou serviços públicos impactados e metadados que descrevam as principais informações do conjunto de dados. (Selo de Qualidade: Prata)</td>
             <td><code>rdfs:Literal</code></td>
           </tr>
           <tr>
             <td><code>dcterms:title</code></td>
             <td>Título do Recurso</td>
-            <td>Deve conter um nome dado ao recurso do conjunto de dados. O título deve ser escrito por extenso utilizando siglas após o final do título, caso exista.</td>
+            <td>Deve conter um nome dado ao recurso do conjunto de dados. O título deve ser escrito por extenso utilizando siglas após o final do título, caso exista. (Selo de Qualidade: Prata)</td>
             <td><code>rdfs:Literal</code></td>
           </tr>
           <tr>
             <td><code>dcterms:format</code></td>
             <td>Formato</td>
-            <td>Deve selecionar sob qual formato o recurso será disponibilizado.</td>
+            <td>Deve selecionar sob qual formato o recurso será disponibilizado. (Selo de Qualidade: Prata)</td>
             <td><code>dcterms:MediaTypeOrExtent</code></td>
           </tr>
           <tr>
@@ -524,61 +541,61 @@
           <tr>
             <td><code>dcterms:modified</code></td>
             <td>Data de Alteração do Recurso</td>
-            <td>Data mais recente em que o recurso foi alterado, atualizado ou modificado. (Selo de Qualidade: Sem Selo)</td>
+            <td>Data mais recente em que o recurso foi alterado, atualizado ou modificado.</td>
             <td><code>rdfs:Literal</code></td>
           </tr>
           <tr>
             <td><code>dcterms:rights</code></td>
             <td>Observância Legal Complementar do Recurso</td>
-            <td>Deve indicar uma declaração que diz respeito a todos os direitos não abordados com dcterms:license ou dcterms:accessRights, como declarações de direitos autorais. (Selo de Qualidade: Sem Selo)</td>
+            <td>Deve indicar uma declaração que diz respeito a todos os direitos não abordados com dcterms:license ou dcterms:accessRights, como declarações de direitos autorais.</td>
             <td><code>dcterms:RightsStatement</code></td>
           </tr>
           <tr>
             <td><code>dcterms:accessRights</code></td>
             <td>Observância Legal do Recurso</td>
-            <td>Deve indicar a visibilidade do Recurso, se a visibilidade é pública ou privada. (Selo de Qualidade: Sem Selo)</td>
+            <td>Deve indicar a visibilidade do Recurso, se a visibilidade é pública ou privada.</td>
             <td><code>dcterms:RightsStatement</code></td>
           </tr>
           <tr>
             <td><code>dcterms:license</code></td>
             <td>Licença de Uso do Recurso</td>
-            <td>Deve selecionar sob qual espécie de licença o recurso será publicado de acordo com as definições apresentadas. (Selo de Qualidade: Sem Selo)</td>
+            <td>Deve selecionar sob qual espécie de licença o recurso será publicado de acordo com as definições apresentadas.</td>
             <td><code>dcterms:LicenseDocument</code></td>
           </tr>
           <tr>
             <td><code>dcat:downloadURL</code></td>
             <td>URL de Download</td>
-            <td>Deve indicar a URL de download do arquivo em um determinado formato (por exemplo, CSV, ODS ou RDF). O formato deve ser indicado por dcterms:format e/ou dcat:mediaType da distribuição. (Selo de Qualidade: Não utilizado nos Selos)</td>
+            <td>Deve indicar a URL de download do arquivo em um determinado formato (por exemplo, CSV, ODS ou RDF). O formato deve ser indicado por dcterms:format e/ou dcat:mediaType da distribuição.</td>
             <td><code>rdfs:Resource</code></td>
           </tr>
           <tr>
             <td><code>dcat:byteSize</code></td>
             <td>Tamanho em Bytes</td>
-            <td>Deve indicar o tamanho da distribuição em bytes. (Selo de Qualidade: Sem Selo)</td>
+            <td>Deve indicar o tamanho da distribuição em bytes.</td>
             <td><code>rdfs:Literal</code></td>
           </tr>
           <tr>
             <td><code>dcterms:conformsTo</code></td>
             <td>Conforme a</td>
-            <td>Deve indicar um padrão, norma ou especificação estabelecida ao qual a distribuição está em conformidade. (Selo de Qualidade: Não utilizado nos Selos)</td>
+            <td>Deve indicar um padrão, norma ou especificação estabelecida ao qual a distribuição está em conformidade.</td>
             <td><code>dcterms:Standard</code></td>
           </tr>
           <tr>
             <td><code>dcat:mediaType</code></td>
             <td>Tipo de Mídia</td>
-            <td>Deve indicar o tipo de mídia (MIME type) da distribuição, conforme IANA. (Selo de Qualidade: Sem Selo)</td>
+            <td>Deve indicar o tipo de mídia (MIME type) da distribuição, conforme IANA. (Selo de Qualidade: Prata)</td>
             <td><code>dcterms:MediaType</code></td>
           </tr>
           <tr>
             <td><code>dcat:compressFormat</code></td>
             <td>Formato de Compactação</td>
-            <td>Deve indicar o formato de compactação da distribuição na qual os dados estão contidos, por exemplo, para reduzir o tamanho do arquivo para download. (Selo de Qualidade: Sem Selo)</td>
+            <td>Deve indicar o formato de compactação da distribuição na qual os dados estão contidos, por exemplo, para reduzir o tamanho do arquivo para download.</td>
             <td><code>dcterms:MediaType</code></td>
           </tr>
           <tr>
             <td><code>spdx:checksum</code></td>
             <td>Verificação de Conteúdo</td>
-            <td>Mecanismo para verificar se o conteúdo de um arquivo ou pacote não foi alterado. (Selo de Qualidade: Não utilizado nos Selos)</td>
+            <td>Mecanismo para verificar se o conteúdo de um arquivo ou pacote não foi alterado.</td>
             <td><code>spdx:Checksum</code></td>
           </tr>
         </tbody>
@@ -598,13 +615,13 @@
           <tr>
             <td><code>dcat:startDate</code></td>
             <td>Início do Período</td>
-            <td>Deve indicar o início do período. (Selo de Qualidade: Ouro)</td>
+            <td>Deve indicar o início do período. (Selo de Qualidade: Prata)</td>
             <td><code>rdfs:Literal</code></td>
           </tr>
           <tr>
             <td><code>dcat:endDate</code></td>
             <td>Final do Período</td>
-            <td>Deve indicar o final do período. (Selo de Qualidade: Ouro)</td>
+            <td>Deve indicar o final do período. (Selo de Qualidade: Prata)</td>
             <td><code>rdfs:Literal</code></td>
           </tr>
         </tbody>
@@ -624,19 +641,19 @@
           <tr>
             <td><code>locn:geometry</code></td>
             <td>Localização Geométrica</td>
-            <td>Associa uma área espacial a uma geometria correspondente. (Selo de Qualidade: Não utilizado nos Selos)</td>
+            <td>Associa uma área espacial a uma geometria correspondente.</td>
             <td><code>rdfs:Resource</code></td>
           </tr>
           <tr>
             <td><code>dcat:bbox</code></td>
             <td>Caixa Delimitadora</td>
-            <td>Deve indicar a caixa delimitadora geográfica de uma área espacial. (Selo de Qualidade: Não utilizado nos Selos)</td>
+            <td>Deve indicar a caixa delimitadora geográfica de uma área espacial.</td>
             <td><code>rdfs:Literal</code></td>
           </tr>
           <tr>
             <td><code>dcat:centroid</code></td>
             <td>Centro Geográfico</td>
-            <td>Deve indicar o centro geográfico (centróide) de uma coisa espacial. (Selo de Qualidade: Não utilizado nos Selos)</td>
+            <td>Deve indicar o centro geográfico (centróide) de uma coisa espacial.</td>
             <td><code>rdfs:Literal</code></td>
           </tr>
         </tbody>
@@ -656,19 +673,19 @@
           <tr>
             <td><code>dcat:endpointURL</code></td>
             <td>URL do Endpoint</td>
-            <td>Deve indicar o local raiz ou endpoint primário do serviço (um IRI resolvível pela Web). (Selo de Qualidade: Sem Selo)</td>
+            <td>Deve indicar o local raiz ou endpoint primário do serviço (um IRI resolvível pela Web).</td>
             <td><code>rdfs:Resource</code></td>
           </tr>
           <tr>
             <td><code>dcat:endpointDescription</code></td>
             <td>Descrição do Endpoint</td>
-            <td>Deve indicar uma descrição dos serviços disponíveis através dos terminais, incluindo operações, parâmetros, etc. (Selo de Qualidade: Sem Selo)</td>
+            <td>Deve indicar uma descrição dos serviços disponíveis através dos terminais, incluindo operações, parâmetros, etc.</td>
             <td><code>rdfs:Resource</code></td>
           </tr>
           <tr>
             <td><code>dcat:servesDataset</code></td>
             <td>Serviço de Dados</td>
-            <td>Deve indicar um conjunto de dados que este serviço de dados pode distribuir/servir. (Selo de Qualidade: Sem Selo)</td>
+            <td>Deve indicar um conjunto de dados que este serviço de dados pode distribuir/servir.</td>
             <td><code>dcat:Dataset</code></td>
           </tr>
         </tbody>
@@ -732,7 +749,7 @@
           <tr>
             <td><code>dcat:spatialResolutionInMeters</code></td>
             <td>Granularidade Espacial</td>
-            <td>Deve indicar o nível de granularidade espacial do conjunto de dados. Refere-se ao nível de detalhamento/resolução com que áreas geográficas são representadas (em metros).</td>
+            <td>Deve indicar o nível de granularidade espacial do conjunto de dados. Refere-se ao nível de detalhamento/resolução com que áreas geográficas são representadas (em metros) (Selo de qualidade: Ouro).</td>
             <td><code>xsd:decimal</code></td>
           </tr>
         </tbody>
@@ -819,6 +836,56 @@
         <tr><td><code>dcatbr</code></td><td><code>http://purl.org/dcat-br/</code></td><td>DCAT-BR Extension</td></tr>
       </tbody>
     </table>
+  </section>
+
+  <!-- Validação -->
+  <section class="appendix" id="validacao">
+    <h2>Validação RDF</h2>
+    <p>
+      As restrições do DCAT-BR são expressas em SHACL [[shacl]] para permitir a validação de catálogos na troca de dados entre sistemas. O DCAT-BR fornece um conjunto de expressões SHACL organizadas em arquivos separados, cada um contendo um subconjunto específico de restrições. Esses arquivos são projetados para apoiar diferentes configurações típicas de validação, permitindo que os implementadores escolham as expressões mais relevantes para suas necessidades específicas.
+    </p>
+    <p>
+      Os arquivos de expressões estão disponíveis no <a href="https://github.com/dcat-br/dcat-br/tree/main/docs/shacl">repositório oficial do projeto no GitHub</a>.
+    </p>
+  </section>
+
+  <!-- Glossário -->
+  <section class="appendix" id="glossario"> 
+    <h2>Glossário</h2>
+    <p>
+      <b>Especificação</b>: documento que define os requisitos e características de um sistema ou componente. Nesse caso, para o DCAT-BR.
+    </p>
+    <p>
+      <b>Interoperabilidade</b>: capacidade de diversos sistemas e organizações trabalharem em conjunto, de modo a garantir que pessoas, organizações e sistemas computacionais troquem dados. <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/decreto/d10046.htm">(Decreto 10.046/19)</a>
+    </p>
+    <p>
+      <b>Interoperabilidade semântica</b>: capacidade de diversos sistemas e organizações trabalharem em conjunto, de modo a garantir que pessoas, organizações e sistemas computacionais troquem dados, com base em um entendimento compartilhado do significado dos dados.
+    </p>
+    <p>
+      <b><em>Linked Data</em></b>: abordagem para publicar e interconectar dados na web usando padrões abertos, como RDF e URIs, para criar uma rede de dados interligados e acessíveis.
+    </p>
+    <p>
+      <b>Metadados</b>: representam "dados sobre dados", fornecendo os recursos necessários para entender os dados no decorrer do tempo, ou seja, são dados estruturados que fornecem uma descrição concisa a respeito dos dados armazenados e que permitem encontrar, gerenciar, compreender ou preservar informações a respeito dos dados ao longo do tempo. Possuem um papel importante na gestão de dados, pois, a partir deles, as informações são processadas, atualizadas e consultadas. As informações de como os dados foram criados ou derivados, do ambiente em que residem ou residiram, das alterações realizadas, dentre outras, são obtidas de metadados. <a href="https://www.in.gov.br/en/web/dou/-/portaria-gsi/pr-n-93-de-18-de-outubro-de-2021-353056370">(Portaria GSI/PR Nº 93, 2021)</a>
+    </p>
+    <p>
+      <b><em>Open Data</em></b>: dados que são disponibilizados de forma aberta e livre para uso, reutilização e distribuição.
+    </p>
+    <p>
+      <b>Perfil de aplicação</b>: especificação de um vocabulário RDF que define as classes e propriedades a serem utilizadas para descrever recursos de um domínio específico, incluindo restrições e orientações sobre o uso desses termos. O DCAT-BR é um perfil de aplicação do DCAT para o contexto brasileiro.
+    </p>
+    <p>
+      <b>Recurso</b>: uma entidade que pode ser descrita usando RDF, representada por um URI. No DCAT-BR, recursos são representados pela classe <code>dcat:Distribution</code>, que podem ser conjuntos de dados, serviços de dados, entre outros.
+    </p>
+    <p>
+      <b>RDF</b>: <em>Resource Description Framework</em>, um modelo para representar informações sobre recursos na web, utilizando URIs para identificar entidades e propriedades. É baseado em tripletas (sujeito-predicado-objeto) para expressar relações entre recursos e seus atributos.
+    </p>
+    <p>
+      <b>Vocabulário controlado</b>: um conjunto de termos pré-definidos e organizados de forma hierárquica ou categorizada, utilizado para garantir consistência na descrição semântica de recursos. O DCAT-BR recomenda o uso de vocabulários controlados para propriedades como <code>dcat:theme</code> e <code>adms:status</code>.
+    </p>
+    <p>
+      <b>Vocabulário (RDF)</b>: um conjunto de termos (classes e propriedades) definidos em RDF para descrever recursos e suas relações. O DCAT-BR utiliza termos de diversos vocabulários RDF, como DCAT, DCTERMS, FOAF, entre outros.
+    </p>
+
   </section>
 
   <script>
