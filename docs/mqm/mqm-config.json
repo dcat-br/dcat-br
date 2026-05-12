@@ -2,7 +2,7 @@
   "version": "1.0.0",
   "maxCompletude": 130,
   "maxFairScore": 405,
-  "maxTotalFairQC": 535,
+  "maxtotalFairCQ": 535,
   "dimensions": {
     "encontrabilidade": {
       "maxScore": 100,
@@ -346,7 +346,7 @@
   },
   "completude": {
     "bronze": {
-      "totalPoints": 83,
+      "totalPoints": 75,
       "fields": {
         "dcterms:title": { "points": 10, "required": true, "description": "Título: nome por extenso do conjunto de dados." },
         "dcterms:description": { "points": 10, "required": true, "description": "Descrição: resumo das principais informações e políticas públicas impactadas." },
@@ -356,16 +356,15 @@
         "dcat:contactPoint": { "points": 8, "required": true, "description": "E-mail de contato: canal de comunicação com a área técnica." },
         "dcterms:accrualPeriodicity": { "points": 10, "required": true, "description": "Periodicidade: frequência de atualização (usar vocabulário controlado)." },
         "dcat:version": { "points": 2, "required": true, "description": "Versão: indicação da versão (ex: SemVer)." },
-        "dcterms:license": { "points": 8, "required": true, "description": "Licença de uso: Creative Commons ou outra licença definida." },
         "dcterms:accessRights": { "points": 8, "required": true, "description": "Observância legal: se o dado é público, restrito ou sigiloso." },
         "dcat:theme": { "points": 7, "required": true, "description": "Temas: categoria extraída do Vocabulário Controlado do Governo Eletrônico (VCGE)." }
       }
     },
     "prata": {
-      "totalPoints": 125,
-      "additionalPoints": 42,
+      "totalPoints": 120,
+      "additionalPoints": 45,
       "datasetFields": {
-        "dct:spatial": { "points": 5, "required": true, "description": "Cobertura espacial: extensão geográfica dos dados (ex: links do IBGE)." },
+        "dcterms:license": { "points": 8, "required": true, "description": "Licença de uso: Creative Commons ou outra licença definida." },
         "dcat:startDate": { "points": 2, "required": true, "description": "Cobertura temporal: data inicial do período coberto pelos dados." },
         "dcat:endDate": { "points": 2, "required": true, "description": "Cobertura temporal: data final do período coberto pelos dados." }
       },
@@ -379,8 +378,9 @@
     },
     "ouro": {
       "totalPoints": 130,
-      "additionalPoints": 5,
+      "additionalPoints": 10,
       "datasetFields": {
+        "dct:spatial": { "points": 5, "required": true, "description": "Cobertura espacial: extensão geográfica dos dados (ex: links do IBGE)." },
         "dcat:spatialResolutionInMeters": { "points": 5, "required": true, "description": "Granularidade espacial: nível de detalhe (ex: municipal, estadual). Ouro exige cumprir Bronze e Prata antes (Prata inclui dct:spatial)." }
       }
     }

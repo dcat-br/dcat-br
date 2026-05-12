@@ -1,0 +1,412 @@
+@prefix mqm:    <http://purl.org/mqm/> .
+@prefix dc:     <http://purl.org/dc/terms/> .
+@prefix cc:     <http://creativecommons.org/ns#> .
+@prefix dqv:    <http://www.w3.org/ns/dqv#> .
+@prefix prov:   <http://www.w3.org/ns/prov#> .
+@prefix oa:     <http://www.w3.org/ns/oa#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix vann:   <http://purl.org/vocab/vann/> .
+@prefix voaf:   <http://purl.org/vocommons/voaf#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcat:   <http://www.w3.org/ns/dcat#> .
+
+<http://purl.org/mqm/>
+  a owl:Ontology ;
+  rdfs:label
+      "Vocabulário de Resultados MQM/DQM"@pt-BR ,
+      "MQM/DQM Results Vocabulary"@en ;
+  rdfs:comment
+      "Ontologia leve para publicar, em RDF, os resultados de avaliações MQM (qualidade de metadados) com base em DQV, PROV e Web Annotation, incluindo pontuações por dimensão, medições por métrica, relatórios SHACL e completude por níveis."@pt-BR ,
+      "Lightweight ontology to publish MQM metadata-quality evaluation results in RDF, reusing DQV, PROV and Web Annotation, including per-dimension scores, per-metric measurements, SHACL reports and completeness levels."@en ;
+  dc:abstract """
+    Este vocabulário descreve como representar resultados de avaliação de qualidade de metadados
+    (ex.: FAIR+CQ, completude Bronze/Prata/Ouro e validação SHACL) como medições e anotações DQV
+    vinculadas a um recurso avaliado (ex.: dcat:Dataset) e a uma execução (prov:Activity).
+  """@pt-BR ;
+  dc:modified "2026-02-20"^^xsd:date ;
+  owl:versionInfo "0.1.0" ;
+  cc:attributionName "Governo Federal do Brasil"@pt-BR ;
+  cc:attributionURL <https://www.gov.br/> ;
+  dc:license <https://creativecommons.org/licenses/by/4.0/> ;
+  voaf:specializes dqv: ;
+  vann:preferredNamespacePrefix "mqm" ;
+  vann:preferredNamespaceUri "http://purl.org/mqm/" ;
+  dc:creator [
+    rdfs:label "Juliano Leonardo Soares" ;
+    dc:identifier "Juliano Leonardo Soares"
+  ] .
+
+<https://creativecommons.org/licenses/by/4.0/>
+  dc:title "Attribution 4.0 International (CC BY 4.0)" ;
+  cc:attributionName "Governo Federal do Brasil" ;
+  cc:attributionURL <https://www.gov.br/> .
+
+####################################################
+#   Classes
+####################################################
+
+# Reuso (referências)
+dqv:QualityMeasurement
+  dc:identifier "dqv:QualityMeasurement" ;
+  rdfs:label "Medição de Qualidade"@pt-BR, "Quality Measurement"@en ;
+  rdfs:comment "Instância que representa uma medição objetiva (valor) de uma métrica de qualidade sobre um recurso avaliado."@pt-BR .
+
+dqv:QualityAnnotation
+  dc:identifier "dqv:QualityAnnotation" ;
+  rdfs:label "Anotação de Qualidade"@pt-BR, "Quality Annotation"@en ;
+  rdfs:comment "Anotação qualitativa/estruturada associada ao recurso avaliado, frequentemente usada para anexar relatórios (ex.: SHACL report) via Web Annotation."@pt-BR .
+
+dqv:Metric
+  dc:identifier "dqv:Metric" ;
+  rdfs:label "Métrica"@pt-BR, "Metric"@en ;
+  rdfs:comment "Definição de um critério mensurável de qualidade (ex.: título mínimo, tema no VCR, URL acessível)."@pt-BR .
+
+dqv:Dimension
+  dc:identifier "dqv:Dimension" ;
+  rdfs:label "Dimensão"@pt-BR, "Dimension"@en ;
+  rdfs:comment "Eixo de avaliação que agrupa métricas relacionadas (ex.: encontrabilidade, acessibilidade, interoperabilidade, reutilizabilidade, contextualidade)."@pt-BR .
+
+prov:Activity
+  dc:identifier "prov:Activity" ;
+  rdfs:label "Atividade (Execução de Avaliação)"@pt-BR, "Activity (Evaluation Run)"@en ;
+  rdfs:comment "Execução/procedimento que gerou os resultados (por exemplo, a rodada MQM sobre um conjunto de dados)."@pt-BR .
+
+# Classes MQM específicas (mínimas e pragmáticas)
+mqm:ShaclValidationReport
+  dc:identifier "mqm:ShaclValidationReport" ;
+  rdfs:label "Relatório de Validação SHACL"@pt-BR, "SHACL Validation Report"@en ;
+  rdfs:comment "Resumo normalizado de uma execução SHACL (conforms, contagens, e referências opcionais ao relatório completo)."@pt-BR .
+
+mqm:CompletenessReport
+  dc:identifier "mqm:CompletenessReport" ;
+  rdfs:label "Relatório de Completude"@pt-BR, "Completeness Report"@en ;
+  rdfs:comment "Resultado de completude por níveis (Bronze/Prata/Ouro) com campos/recursos faltantes e nível máximo atingido."@pt-BR .
+
+mqm:CompletenessLevel
+  dc:identifier "mqm:CompletenessLevel" ;
+  rdfs:label "Nível de Completude"@pt-BR, "Completeness Level"@en ;
+  rdfs:comment "Instância representando um nível (ex.: bronze/prata/ouro) e suas pendências (campos/recursos ausentes) para o recurso avaliado."@pt-BR .
+
+####################################################
+#   Properties
+####################################################
+
+#######################################
+##===================================##
+##==          PROPERTIES           ==##
+##===================================##
+#######################################
+
+#=====================================#
+#==  Núcleo DQV/PROV (reuso)         ==#
+#=====================================#
+
+dqv:isMeasurementOf
+  dc:identifier "dqv:isMeasurementOf" ;
+  rdfs:label "É medição de"@pt-BR, "Is Measurement Of"@en ;
+  rdfs:comment "Liga uma dqv:QualityMeasurement à dqv:Metric medida."@pt-BR ;
+  rdfs:domain dqv:QualityMeasurement ;
+  rdfs:range dqv:Metric .
+
+dqv:value
+  dc:identifier "dqv:value" ;
+  rdfs:label "Valor"@pt-BR, "Value"@en ;
+  rdfs:comment "Valor da medição (pode ser booleano, numérico ou textual conforme a métrica)."@pt-BR ;
+  rdfs:domain dqv:QualityMeasurement ;
+  rdfs:range rdfs:Literal .
+
+dqv:computedOn
+  dc:identifier "dqv:computedOn" ;
+  rdfs:label "Computado sobre"@pt-BR, "Computed On"@en ;
+  rdfs:comment "Recurso avaliado ao qual a medição/anotação se refere (ex.: dcat:Dataset)."@pt-BR ;
+  rdfs:domain dqv:QualityMeasurement ;
+  rdfs:range rdfs:Resource .
+
+dqv:inDimension
+  dc:identifier "dqv:inDimension" ;
+  rdfs:label "Na dimensão"@pt-BR, "In Dimension"@en ;
+  rdfs:comment "Indica a dimensão DQV associada a uma métrica, medição ou anotação."@pt-BR ;
+  rdfs:domain dqv:Metric ;
+  rdfs:range dqv:Dimension .
+
+prov:wasGeneratedBy
+  dc:identifier "prov:wasGeneratedBy" ;
+  rdfs:label "Gerado por"@pt-BR, "Was Generated By"@en ;
+  rdfs:comment "Relaciona um resultado (medição/anotação/relatório) à atividade (execução) que o gerou."@pt-BR ;
+  rdfs:domain rdfs:Resource ;
+  rdfs:range prov:Activity .
+
+prov:generatedAtTime
+  dc:identifier "prov:generatedAtTime" ;
+  rdfs:label "Gerado em"@pt-BR, "Generated At Time"@en ;
+  rdfs:comment "Carimbo de tempo da geração do resultado (ISO 8601)."@pt-BR ;
+  rdfs:domain rdfs:Resource ;
+  rdfs:range xsd:dateTime .
+
+oa:hasTarget
+  dc:identifier "oa:hasTarget" ;
+  rdfs:label "Alvo"@pt-BR, "Has Target"@en ;
+  rdfs:comment "Recurso anotado (alvo da anotação) no modelo Web Annotation."@pt-BR ;
+  rdfs:domain dqv:QualityAnnotation ;
+  rdfs:range rdfs:Resource .
+
+oa:hasBody
+  dc:identifier "oa:hasBody" ;
+  rdfs:label "Corpo"@pt-BR, "Has Body"@en ;
+  rdfs:comment "Conteúdo/anexo da anotação (por exemplo, um mqm:ShaclValidationReport ou link para relatório completo)."@pt-BR ;
+  rdfs:domain dqv:QualityAnnotation ;
+  rdfs:range rdfs:Resource .
+
+#=====================================#
+#==  Pontuações e Metadados MQM       ==#
+#=====================================#
+
+mqm:badge
+  dc:identifier "mqm:badge" ;
+  rdfs:label "Selo (Badge)"@pt-BR, "Badge"@en ;
+  vann:usageNote """
+    Valor textual indicando o selo global alcançado (ex.: "Bronze (Suficiente)").
+    Recomenda-se publicar também mqm:conforms e as pontuações globais FAIR+CQ.
+  """@pt-BR ;
+  rdfs:comment "Selo global atribuído ao recurso avaliado."@pt-BR ;
+  rdfs:domain dqv:QualityMeasurement ;
+  rdfs:range xsd:string .
+
+mqm:conforms
+  dc:identifier "mqm:conforms" ;
+  rdfs:label "Conforme (Conforms)"@pt-BR, "Conforms"@en ;
+  vann:usageNote """
+    Indicador booleano de conformidade global com o processo/regra configurada (ex.: pipeline MQM).
+    Não substitui o SHACL report: use mqm:ShaclValidationReport para contagens detalhadas.
+  """@pt-BR ;
+  rdfs:comment "Indicador booleano de conformidade global."@pt-BR ;
+  rdfs:domain dqv:QualityMeasurement ;
+  rdfs:range xsd:boolean .
+
+mqm:score
+  dc:identifier "mqm:score" ;
+  rdfs:label "Pontuação"@pt-BR, "Score"@en ;
+  vann:usageNote """
+    Pontuação obtida pela métrica (p.ex. 0..weight).
+    Use junto com mqm:maxScore para permitir normalização e comparações.
+  """@pt-BR ;
+  rdfs:comment "Pontuação obtida (numérica) para uma métrica ou agregação."@pt-BR ;
+  rdfs:domain dqv:QualityMeasurement ;
+  rdfs:range xsd:decimal .
+
+mqm:maxScore
+  dc:identifier "mqm:maxScore" ;
+  rdfs:label "Pontuação Máxima"@pt-BR, "Max Score"@en ;
+  vann:usageNote """
+    Pontuação máxima possível para a métrica (tipicamente o peso).
+    Para agregações (dimensão/total), representa o máximo da agregação.
+  """@pt-BR ;
+  rdfs:comment "Pontuação máxima associada à medição."@pt-BR ;
+  rdfs:domain dqv:QualityMeasurement ;
+  rdfs:range xsd:decimal .
+
+mqm:weight
+  dc:identifier "mqm:weight" ;
+  rdfs:label "Peso"@pt-BR, "Weight"@en ;
+  vann:usageNote """
+    Peso configurado da métrica no cálculo do score (ex.: 25, 30, 100).
+    Pode coincidir com mqm:maxScore quando score é limitado ao peso.
+  """@pt-BR ;
+  rdfs:comment "Peso (configuração) associado à métrica."@pt-BR ;
+  rdfs:domain dqv:QualityMeasurement ;
+  rdfs:range xsd:decimal .
+
+mqm:validation
+  dc:identifier "mqm:validation" ;
+  rdfs:label "Validação (ID do check)"@pt-BR, "Validation (Check ID)"@en ;
+  vann:usageNote """
+    Identificador técnico do validador/check executado (ex.: 'dcat_title_quality_check').
+    Útil para rastreabilidade e reprodutibilidade do pipeline.
+  """@pt-BR ;
+  rdfs:comment "Nome/ID da validação executada para produzir a medição."@pt-BR ;
+  rdfs:domain dqv:QualityMeasurement ;
+  rdfs:range xsd:string .
+
+mqm:metricId
+  dc:identifier "mqm:metricId" ;
+  rdfs:label "ID da Métrica (instância)"@pt-BR, "Metric ID (instance)"@en ;
+  vann:usageNote """
+    Identificador interno do item de métrica do relatório (ex.: 'dcat_title_quality_dcat_title_quality_check').
+    Diferente de dqv:Metric (definição), pois este é o ID do item observado no resultado.
+  """@pt-BR ;
+  rdfs:comment "ID interno do item de métrica no relatório de resultados."@pt-BR ;
+  rdfs:domain dqv:QualityMeasurement ;
+  rdfs:range xsd:string .
+
+mqm:valueSample
+  dc:identifier "mqm:valueSample" ;
+  rdfs:label "Amostra de Valor"@pt-BR, "Value Sample"@en ;
+  vann:usageNote """
+    Valores observados usados pelo validador como evidência (ex.: títulos, descrições, IRIs de vocabulário).
+    Recomenda-se limitar a quantidade por motivos de volume e privacidade.
+  """@pt-BR ;
+  rdfs:comment "Amostras de valores observados durante a validação."@pt-BR ;
+  rdfs:domain dqv:QualityMeasurement ;
+  rdfs:range xsd:string .
+
+mqm:httpStatus
+  dc:identifier "mqm:httpStatus" ;
+  rdfs:label "Status HTTP"@pt-BR, "HTTP Status"@en ;
+  vann:usageNote """
+    Usado em checks de acessibilidade (ex.: dcat:accessURL).
+    Publica o status observado (200, 301, 404 etc.) para auditoria.
+  """@pt-BR ;
+  rdfs:comment "Código HTTP observado em validações de acessibilidade."@pt-BR ;
+  rdfs:domain dqv:QualityMeasurement ;
+  rdfs:range xsd:integer .
+
+mqm:url
+  dc:identifier "mqm:url" ;
+  rdfs:label "URL Observada"@pt-BR, "Observed URL"@en ;
+  vann:usageNote """
+    URL verificada por um check (ex.: distribuição accessURL).
+    Use com mqm:httpStatus para contextualizar o resultado.
+  """@pt-BR ;
+  rdfs:comment "URL observada/validada durante a execução."@pt-BR ;
+  rdfs:domain dqv:QualityMeasurement ;
+  rdfs:range rdfs:Resource .
+
+#=====================================#
+#==  SHACL report (resumo normalizado)#
+#=====================================#
+
+mqm:violationCount
+  dc:identifier "mqm:violationCount" ;
+  rdfs:label "Quantidade de Violações"@pt-BR, "Violation Count"@en ;
+  vann:usageNote """
+    Número de violações SHACL (sh:Violation) encontradas.
+    Use em mqm:ShaclValidationReport para sumarização e dashboards.
+  """@pt-BR ;
+  rdfs:comment "Quantidade de violações SHACL."@pt-BR ;
+  rdfs:domain mqm:ShaclValidationReport ;
+  rdfs:range xsd:integer .
+
+mqm:warningCount
+  dc:identifier "mqm:warningCount" ;
+  rdfs:label "Quantidade de Avisos"@pt-BR, "Warning Count"@en ;
+  vann:usageNote """
+    Número de avisos (warnings) reportados pelo validador.
+    Dependendo da sua configuração SHACL, warnings podem ser sh:Warning ou uma camada adicional do seu pipeline.
+  """@pt-BR ;
+  rdfs:comment "Quantidade de avisos no relatório."@pt-BR ;
+  rdfs:domain mqm:ShaclValidationReport ;
+  rdfs:range xsd:integer .
+
+mqm:shaclConforms
+  dc:identifier "mqm:shaclConforms" ;
+  rdfs:label "SHACL Conforms"@pt-BR, "SHACL Conforms"@en ;
+  vann:usageNote """
+    Booleano indicando se a validação SHACL passou sem violações.
+    Útil mesmo quando warnings existem.
+  """@pt-BR ;
+  rdfs:comment "Indicador booleano de conformidade SHACL."@pt-BR ;
+  rdfs:domain mqm:ShaclValidationReport ;
+  rdfs:range xsd:boolean .
+
+mqm:hasShaclReport
+  dc:identifier "mqm:hasShaclReport" ;
+  rdfs:label "Possui Relatório SHACL"@pt-BR, "Has SHACL Report"@en ;
+  vann:usageNote """
+    Liga a execução/resultado ao relatório SHACL resumido.
+    Se você publicar também o relatório SHACL completo em RDF, pode linkar por outra propriedade (ex.: mqm:fullReport).
+  """@pt-BR ;
+  rdfs:comment "Relaciona um recurso avaliado ao seu relatório SHACL resumido."@pt-BR ;
+  rdfs:domain rdfs:Resource ;
+  rdfs:range mqm:ShaclValidationReport .
+
+#=====================================#
+#==  Completude por níveis             #
+#=====================================#
+
+mqm:maxLevel
+  dc:identifier "mqm:maxLevel" ;
+  rdfs:label "Nível Máximo Atingido"@pt-BR, "Max Level Achieved"@en ;
+  vann:usageNote """
+    Indica o nível máximo atingido segundo as regras configuradas (ex.: 'bronze', 'prata', 'ouro').
+    Recomenda-se valores controlados (SKOS) quando houver governança.
+  """@pt-BR ;
+  rdfs:comment "Nível máximo alcançado na avaliação de completude."@pt-BR ;
+  rdfs:domain mqm:CompletenessReport ;
+  rdfs:range xsd:string .
+
+mqm:points
+  dc:identifier "mqm:points" ;
+  rdfs:label "Pontos de Completude"@pt-BR, "Completeness Points"@en ;
+  vann:usageNote """
+    Pontos totais de completude calculados pela regra MQM (ex.: 83).
+    Use com mqm:maxCompletenessScore para normalização.
+  """@pt-BR ;
+  rdfs:comment "Total de pontos de completude."@pt-BR ;
+  rdfs:domain mqm:CompletenessReport ;
+  rdfs:range xsd:decimal .
+
+mqm:hasLevel
+  dc:identifier "mqm:hasLevel" ;
+  rdfs:label "Possui nível"@pt-BR, "Has Level"@en ;
+  vann:usageNote """
+    Relaciona o relatório de completude às instâncias por nível (bronze/prata/ouro),
+    incluindo pendências específicas.
+  """@pt-BR ;
+  rdfs:comment "Relaciona um relatório de completude a um nível específico."@pt-BR ;
+  rdfs:domain mqm:CompletenessReport ;
+  rdfs:range mqm:CompletenessLevel .
+
+mqm:levelName
+  dc:identifier "mqm:levelName" ;
+  rdfs:label "Nome do Nível"@pt-BR, "Level Name"@en ;
+  vann:usageNote "Nome do nível (ex.: bronze, prata, ouro)."@pt-BR ;
+  rdfs:comment "Identificador textual do nível de completude."@pt-BR ;
+  rdfs:domain mqm:CompletenessLevel ;
+  rdfs:range xsd:string .
+
+mqm:levelOk
+  dc:identifier "mqm:levelOk" ;
+  rdfs:label "Nível OK"@pt-BR, "Level OK"@en ;
+  vann:usageNote "Indica se o nível foi atingido (true) ou não (false)."@pt-BR ;
+  rdfs:comment "Indicador booleano de atingimento do nível."@pt-BR ;
+  rdfs:domain mqm:CompletenessLevel ;
+  rdfs:range xsd:boolean .
+
+mqm:missingField
+  dc:identifier "mqm:missingField" ;
+  rdfs:label "Campo Ausente"@pt-BR, "Missing Field"@en ;
+  vann:usageNote """
+    Lista os campos/propriedades obrigatórias ausentes (ex.: dcat:startDate, dcat:endDate).
+    Use IRIs de propriedades quando possível (recomendado).
+  """@pt-BR ;
+  rdfs:comment "Campo/propriedade obrigatória ausente para atingir o nível."@pt-BR ;
+  rdfs:domain mqm:CompletenessLevel ;
+  rdfs:range rdfs:Resource .
+
+mqm:missingResource
+  dc:identifier "mqm:missingResource" ;
+  rdfs:label "Recurso Ausente"@pt-BR, "Missing Resource"@en ;
+  vann:usageNote """
+    Lista recursos mínimos ausentes (ex.: distribuições, serviços ou evidências exigidas).
+    Útil quando a regra exige pelo menos 1 distribuição ou 1 recurso com determinado perfil.
+  """@pt-BR ;
+  rdfs:comment "Recurso mínimo ausente para atingir o nível."@pt-BR ;
+  rdfs:domain mqm:CompletenessLevel ;
+  rdfs:range rdfs:Resource .
+
+####################################################
+#  Vínculo recomendado com DCAT (alvo avaliado)
+####################################################
+
+mqm:evaluatedResource
+  dc:identifier "mqm:evaluatedResource" ;
+  rdfs:label "Recurso Avaliado"@pt-BR, "Evaluated Resource"@en ;
+  vann:usageNote """
+    Propriedade auxiliar para apontar explicitamente o recurso avaliado (ex.: dcat:Dataset).
+    Alternativamente, para medições use dqv:computedOn; para anotações use oa:hasTarget.
+  """@pt-BR ;
+  rdfs:comment "Aponta o recurso avaliado ao qual o relatório/resultado se refere."@pt-BR ;
+  rdfs:domain rdfs:Resource ;
+  rdfs:range dcat:Resource .
