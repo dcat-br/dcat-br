@@ -158,6 +158,31 @@
         sh:minCount 1 ;
         sh:severity sh:Warning ;
         sh:message "Recomendado: indicar dct:license (licença) do conjunto de dados."@pt-BR
+    ], [
+        sh:path dct:language ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Recomendado: indicar dct:language (idioma) do conjunto de dados."@pt-BR ;
+        sh:message "Recommended: provide dct:language for the dataset."@en
+    ] .
+
+:Dataset_SpatialGranularity_Recommended_Shape
+    a sh:NodeShape ;
+    rdfs:label "Granularidade espacial (recomendado)"@pt-BR ;
+    rdfs:label "Spatial granularity (recommended)"@en ;
+    sh:targetClass dcat:Dataset ;
+    sh:severity sh:Warning ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Recomendado: indicar granularidade espacial via dcat:spatialResolutionInMeters ou dct:spatialResolutionInMeters (Selo Ouro)."@pt-BR ;
+        sh:message "Recommended: provide spatial granularity via dcat:spatialResolutionInMeters or dct:spatialResolutionInMeters (Gold seal)."@en ;
+        sh:select """
+            SELECT $this
+            WHERE {
+                FILTER NOT EXISTS { $this <http://www.w3.org/ns/dcat#spatialResolutionInMeters> ?v }
+                FILTER NOT EXISTS { $this <http://purl.org/dc/terms/spatialResolutionInMeters> ?v2 }
+            }
+        """
     ] .
 
 # -------------------------------------------------------------------------

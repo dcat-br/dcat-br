@@ -60,6 +60,64 @@
         [ sh:datatype xsd:gYearMonth ]
     ) .
 
+:SpatialGranularityValue_Shape
+    a sh:NodeShape ;
+    rdfs:label "Valor de granularidade espacial"@pt-BR ;
+    rdfs:label "Spatial granularity value"@en ;
+    rdfs:comment "Aceita o formato do portal dados.gov.br: literal (ex.: ESTADUAL), IRI SKOS (VCR-CE) ou xsd:decimal (DCAT)."@pt-BR ;
+    rdfs:comment "Accepts dados.gov.br portal format: literal (e.g. ESTADUAL), SKOS IRI (VCR-CE) or xsd:decimal (DCAT)."@en ;
+    sh:or (
+        [ sh:datatype xsd:decimal ]
+        [ sh:nodeKind sh:IRI ]
+        [ sh:nodeKind sh:Literal ]
+    ) .
+
+# Vocabulários controlados — IRIs diretos (formato portal dados.gov.br)
+:SEI_VocabularyIRI_Shape
+    a sh:NodeShape ;
+    rdfs:label "IRI vocabulário SEI"@pt-BR ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "O valor deve ser um IRI do vocabulário SEI (ex.: SEI:1)."@pt-BR ;
+        sh:message "Value must be an SEI vocabulary IRI (e.g. SEI:1)."@en ;
+        sh:select """
+            SELECT $this
+            WHERE {
+                FILTER (!REGEX(STR($this), "^https://dcat-br\\\\.github\\\\.io/dcat-br/docs/vocabularies/SEI/"))
+            }
+        """
+    ] .
+
+:VCRFR_VocabularyIRI_Shape
+    a sh:NodeShape ;
+    rdfs:label "IRI vocabulário VCR-FR"@pt-BR ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "O valor deve ser um IRI do vocabulário VCR-FR (ex.: VCR:ANUAL)."@pt-BR ;
+        sh:message "Value must be a VCR-FR vocabulary IRI (e.g. VCR:ANUAL)."@en ;
+        sh:select """
+            SELECT $this
+            WHERE {
+                FILTER (!REGEX(STR($this), "^https://dcat-br\\\\.github\\\\.io/dcat-br/docs/vocabularies/VCR-FR/"))
+            }
+        """
+    ] .
+
+:VCRCE_VocabularyIRI_Shape
+    a sh:NodeShape ;
+    rdfs:label "IRI vocabulário VCR-CE"@pt-BR ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "O valor deve ser um IRI do vocabulário VCR-CE (ex.: VC:INTERNACIONAL)."@pt-BR ;
+        sh:message "Value must be a VCR-CE vocabulary IRI (e.g. VC:INTERNACIONAL)."@en ;
+        sh:select """
+            SELECT $this
+            WHERE {
+                FILTER (!REGEX(STR($this), "^https://dcat-br\\\\.github\\\\.io/dcat-br/docs/vocabularies/VCR-CE/"))
+            }
+        """
+    ] .
+
 # -------------------------------------------------------------------------
 # Agent (foaf:Agent)
 # -------------------------------------------------------------------------
@@ -105,9 +163,11 @@
     ], [
         sh:path vcard:hasEmail ;
         sh:minCount 1 ;
-        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:nodeKind sh:IRI ;
+        sh:pattern "^mailto:" ;
         sh:severity sh:Violation ;
-        sh:message "vcard:hasEmail é obrigatório e deve ser um recurso (IRI ou nó anônimo), tipicamente um mailto:."@pt-BR
+        sh:message "vcard:hasEmail é obrigatório e deve ser um IRI mailto: (ex.: <mailto:area@cgu.gov.br>)."@pt-BR ;
+        sh:message "vcard:hasEmail is required and must be a mailto: IRI (e.g. <mailto:area@agency.gov.br>)."@en
     ] .
 
 # -------------------------------------------------------------------------
@@ -130,9 +190,10 @@
         sh:path spdx:checksumValue ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:datatype xsd:hexBinary ;
+        sh:nodeKind sh:Literal ;
         sh:severity sh:Violation ;
-        sh:message "spdx:checksumValue é obrigatório e deve ter exatamente um valor do tipo xsd:hexBinary."@pt-BR
+        sh:message "spdx:checksumValue é obrigatório e deve ser um literal de texto."@pt-BR ;
+        sh:message "spdx:checksumValue is required and must be a text literal."@en
     ] .
 
 # -------------------------------------------------------------------------
@@ -350,9 +411,10 @@
         sh:message "dcat:endpointDescription deve ser um recurso (URI/IRI ou nó anônimo) apontando para documentação técnica."@pt-BR
     ], [
         sh:path dcat:contactPoint ;
-        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:node :VCard_Shape ;
         sh:severity sh:Violation ;
-        sh:message "dcat:contactPoint deve ser um recurso vcard:Organization (com vcard:fn e vcard:hasEmail)."@pt-BR
+        sh:message "dcat:contactPoint deve ser um vcard:Organization com vcard:fn e vcard:hasEmail mailto: (formato portal)."@pt-BR ;
+        sh:message "dcat:contactPoint must be a vcard:Organization with vcard:fn and mailto: vcard:hasEmail (portal format)."@en
     ], [
         sh:path dct:publisher ;
         sh:maxCount 1 ;
@@ -427,22 +489,26 @@
         sh:path dct:accessRights ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:node :SEI_VocabularyIRI_Shape ;
         sh:severity sh:Violation ;
-        sh:message "dct:accessRights é obrigatório, deve ter exatamente 1 valor e deve ser um recurso (URI/IRI ou nó anônimo)."@pt-BR
+        sh:message "dct:accessRights é obrigatório e deve ser um IRI do vocabulário SEI (ex.: SEI:1 → …/SEI/1)."@pt-BR ;
+        sh:message "dct:accessRights is required and must be an SEI vocabulary IRI (e.g. SEI:1 → …/SEI/1)."@en
     ], [
         sh:path dct:accrualPeriodicity ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:node :VCRFR_VocabularyIRI_Shape ;
         sh:severity sh:Violation ;
-        sh:message "dct:accrualPeriodicity é obrigatório, deve ter exatamente 1 valor e deve ser um recurso (URI/IRI ou nó anônimo)."@pt-BR
+        sh:message "dct:accrualPeriodicity é obrigatório e deve ser um IRI do vocabulário VCR-FR (ex.: VCR:ANUAL → …/VCR-FR/ANUAL)."@pt-BR ;
+        sh:message "dct:accrualPeriodicity is required and must be a VCR-FR vocabulary IRI (e.g. VCR:ANUAL → …/VCR-FR/ANUAL)."@en
     ], [
         sh:path dcat:contactPoint ;
         sh:minCount 1 ;
-        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:maxCount 1 ;
+        sh:node :VCard_Shape ;
         sh:severity sh:Violation ;
-        sh:message "dcat:contactPoint é obrigatório e deve ser um recurso vcard:Organization (com vcard:fn e vcard:hasEmail)."@pt-BR
+        sh:message "dcat:contactPoint é obrigatório: vcard:Organization com vcard:fn e vcard:hasEmail mailto: (formato portal)."@pt-BR ;
+        sh:message "dcat:contactPoint is required: vcard:Organization with vcard:fn and mailto: vcard:hasEmail (portal format)."@en
     ], [
         sh:path dct:publisher ;
         sh:minCount 1 ;
@@ -456,6 +522,13 @@
         sh:severity sh:Violation ;
         sh:message "dct:creator deve ser um recurso (URI/IRI ou nó anônimo) representando o criador do conjunto de dados."@pt-BR
     ], [
+        sh:path dct:created ;
+        sh:maxCount 1 ;
+        sh:node :DateOrDateTimeDataType_Shape ;
+        sh:severity sh:Violation ;
+        sh:message "dct:created deve ter no máximo 1 valor e ser uma data válida (ex.: xsd:dateTime)."@pt-BR ;
+        sh:message "dct:created must have at most 1 value and be a valid date (e.g. xsd:dateTime)."@en
+    ], [
         sh:path dct:issued ;
         sh:maxCount 1 ;
         sh:node :DateOrDateTimeDataType_Shape ;
@@ -468,10 +541,24 @@
         sh:severity sh:Violation ;
         sh:message "dct:modified deve ter no máximo 1 valor e ser uma data válida."@pt-BR
     ], [
-        sh:path dct:spatial ;
+        sh:path dct:language ;
         sh:nodeKind sh:BlankNodeOrIRI ;
         sh:severity sh:Violation ;
-        sh:message "dct:spatial deve ser um recurso (URI/IRI ou nó anônimo) representando a cobertura geográfica."@pt-BR
+        sh:message "dct:language deve ser um recurso (URI/IRI ou nó anônimo) representando o idioma (ex.: iso639-1)."@pt-BR ;
+        sh:message "dct:language must be a resource (URI/IRI or blank node) representing the language (e.g. iso639-1)."@en
+    ], [
+        sh:path dct:license ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:severity sh:Violation ;
+        sh:message "dct:license deve ter no máximo 1 valor e ser um recurso (URI/IRI ou nó anônimo)."@pt-BR ;
+        sh:message "dct:license must have at most 1 value and be a resource (URI/IRI or blank node)."@en
+    ], [
+        sh:path dct:spatial ;
+        sh:node :VCRCE_VocabularyIRI_Shape ;
+        sh:severity sh:Violation ;
+        sh:message "dct:spatial deve ser um IRI do vocabulário VCR-CE (ex.: VC:INTERNACIONAL → …/VCR-CE/INTERNACIONAL)."@pt-BR ;
+        sh:message "dct:spatial must be a VCR-CE vocabulary IRI (e.g. VC:INTERNACIONAL → …/VCR-CE/INTERNACIONAL)."@en
     ], [
         sh:path dct:temporal ;
         sh:nodeKind sh:BlankNodeOrIRI ;
@@ -533,34 +620,71 @@
     a sh:NodeShape ;
     rdfs:label "Extensões DCAT-BR"@pt-BR ;
     rdfs:label "DCAT-BR extensions"@en ;
-    sh:targetClass dcat:Resource ;
+    sh:targetClass dcat:Dataset ;
     sh:property [
         sh:path dcatbr:relacionadoODS ;
+        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:datatype xsd:boolean ;
         sh:severity sh:Violation ;
-        sh:message "dcatbr:relacionadoODS deve ter no máximo 1 valor do tipo xsd:boolean."@pt-BR
+        sh:message "dcatbr:relacionadoODS é obrigatório e deve ter exatamente 1 valor do tipo xsd:boolean."@pt-BR ;
+        sh:message "dcatbr:relacionadoODS is required and must have exactly 1 xsd:boolean value."@en
     ], [
         sh:path dcatbr:dadosRacaEtnia ;
+        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:datatype xsd:boolean ;
         sh:severity sh:Violation ;
-        sh:message "dcatbr:dadosRacaEtnia deve ter no máximo 1 valor do tipo xsd:boolean."@pt-BR
+        sh:message "dcatbr:dadosRacaEtnia é obrigatório e deve ter exatamente 1 valor do tipo xsd:boolean."@pt-BR ;
+        sh:message "dcatbr:dadosRacaEtnia is required and must have exactly 1 xsd:boolean value."@en
     ], [
         sh:path dcatbr:dadosGenero ;
+        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:datatype xsd:boolean ;
         sh:severity sh:Violation ;
-        sh:message "dcatbr:dadosGenero deve ter no máximo 1 valor do tipo xsd:boolean."@pt-BR
+        sh:message "dcatbr:dadosGenero é obrigatório e deve ter exatamente 1 valor do tipo xsd:boolean."@pt-BR ;
+        sh:message "dcatbr:dadosGenero is required and must have exactly 1 xsd:boolean value."@en
     ], [
         sh:path dcatbr:ods ;
-        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:or (
+            [ sh:nodeKind sh:Literal ]
+            [ sh:nodeKind sh:IRI ]
+            [ sh:nodeKind sh:BlankNode ]
+        ) ;
         sh:severity sh:Violation ;
-        sh:message "dcatbr:ods deve ser um recurso (URI/IRI ou nó anônimo), recomendado como skos:Concept."@pt-BR
+        sh:message "dcatbr:ods deve ser literal (rótulo ODS, formato portal) ou IRI skos:Concept."@pt-BR ;
+        sh:message "dcatbr:ods must be a literal (SDG label, portal format) or skos:Concept IRI."@en
     ], [
         sh:path dcat:spatialResolutionInMeters ;
         sh:maxCount 1 ;
-        sh:datatype xsd:decimal ;
+        sh:node :SpatialGranularityValue_Shape ;
         sh:severity sh:Violation ;
-        sh:message "dcat:spatialResolutionInMeters deve ter no máximo 1 valor do tipo xsd:decimal."@pt-BR
+        sh:message "dcat:spatialResolutionInMeters deve ter no máximo 1 valor: literal (ex.: ESTADUAL), IRI SKOS (VCR-CE) ou xsd:decimal."@pt-BR ;
+        sh:message "dcat:spatialResolutionInMeters must have at most 1 value: literal (e.g. ESTADUAL), SKOS IRI (VCR-CE) or xsd:decimal."@en
+    ], [
+        sh:path dct:spatialResolutionInMeters ;
+        sh:maxCount 1 ;
+        sh:node :SpatialGranularityValue_Shape ;
+        sh:severity sh:Violation ;
+        sh:message "dct:spatialResolutionInMeters (serialização portal) deve ter no máximo 1 valor: literal (ex.: ESTADUAL), IRI SKOS ou xsd:decimal."@pt-BR ;
+        sh:message "dct:spatialResolutionInMeters (portal serialization) must have at most 1 value: literal, SKOS IRI or xsd:decimal."@en
+    ] .
+
+:DCATBR_ODS_Conditional_Shape
+    a sh:NodeShape ;
+    rdfs:label "ODS condicional (DCAT-BR)"@pt-BR ;
+    rdfs:label "Conditional SDGs (DCAT-BR)"@en ;
+    sh:targetClass dcat:Dataset ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Quando dcatbr:relacionadoODS é true, dcatbr:ods deve indicar ao menos um ODS associado."@pt-BR ;
+        sh:message "When dcatbr:relacionadoODS is true, dcatbr:ods must indicate at least one associated SDG."@en ;
+        sh:select """
+            SELECT $this
+            WHERE {
+                $this <http://purl.org/dcat-br/relacionadoODS> true .
+                FILTER NOT EXISTS { $this <http://purl.org/dcat-br/ods> ?ods }
+            }
+        """
     ] .
