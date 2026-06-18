@@ -26,38 +26,38 @@
     #####################################################################
  
     # Temas
-    owl:imports <https://dcat-br.github.io/dcat-br/docs/vocabularies/themes/themes.ttl> ;
+    owl:imports <https://dcat-br.github.io/vcr-br/temas/themes.ttl> ;
 
     # Tipo de recurso (VCR-TR)
-    owl:imports <https://dcat-br.github.io/dcat-br/docs/vocabularies/tipo-recurso/tipo-recurso.ttl> ;
+    owl:imports <https://dcat-br.github.io/vcr-br/tipo-recurso/tipo-recurso.ttl> ;
 
     # Cobertura espacial (VCR-CE)
-    owl:imports <https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-CE/cobertura-espacial.ttl> ;
+    owl:imports <https://dcat-br.github.io/vcr-br/VCR-CE/cobertura-espacial.ttl> ;
 
 # Observância Legal (SEI)
-    owl:imports <https://dcat-br.github.io/dcat-br/docs/vocabularies/SEI/sei.ttl> ;
+    owl:imports <https://dcat-br.github.io/vcr-br/SEI/sei.ttl> ;
 
     # Formatos (IANA Media Types)
-    owl:imports <https://dcat-br.github.io/dcat-br/docs/vocabularies/formato/formato.ttl> ;
+    owl:imports <https://dcat-br.github.io/vcr-br/formato/formato.ttl> ;
 
     # Frequência de atualização (VCR-FR)
-    owl:imports <https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-FR/freq.ttl> ;
+    owl:imports <https://dcat-br.github.io/vcr-br/VCR-FR/freq.ttl> ;
 
     # Licença de uso (VCR-LU)
-    owl:imports <https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-LU/licenca-uso.ttl> ;
+    owl:imports <https://dcat-br.github.io/vcr-br/VCR-LU/licenca-uso.ttl> ;
 
     #####################################################################
     # Vocabulários Faltantes
     #####################################################################
 
     # Idioma (VCR-LN)
-    #owl:imports <https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-LN/language.ttl> ;
+    #owl:imports <https://dcat-br.github.io/vcr-br/VCR-LN/language.ttl> ;
 
     # IBGE
-    # owl:imports <https://dcat-br.github.io/dcat-br/docs/vocabularies/IBGE/ibge.ttl> ;
+    # owl:imports <https://dcat-br.github.io/vcr-br/IBGE/ibge.ttl> ;
     
     # SIORG
-    # owl:imports <https://dcat-br.github.io/dcat-br/docs/vocabularies/SIORG/siorg.ttl> ;
+    # owl:imports <https://dcat-br.github.io/vcr-br/SIORG/siorg.ttl> ;
 
     # Verificação de conteúdo (SPDX)
     #owl:imports <https://spdx.org/rdf/terms/spdx-ontology.owl.xml> ;

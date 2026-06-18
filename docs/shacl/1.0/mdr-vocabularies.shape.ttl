@@ -47,7 +47,7 @@
     rdfs:label "Restrição de Tema"@pt-BR ;
     rdfs:label "Theme Restriction"@en ;
     sh:property [
-        sh:hasValue <https://dcat-br.github.io/dcat-br/docs/vocabularies/themes/> ;
+        sh:hasValue <https://dcat-br.github.io/vcr-br/temas/> ;
         sh:minCount 1 ;
         sh:nodeKind sh:IRI ;
         sh:path skos:inScheme
@@ -61,7 +61,7 @@
     rdfs:label "Restrição de Tipo de Recurso"@pt-BR ;
     rdfs:label "Resource Type Restriction"@en ;
     sh:property [
-        sh:hasValue <https://dcat-br.github.io/dcat-br/docs/vocabularies/tipo-recurso/> ;
+        sh:hasValue <https://dcat-br.github.io/vcr-br/tipo-recurso/> ;
         sh:minCount 1 ;
         sh:nodeKind sh:IRI ;
         sh:path skos:inScheme
@@ -77,7 +77,7 @@
     sh:or (
         [ sh:node :SEI_VocabularyIRI_Shape ]
         [ sh:property [
-            sh:hasValue <https://dcat-br.github.io/dcat-br/docs/vocabularies/SEI/esquema> ;
+            sh:hasValue <https://dcat-br.github.io/vcr-br/SEI/esquema> ;
             sh:minCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:path skos:inScheme
@@ -94,7 +94,7 @@
     sh:or (
         [ sh:node :VCRFR_VocabularyIRI_Shape ]
         [ sh:property [
-            sh:hasValue <https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-FR> ;
+            sh:hasValue <https://dcat-br.github.io/vcr-br/VCR-FR> ;
             sh:minCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:path skos:inScheme
@@ -111,7 +111,7 @@
     sh:or (
         [ sh:node :VCRCE_VocabularyIRI_Shape ]
         [ sh:property [
-            sh:hasValue <https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-CE/> ;
+            sh:hasValue <https://dcat-br.github.io/vcr-br/VCR-CE/> ;
             sh:minCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:path skos:inScheme
@@ -126,7 +126,7 @@
     rdfs:label "Restrição de Formato"@pt-BR ;
     rdfs:label "Format Restriction"@en ;
     sh:property [
-        sh:hasValue <https://dcat-br.github.io/dcat-br/docs/vocabularies/formato/esquema> ;
+        sh:hasValue <https://dcat-br.github.io/vcr-br/formato/esquema> ;
         sh:minCount 1 ;
         sh:nodeKind sh:IRI ;
         sh:path skos:inScheme
@@ -140,7 +140,7 @@
     rdfs:label "Restrição de Licença de Uso"@pt-BR ;
     rdfs:label "License Restriction"@en ;
     sh:property [
-        sh:hasValue <https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-LU/esquema> ;
+        sh:hasValue <https://dcat-br.github.io/vcr-br/VCR-LU/esquema> ;
         sh:minCount 1 ;
         sh:nodeKind sh:IRI ;
         sh:path skos:inScheme
@@ -171,15 +171,15 @@
         sh:node :ThemeRestriction ;
         sh:nodeKind sh:IRI ;
         sh:path dcat:theme ;
-        sh:description "Múltiplos temas podem ser usados, mas pelo menos um conceito de <https://dcat-br.github.io/dcat-br/docs/vocabularies/themes/> deve estar presente."@pt-BR ;
-        sh:description "Multiple themes can be used but at least one concept of <https://dcat-br.github.io/dcat-br/docs/vocabularies/themes/> should be present."@en ;
+        sh:description "Múltiplos temas podem ser usados, mas pelo menos um conceito de <https://dcat-br.github.io/vcr-br/temas/> deve estar presente."@pt-BR ;
+        sh:description "Multiple themes can be used but at least one concept of <https://dcat-br.github.io/vcr-br/temas/> should be present."@en ;
         sh:severity sh:Warning
     ], [
         sh:node :ResourceTypeRestriction ;
         sh:nodeKind sh:IRI ;
         sh:path dct:type ;
-        sh:description "Múltiplos tipos podem ser usados, mas é recomendado fornecer pelo menos um conceito de <https://dcat-br.github.io/dcat-br/docs/vocabularies/tipo-recurso/>."@pt-BR ;
-        sh:description "Multiple types can be used but it is recommended to also provide at least one concept of <https://dcat-br.github.io/dcat-br/docs/vocabularies/tipo-recurso/> should be present."@en ;
+        sh:description "Múltiplos tipos podem ser usados, mas é recomendado fornecer pelo menos um conceito de <https://dcat-br.github.io/vcr-br/tipo-recurso/>."@pt-BR ;
+        sh:description "Multiple types can be used but it is recommended to also provide at least one concept of <https://dcat-br.github.io/vcr-br/tipo-recurso/> should be present."@en ;
         sh:severity sh:Warning
     ], [
         sh:node :SpatialRestriction ;
