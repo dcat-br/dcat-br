@@ -286,14 +286,14 @@
           <tr>
             <td><code>dcterms:accrualPeriodicity</code></td>
             <td>Periodicidade de Atualização</td>
-            <td>Deve indicar qual será a periodicidade com que o conjunto de dados será atualizado (ex.: diária, mensal, trimestral, semestral, anual). (Selo de Qualidade: Bronze)</td>
-            <td><code>dcterms:Frequency</code></td>
+            <td>IRI do vocabulário VCR-FR (ex.: <code>VCR:ANUAL</code>). (Selo de Qualidade: Bronze)</td>
+            <td><code>skos:Concept</code></td>
           </tr>
           <tr>
             <td><code>dcterms:spatial</code></td>
             <td>Área Geográfica</td>
-            <td>Deve indicar a área geográfica coberta pelo conjunto de dados, representando a extensão territorial à qual os dados se referem. (Selo de Qualidade: Ouro)</td>
-            <td><code>dcterms:Location</code></td>
+            <td>IRI do vocabulário VCR-CE (ex.: <code>VC:INTERNACIONAL</code>). (Selo de Qualidade: Ouro)</td>
+            <td><code>skos:Concept</code></td>
           </tr>
           <tr>
             <td><code>dcterms:temporal</code></td>
@@ -330,14 +330,14 @@
           <tr>
             <td><code>dcterms:accessRights</code></td>
             <td>Observância Legal</td>
-            <td>Deve indicar se o conjunto de dados é público, restrito ou privado.</td>
-            <td><code>dcterms:RightsStatement</code></td>
+            <td>IRI do vocabulário SEI (ex.: <code>SEI:1</code>).</td>
+            <td><code>skos:Concept</code></td>
           </tr>
           <tr>
             <td><code>dcat:contactPoint</code></td>
             <td>E-mail da Área Técnica Responsável</td>
-            <td>Deve indicar o e-mail de contato da área técnica responsável pelo conjunto de dados.</td>
-            <td><code>vcard:Kind</code></td>
+            <td>Ponto de contato como <code>vcard:Organization</code> com <code>vcard:fn</code> e <code>vcard:hasEmail</code> (<code>mailto:</code>).</td>
+            <td><code>vcard:Organization</code></td>
           </tr>
           <tr>
             <td><code>dcterms:creator</code></td>
@@ -688,8 +688,8 @@
           <tr>
             <td><code>spdx:checksumValue</code></td>
             <td>Valor de Verificação de Integridade</td>
-            <td>Deve indicar um valor de resumo (checksum) codificado em hexadecimal minúsculo, produzido usando um algoritmo específico.</td>
-            <td><code>xsd:hexBinary</code></td>
+            <td>Deve indicar um valor de resumo (checksum) como literal de texto, associado ao algoritmo informado.</td>
+            <td><code>rdfs:Literal</code></td>
           </tr>
         </tbody>
       </table>
@@ -730,10 +730,10 @@
             <td><code>xsd:boolean</code></td>
           </tr>
           <tr>
-            <td><code>dcat:spatialResolutionInMeters</code></td>
+            <td><code>dcat:spatialResolutionInMeters</code><br/><code>dct:spatialResolutionInMeters</code></td>
             <td>Granularidade Espacial</td>
-            <td>Deve indicar o nível de granularidade espacial do conjunto de dados. Refere-se ao nível de detalhamento/resolução com que áreas geográficas são representadas (em metros).</td>
-            <td><code>xsd:decimal</code></td>
+            <td>Nível de granularidade (ex.: ESTADUAL, MUNICIPAL). O portal serializa como <code>dct:spatialResolutionInMeters</code> com literal de texto; também aceita IRI VCR-CE ou <code>dcat:spatialResolutionInMeters</code>.</td>
+            <td><code>rdfs:Literal</code>, <code>skos:Concept</code> ou <code>xsd:decimal</code></td>
           </tr>
         </tbody>
       </table>
@@ -750,41 +750,69 @@
     </p>
 
     <pre class="example" data-language="turtle">
-@prefix dct:   &lt;http://purl.org/dc/terms/&gt; .
-@prefix dcat:  &lt;http://www.w3.org/ns/dcat#&gt; .
-@prefix foaf:  &lt;http://xmlns.com/foaf/0.1/&gt; .
+@prefix dcat: &lt;http://www.w3.org/ns/dcat#&gt; .
+@prefix dc: &lt;http://purl.org/dc/terms/&gt; .
 @prefix vcard: &lt;http://www.w3.org/2006/vcard/ns#&gt; .
-@prefix spdx:  &lt;http://spdx.org/rdf/terms#&gt; .
+@prefix ns0: &lt;http://www.w3.org/ns/adms#&gt; .
+@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
 
-&lt;https://data.gov.br/conjuntodados/cadastro-unico&gt;
+&lt;https://dados.gov.br/dados/conjuntos-dados/cadastro-nacional-da-pessoa-juridica---cnpj&gt;
   a dcat:Dataset ;
-  dct:title "Cadastro Único"@pt-BR ;
-  dct:description "Conjunto de dados do Cadastro Único, cadastro do governo federal
-    que identifica e caracteriza famílias de baixa renda, para acesso a programas sociais."@pt-BR ;
-  dcat:keyword "cadastro unico", "programa social", "familias de baixa renda"@pt-BR ;
-  dct:creator  &lt;https://www.mc.br/&gt; ;
-  dct:publisher [
-    a foaf:Organization ;
-    foaf:name "Ministério da Cidadania - Dados"@pt-BR
+  dc:creator &lt;https://dados.gov.br/dados/organizacoes/visualizar/ministerio-da-fazenda&gt; ;
+  dc:title "Cadastro Nacional da Pessoa Jurídica - CNPJ" ;
+  dc:description "O Cadastro Nacional da Pessoa Jurídica (CNPJ) é um banco de dados gerenciado pela Secretaria Especial da Receita Federal do Brasil (RFB), que armazena informações cadastrais das pessoas jurídicas e outras entidades de interesse das administrações tributárias da União, dos Estados, do Distrito Federal e dos Municípios. A periodicidade de atualização dos dados é mensal. Data da última extração: 11/01/2026." ;
+  dcat:license &lt;https://opendefinition.org/licenses/cc-by&gt; ;
+  dc:accrualPeriodicity "MENSAL" ;
+  dc:accessRights "Público" ;
+  dc:publisher "RFB - Secretaria Especial da Receita Federal do Brasil" ;
+  dcat:contactPoint [
+    a vcard:Organization ;
+    vcard:hasEmail &lt;mailto:demandas.dicaj.df@rfb.gov.br&gt;
   ] ;
-  dct:license &lt;https://creativecommons.org/licenses/by/4.0/&gt; ;
-  dct:accrualPeriodicity "mensal"@pt-BR ;
+  dcat:keyword "CNPJ", "RFB", "cadastro CNPJ", "receita federal" ;
+  ns0:version "1" ;
+  dcat:theme "Economia e Finanças" ;
+  dc:modified "09/02/2026 10:36:06" ;
   dcat:distribution [
     a dcat:Distribution ;
-    dct:title "Arquivo com dados do Cadastro Único"@pt-BR ;
-    dct:format "CSV" ;
-    dcat:accessURL   &lt;https://data.gov.br/dataset/cadastro-unico/resource/cadastro-unico.csv&gt; ;
-    dcat:mediaType   "text/csv" ;
-    dcat:byteSize    10000 ;
-    spdx:checksumValue "SHA-256:f3123234-4567-8901-2345-678901234567"
-  ] ;
-  dcat:distribution [
+    dc:format &lt;https://www.iana.org/assignments/media-types/application/pdf&gt; ;
+    dc:title "Nota Técnica RFB/Cocad nº 47/2024" ;
+    dc:description "Trata da avaliação de confidencialidade das informações constantes nos Dados Abertos do Cadastro Nacional da Pessoa Jurídica (CNPJ)." ;
+    dc:type "DOCUMENTACAO" ;
+    dcat:accessURL &lt;https://www.gov.br/receitafederal/dados/nota_cocad_no_47_2024.pdf/&gt;
+  ], [
     a dcat:Distribution ;
-    dct:title "API consulta Cadastro Único"@pt-BR ;
-    dct:format "JSON" ;
-    dcat:accessURL &lt;https://api.data.gov.br/datasets/cadastro-unico&gt; ;
-    dcat:mediaType "application/json"
+    dc:format &lt;https://www.iana.org/assignments/media-types/application/pdf&gt; ;
+    dc:title "Nota Técnica RFB/Cocad Nº 86/2024" ;
+    dc:description "Altera a Nota Técnica RFB/Cocad nº 47, de 13 de maio de 2024, que trata da avaliação de confidencialidade das informações constantes nos Dados Abertos do Cadastro Nacional de Pessoa Jurídica (CNPJ)" ;
+    dc:type "DOCUMENTACAO" ;
+    dcat:accessURL &lt;https://www.gov.br/receitafederal/dados/nota-cocad-rfb-86-2024.pdf/&gt;
+  ], [
+    a dcat:Distribution ;
+    dc:format &lt;https://www.iana.org/assignments/media-types/application/pdf&gt; ;
+    dc:title "Dicionário de dados do CNPJ" ;
+    dc:description "Informações que possibilitam organizar, classificar, relacionar e inferir novos dados sobre o conjunto de dados do Cadastro Nacional da Pessoa Jurídica." ;
+    dc:type "DICIONARIO_DE_DADOS" ;
+    dcat:accessURL &lt;https://www.gov.br/receitafederal/dados/cnpj-metadados.pdf&gt;
+  ], [
+    a dcat:Distribution ;
+    dc:format &lt;https://www.iana.org/assignments/media-types/application/zip&gt; ;
+    dc:title "Inscrições no CNPJ" ;
+    dc:description "Inscrições no Cadastro Nacional da Pessoa Jurídica (CNPJ)." ;
+    dc:type "DADOS" ;
+    dcat:accessURL &lt;https://arquivos.receitafederal.gov.br/index.php/s/YggdBLfdninEJX9&gt;
+  ], [
+    a dcat:Distribution ;
+    dc:format &lt;https://www.iana.org/assignments/media-types/application/zip&gt; ;
+    dc:title "Regimes Tributários" ;
+    dc:description "Entidades inscritas no CNPJ e respectiva forma de tributação, conforme informado na Escrituração Contábil Fiscal (ECF)." ;
+    dc:type "DADOS" ;
+    dcat:accessURL &lt;https://arquivos.receitafederal.gov.br/index.php/s/MPPfFit7g7zdA8C&gt;
   ] .
+
+&lt;https://dados.gov.br/dados/organizacoes/visualizar/ministerio-da-fazenda&gt;
+  a foaf:Organization ;
+  foaf:name "MF - Ministério da Fazenda" .
     </pre>
   </section>
 

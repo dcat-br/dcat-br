@@ -48,13 +48,46 @@ Este arquivo lista as importações dos vocabulários controlados (SKOS) necess�
 
 Para validar um catálogo, pode ser necessário importar dados adicionais para o validador, como os vocabulários controlados. Estes devem ser obtidos dos locais apropriados.
 
-### Exemplo de uso com validador SHACL
+### Pré-requisito
 
 ```bash
-# Usando pyshacl (Python)
-pyshacl -s shapes.ttl -r range.ttl -i imports.ttl seu_catalogo.ttl
+pip install pyshacl rdflib
+```
 
-# Usando shaclvalidate (Java)
+### Script recomendado (vários arquivos SHACL)
+
+O DCAT-BR distribui as restrições em vários arquivos (`shapes.ttl`, `range.ttl`, etc.). Use o script na raiz do repositório:
+
+```bash
+# a partir da raiz do projeto DCAT-BR
+python scripts/validate-shacl.py docs/examples/portal-dataset.ttl
+
+# núcleo obrigatório (shapes.ttl)
+python scripts/validate-shacl.py docs/examples/portal-dataset.ttl --suite core
+
+# núcleo + intervalos de classe
+python scripts/validate-shacl.py docs/examples/portal-dataset.ttl --suite core+range
+
+# completo (inclui vocabulários MDR)
+python scripts/validate-shacl.py docs/examples/portal-dataset.ttl --suite full
+```
+
+Suites disponíveis: `core`, `core+range`, `recommended`, `full`.
+
+### PySHACL direto (apenas shapes.ttl)
+
+O PySHACL aceita **um** arquivo de shapes em `-s`. Para validar só o núcleo:
+
+```bash
+cd docs/shacl/1.0
+python -m pyshacl -s shapes.ttl -f human ../../examples/portal-dataset.ttl
+```
+
+**Atenção:** em `python -m pyshacl`, a opção `-i` define **inferência** (`none`, `rdfs`, `owlrl`, `both`), não um arquivo `imports.ttl`. Os arquivos `imports.ttl` e `mdr_imports.ttl` listam `owl:imports` para carregar ontologias em ferramentas que suportam importação de grafos.
+
+### Apache Jena (alternativa)
+
+```bash
 shaclvalidate.sh -datafile seu_catalogo.ttl -shapesfile shapes.ttl
 ```
 

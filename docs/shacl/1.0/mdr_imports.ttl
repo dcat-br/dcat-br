@@ -26,7 +26,7 @@
     #####################################################################
  
     # Temas
-    owl:imports <https://dcat-br.github.io/vcr-br/temas/themes.ttl> ;
+    owl:imports <https://dcat-br.github.io/vcr-br/temas/temas.ttl> ;
 
     # Tipo de recurso (VCR-TR)
     owl:imports <https://dcat-br.github.io/vcr-br/tipo-recurso/tipo-recurso.ttl> ;
@@ -46,12 +46,12 @@
     # Licença de uso (VCR-LU)
     owl:imports <https://dcat-br.github.io/vcr-br/VCR-LU/licenca-uso.ttl> ;
 
+    # Idioma (VCR-LN)
+    owl:imports <https://dcat-br.github.io/vcr-br/VCR-LN/language.ttl> ;
+    
     #####################################################################
     # Vocabulários Faltantes
     #####################################################################
-
-    # Idioma (VCR-LN)
-    #owl:imports <https://dcat-br.github.io/vcr-br/VCR-LN/language.ttl> ;
 
     # IBGE
     # owl:imports <https://dcat-br.github.io/vcr-br/IBGE/ibge.ttl> ;

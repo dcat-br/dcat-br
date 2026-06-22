@@ -132,28 +132,32 @@ dc:accrualPeriodicity
   dc:identifier "dcterms:accrualPeriodicity" ;
   rdfs:label "Periodicidade de Atualização"@pt-BR, "Accrual Periodicity"@en ;
   ns0:usageNote """
-            Deve indicar qual será a periodicidade com que o conjunto de dados será atualizado
-            (ex.: diária, mensal, trimestral, semestral, anual).
+            Deve indicar a periodicidade de atualização como IRI do vocabulário VCR-FR
+            (prefixo VCR: → https://dcat-br.github.io/vcr-br/VCR-FR/).
+            Exemplo (portal): dct:accrualPeriodicity VCR:ANUAL .
             (Selo de Qualidade: Bronze)
         """@pt-BR ;
   rdfs:comment """
-            Deve indicar qual será a periodicidade com que o conjunto de dados será atualizado.
+            Periodicidade de atualização como conceito do vocabulário controlado VCR-FR.
         """@pt-BR ;
   rdfs:domain dcat:Dataset ;
+  rdfs:range skos:Concept ;
   rdfs:range dc:Frequency .
 
 dc:spatial
   dc:identifier "dcterms:spatial" ;
   rdfs:label "Área Geográfica"@pt-BR, "Spatial / Geographical Coverage"@en ;
   ns0:usageNote """
-            Deve indicar a área geográfica coberta pelo conjunto de dados,
-            representando a extensão territorial à qual os dados se referem.
+            Deve indicar a cobertura espacial como IRI do vocabulário VCR-CE
+            (prefixo VC: → https://dcat-br.github.io/vcr-br/VCR-CE/).
+            Exemplo (portal): dct:spatial VC:INTERNACIONAL .
             (Selo de Qualidade: Ouro)
         """@pt-BR ;
   rdfs:comment """
-            A área geográfica coberta pelo conjunto de dados.
+            Cobertura geográfica como conceito do vocabulário controlado VCR-CE.
         """@pt-BR ;
   rdfs:domain dcat:Dataset ;
+  rdfs:range skos:Concept ;
   rdfs:range dc:Location .
 
 dc:temporal
@@ -202,30 +206,37 @@ dc:accessRights
   dc:identifier "dcterms:accessRights" ;
   rdfs:label "Observância Legal"@pt-BR, "Access Rights"@en, "Observância Legal do Recurso"@pt-BR ;
   ns0:usageNote """
-            Deve indicar se o conjunto de dados é público, restrito ou privado.
+            Deve indicar a observância legal como IRI do vocabulário SEI
+            (prefixo SEI: → https://dcat-br.github.io/vcr-br/SEI/).
+            Exemplo (portal): dct:accessRights SEI:1 .
         """@pt-BR, """
-            Deve indicar a visibilidade do Recurso, se a visibilidade é pública ou privada.
+            Deve indicar a visibilidade do Recurso como IRI do vocabulário SEI.
             (Selo de Qualidade: Sem Selo)
         """@pt-BR ;
   rdfs:comment """
-            Deve indicar se o conjunto de dados é público, restrito ou privado.
+            Observância legal / direitos de acesso como conceito do vocabulário controlado SEI.
         """@pt-BR, """
-            Indica a visibilidade do recurso (público ou privado).
+            Indica a visibilidade do recurso (público, restrito ou sigiloso) via vocabulário SEI.
         """@pt-BR ;
   rdfs:domain dcat:Resource, dcat:Distribution ;
+  rdfs:range skos:Concept ;
   rdfs:range dc:RightsStatement .
 
 dcat:contactPoint
   dc:identifier "dcat:contactPoint" ;
   rdfs:label "E-mail da Área Técnica Responsável"@pt-BR, "Contact Point"@en ;
   ns0:usageNote """
-            Deve indicar o e-mail de contato da área técnica responsável pelo conjunto de dados.
+            Deve indicar o e-mail de contato da área técnica responsável pelo conjunto de dados,
+            como vcard:Organization com vcard:fn (nome da área) e vcard:hasEmail (IRI mailto:).
+            Exemplo (formato portal dados.gov.br):
+            dcat:contactPoint [ a vcard:Organization ; vcard:fn "cgtec" ;
+                vcard:hasEmail <mailto:cgtec@cgu.gov.br> ] .
         """@pt-BR ;
   rdfs:comment """
-            Deve indicar o e-mail de contato da área técnica responsável pelo conjunto de dados.
+            Ponto de contato da área técnica responsável, serializado como vcard:Organization.
         """@pt-BR ;
   rdfs:domain dcat:Resource ;
-  rdfs:range vcard:Kind .
+  rdfs:range vcard:Organization .
 
 dc:creator
   dc:identifier "dcterms:creator" ;
@@ -791,14 +802,14 @@ dcat:servesDataset
   dc:identifier "spdx:checksumValue" ;
   rdfs:label "Valor de Verificação de Integridade"@pt-BR, "Checksum Value"@en ;
   ns0:usageNote """
-            Deve indicar um valor de resumo (checksum) codificado em hexadecimal minúsculo,
-            produzido usando um algoritmo específico.
+            Deve indicar um valor de resumo (checksum) como literal de texto,
+            associado ao algoritmo informado em spdx:algorithm.
         """@pt-BR ;
   rdfs:comment """
-            Valor do checksum em hexadecimal (minúsculo) associado ao algoritmo informado.
+            Valor do checksum como literal de texto (serialização do portal dados.gov.br).
         """@pt-BR ;
   rdfs:domain <http://spdx.org/rdf/terms#Checksum> ;
-  rdfs:range xsd:hexBinary .
+  rdfs:range rdfs:Literal .
 
 <http://purl.org/dcat-br/relacionadoODS>
   dc:identifier "dcatbr:relacionadoODS" ;
@@ -816,12 +827,15 @@ dcat:servesDataset
   dc:identifier "dcatbr:ods" ;
   rdfs:label "Objetivos de Desenvolvimento Sustentável (ODS)"@pt-BR, "Sustainable Development Goals (SDGs)"@en ;
   ns0:usageNote """
-            Caso o conjunto de dados seja relacionado a ODS, deve indicar um ou mais ODS associados.
+            Quando dcatbr:relacionadoODS é true, indicar um ou mais ODS associados.
+            Na serialização do portal, usa-se literal de texto com o nome do ODS
+            (ex.: "Ação contra a Mudança Global do Clima"); também aceita IRI skos:Concept.
         """@pt-BR ;
   rdfs:comment """
-            Lista de ODS associados ao conjunto de dados (recomenda-se vocabulário controlado SKOS).
+            ODS associados ao conjunto de dados: literal (portal) ou conceito SKOS.
         """@pt-BR ;
   rdfs:domain dcat:Resource ;
+  rdfs:range rdfs:Literal ;
   rdfs:range skos:Concept .
 
 <http://purl.org/dcat-br/dadosRacaEtnia>
@@ -850,13 +864,47 @@ dcat:servesDataset
 
 dcat:spatialResolutionInMeters
   dc:identifier "dcat:spatialResolutionInMeters" ;
-  rdfs:label "Granularidade Espacial"@pt-BR, "Spatial Resolution (Meters)"@en ;
+  rdfs:label "Granularidade Espacial"@pt-BR, "Spatial Granularity"@en ;
   ns0:usageNote """
-            Deve indicar o nível de granularidade espacial do conjunto de dados.
-            Refere-se ao nível de detalhamento/resolução com que áreas geográficas são representadas (em metros).
+            Deve indicar o nível de granularidade espacial do conjunto de dados
+            (ex.: MUNICIPAL, ESTADUAL, NACIONAL, INTERNACIONAL).
+            Na serialização do portal dados.gov.br, usa-se literal de texto
+            (dct:spatialResolutionInMeters) ou IRI de conceito do vocabulário VCR-CE.
+            (Selo de Qualidade: Ouro)
         """@pt-BR ;
   rdfs:comment """
-            Resolução espacial expressa em metros.
+            Nível administrativo de detalhamento geográfico dos dados.
+            Formatos aceitos: literal (portal), conceito SKOS (VCR-CE) ou xsd:decimal (DCAT).
         """@pt-BR ;
   rdfs:domain dcat:Resource ;
+  rdfs:range rdfs:Literal ;
+  rdfs:range skos:Concept ;
   rdfs:range xsd:decimal .
+
+dc:spatialResolutionInMeters
+  dc:identifier "dcterms:spatialResolutionInMeters" ;
+  rdfs:label "Granularidade Espacial (serialização portal)"@pt-BR, "Spatial Granularity (portal serialization)"@en ;
+  owl:equivalentProperty dcat:spatialResolutionInMeters ;
+  ns0:usageNote """
+            Propriedade usada na serialização RDF do portal dados.gov.br para granularidade espacial.
+            Equivalente a dcat:spatialResolutionInMeters. Valor tipicamente literal (ex.: "ESTADUAL").
+        """@pt-BR ;
+  rdfs:comment """
+            Alias de serialização do portal para dcat:spatialResolutionInMeters.
+        """@pt-BR ;
+  rdfs:domain dcat:Dataset ;
+  rdfs:range rdfs:Literal ;
+  rdfs:range skos:Concept ;
+  rdfs:range xsd:decimal .
+
+dc:created
+  dc:identifier "dcterms:created" ;
+  rdfs:label "Data de Criação do Registro"@pt-BR, "Record Creation Date"@en ;
+  ns0:usageNote """
+            Data e hora de criação do registro de metadados no catálogo (serialização do portal).
+        """@pt-BR ;
+  rdfs:comment """
+            Momento em que o conjunto de dados foi registrado no catálogo.
+        """@pt-BR ;
+  rdfs:domain dcat:Dataset ;
+  rdfs:range rdfs:Literal .
