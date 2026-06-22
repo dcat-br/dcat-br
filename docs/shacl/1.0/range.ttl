@@ -59,14 +59,18 @@
 
 :VCard_Shape
     a sh:NodeShape ;
-    rdfs:label "vCard"@pt-BR ;
-    rdfs:label "vCard"@en ;
+    rdfs:label "vCard (ponto de contato)"@pt-BR ;
+    rdfs:label "vCard (contact point)"@en ;
+    rdfs:comment "Formato portal: vcard:Organization com vcard:fn e vcard:hasEmail mailto:."@pt-BR ;
     sh:targetClass vcard:Organization ;
     sh:property [
         sh:path vcard:hasEmail ;
-        sh:class vcard:Email ;
-        sh:severity sh:Info ;
-        sh:message "Opcional: vcard:hasEmail pode apontar para um recurso vcard:Email (além de mailto:)."@pt-BR
+        sh:minCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:pattern "^mailto:" ;
+        sh:severity sh:Violation ;
+        sh:message "vcard:hasEmail deve ser um IRI mailto: (formato portal dados.gov.br)."@pt-BR ;
+        sh:message "vcard:hasEmail must be a mailto: IRI (dados.gov.br portal format)."@en
     ] .
 
 # -------------------------------------------------------------------------
@@ -80,14 +84,20 @@
     sh:targetClass dcat:DataService ;
     sh:property [
         sh:path dct:accessRights ;
-        sh:or ( [ sh:class dct:RightsStatement ] [ sh:class skos:Concept ] ) ;
+        sh:or (
+            [ sh:class dct:RightsStatement ]
+            [ sh:class skos:Concept ]
+            [ sh:node :SEI_VocabularyIRI_Shape ]
+        ) ;
         sh:severity sh:Violation ;
-        sh:message "dct:accessRights (DataService) deve apontar para dct:RightsStatement ou skos:Concept (ex.: vocabulário SEI)."@pt-BR
+        sh:message "dct:accessRights (DataService) deve ser IRI do vocabulário SEI (ex.: SEI:1) ou skos:Concept."@pt-BR ;
+        sh:message "dct:accessRights (DataService) must be an SEI vocabulary IRI (e.g. SEI:1) or skos:Concept."@en
     ], [
         sh:path dcat:contactPoint ;
-        sh:class vcard:Kind ;
+        sh:class vcard:Organization ;
         sh:severity sh:Violation ;
-        sh:message "dcat:contactPoint (DataService) deve apontar para vcard:Kind (ex.: vcard:Organization)."@pt-BR
+        sh:message "dcat:contactPoint (DataService) deve apontar para vcard:Organization (formato portal: vcard:fn + vcard:hasEmail mailto:)."@pt-BR ;
+        sh:message "dcat:contactPoint (DataService) must point to vcard:Organization (portal format: vcard:fn + mailto: vcard:hasEmail)."@en
     ], [
         sh:path dcat:landingPage ;
         sh:class foaf:Document ;
@@ -126,29 +136,42 @@
     sh:targetClass dcat:Dataset ;
     sh:property [
         sh:path dct:accessRights ;
-        sh:or ( [ sh:class dct:RightsStatement ] [ sh:class skos:Concept ] ) ;
+        sh:or (
+            [ sh:class dct:RightsStatement ]
+            [ sh:class skos:Concept ]
+            [ sh:node :SEI_VocabularyIRI_Shape ]
+        ) ;
         sh:severity sh:Violation ;
-        sh:message "dct:accessRights (Dataset) deve apontar para dct:RightsStatement ou skos:Concept (ex.: vocabulário SEI)."@pt-BR
+        sh:message "dct:accessRights (Dataset) deve ser IRI do vocabulário SEI (ex.: SEI:1) ou skos:Concept."@pt-BR ;
+        sh:message "dct:accessRights (Dataset) must be an SEI vocabulary IRI (e.g. SEI:1) or skos:Concept."@en
     ], [
         sh:path dct:accrualPeriodicity ;
-        sh:class dct:Frequency ;
+        sh:or (
+            [ sh:class dct:Frequency ]
+            [ sh:class skos:Concept ]
+            [ sh:node :VCRFR_VocabularyIRI_Shape ]
+        ) ;
         sh:severity sh:Violation ;
-        sh:message "dct:accrualPeriodicity (Dataset) deve apontar para dct:Frequency."@pt-BR
+        sh:message "dct:accrualPeriodicity (Dataset) deve ser IRI do vocabulário VCR-FR (ex.: VCR:ANUAL) ou dct:Frequency."@pt-BR ;
+        sh:message "dct:accrualPeriodicity (Dataset) must be a VCR-FR vocabulary IRI (e.g. VCR:ANUAL) or dct:Frequency."@en
     ], [
         sh:path dcat:contactPoint ;
-        sh:class vcard:Kind ;
+        sh:class vcard:Organization ;
         sh:severity sh:Violation ;
-        sh:message "dcat:contactPoint (Dataset) deve apontar para vcard:Kind (ex.: vcard:Organization)."@pt-BR
+        sh:message "dcat:contactPoint (Dataset) deve apontar para vcard:Organization (formato portal: vcard:fn + vcard:hasEmail mailto:)."@pt-BR ;
+        sh:message "dcat:contactPoint (Dataset) must point to vcard:Organization (portal format: vcard:fn + mailto: vcard:hasEmail)."@en
     ], [
         sh:path dct:creator ;
-        sh:class foaf:Agent ;
+        sh:or ( [ sh:class foaf:Agent ] [ sh:class foaf:Organization ] ) ;
         sh:severity sh:Violation ;
-        sh:message "dct:creator (Dataset) deve apontar para foaf:Agent."@pt-BR
+        sh:message "dct:creator (Dataset) deve apontar para foaf:Agent ou foaf:Organization (ex.: órgão SIORG)."@pt-BR ;
+        sh:message "dct:creator (Dataset) must point to foaf:Agent or foaf:Organization (e.g. SIORG organization)."@en
     ], [
         sh:path dct:publisher ;
-        sh:class foaf:Agent ;
+        sh:or ( [ sh:class foaf:Agent ] [ sh:class foaf:Organization ] ) ;
         sh:severity sh:Violation ;
-        sh:message "dct:publisher (Dataset) deve apontar para foaf:Agent."@pt-BR
+        sh:message "dct:publisher (Dataset) deve apontar para foaf:Agent ou foaf:Organization (ex.: área técnica responsável)."@pt-BR ;
+        sh:message "dct:publisher (Dataset) must point to foaf:Agent or foaf:Organization (e.g. responsible technical unit)."@en
     ], [
         sh:path dcat:distribution ;
         sh:class dcat:Distribution ;
@@ -156,9 +179,26 @@
         sh:message "dcat:distribution (Dataset) deve apontar para dcat:Distribution."@pt-BR
     ], [
         sh:path dct:spatial ;
-        sh:class dct:Location ;
+        sh:or (
+            [ sh:class dct:Location ]
+            [ sh:class skos:Concept ]
+            [ sh:node :VCRCE_VocabularyIRI_Shape ]
+        ) ;
         sh:severity sh:Violation ;
-        sh:message "dct:spatial (Dataset) deve apontar para dct:Location."@pt-BR
+        sh:message "dct:spatial (Dataset) deve ser IRI do vocabulário VCR-CE (ex.: VC:INTERNACIONAL) ou dct:Location."@pt-BR ;
+        sh:message "dct:spatial (Dataset) must be a VCR-CE vocabulary IRI (e.g. VC:INTERNACIONAL) or dct:Location."@en
+    ], [
+        sh:path dcat:spatialResolutionInMeters ;
+        sh:or ( [ sh:class skos:Concept ] [ sh:datatype xsd:decimal ] [ sh:nodeKind sh:Literal ] ) ;
+        sh:severity sh:Violation ;
+        sh:message "dcat:spatialResolutionInMeters (Dataset) deve ser literal (portal), skos:Concept (VCR-CE) ou xsd:decimal."@pt-BR ;
+        sh:message "dcat:spatialResolutionInMeters (Dataset) must be a literal (portal), skos:Concept (VCR-CE) or xsd:decimal."@en
+    ], [
+        sh:path dct:spatialResolutionInMeters ;
+        sh:or ( [ sh:class skos:Concept ] [ sh:datatype xsd:decimal ] [ sh:nodeKind sh:Literal ] ) ;
+        sh:severity sh:Violation ;
+        sh:message "dct:spatialResolutionInMeters (Dataset) deve ser literal (portal), skos:Concept ou xsd:decimal."@pt-BR ;
+        sh:message "dct:spatialResolutionInMeters (Dataset) must be a literal (portal), skos:Concept or xsd:decimal."@en
     ], [
         sh:path dct:temporal ;
         sh:class dct:PeriodOfTime ;
@@ -217,9 +257,10 @@
         sh:message "spdx:checksum (Distribution) deve apontar para spdx:Checksum."@pt-BR
     ], [
         sh:path dct:format ;
-        sh:class dct:MediaTypeOrExtent ;
+        sh:or ( [ sh:class dct:MediaTypeOrExtent ] [ sh:nodeKind sh:IRI ] ) ;
         sh:severity sh:Violation ;
-        sh:message "dct:format (Distribution) deve apontar para dct:MediaTypeOrExtent."@pt-BR
+        sh:message "dct:format (Distribution) deve apontar para dct:MediaTypeOrExtent ou ser um IRI (ex.: media type IANA)."@pt-BR ;
+        sh:message "dct:format (Distribution) must point to dct:MediaTypeOrExtent or be an IRI (e.g. IANA media type)."@en
     ], [
         sh:path dct:language ;
         sh:class dct:LinguisticSystem ;
@@ -247,9 +288,10 @@
         sh:message "dct:rights (Distribution) deve apontar para dct:RightsStatement."@pt-BR
     ], [
         sh:path dct:type ;
-        sh:class skos:Concept ;
+        sh:or ( [ sh:class skos:Concept ] [ sh:nodeKind sh:IRI ] ) ;
         sh:severity sh:Violation ;
-        sh:message "dct:type (Distribution) deve apontar para skos:Concept."@pt-BR
+        sh:message "dct:type (Distribution) deve apontar para skos:Concept ou ser um IRI de vocabulário controlado."@pt-BR ;
+        sh:message "dct:type (Distribution) must point to skos:Concept or be a controlled vocabulary IRI."@en
     ], [
         sh:path foaf:page ;
         sh:class foaf:Document ;

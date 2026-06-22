@@ -27,7 +27,6 @@ DCAT-BR/
 │   │       ├── dcat-br.pdf
 │   │       └── dcat-br.rdf
 │   ├── shacl/              # SHACL files
-│   └── vocabularies/       # Controlled vocabularies
 └── README.md               # This file
 ```
 

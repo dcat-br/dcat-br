@@ -22,7 +22,7 @@
   
   <!-- Vocabulários -->
   <url>
-    <loc>https://dcat-br.github.io/dcat-br/docs/vocabularies/</loc>
+    <loc>https://dcat-br.github.io/vcr-br/</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -30,7 +30,7 @@
   
   <!-- Vocabulário de Formatos -->
   <url>
-    <loc>https://dcat-br.github.io/dcat-br/docs/vocabularies/formato/</loc>
+    <loc>https://dcat-br.github.io/vcr-br/formato/</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

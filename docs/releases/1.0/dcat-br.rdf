@@ -208,17 +208,19 @@
         <rdfs:label xml:lang="en">Accrual Periodicity</rdfs:label>
 
         <vann:usageNote xml:lang="pt-BR">
-            Deve indicar qual será a periodicidade com que o conjunto de dados será atualizado
-            (ex.: diária, mensal, trimestral, semestral, anual).
+            Deve indicar a periodicidade de atualização como IRI do vocabulário VCR-FR
+            (prefixo VCR: → https://dcat-br.github.io/vcr-br/VCR-FR/).
+            Exemplo (portal): dct:accrualPeriodicity VCR:ANUAL .
             (Selo de Qualidade: Bronze)
         </vann:usageNote>
 
         <rdfs:comment xml:lang="pt-BR">
-            Deve indicar qual será a periodicidade com que o conjunto de dados será atualizado.
+            Periodicidade de atualização como conceito do vocabulário controlado VCR-FR.
         </rdfs:comment>
 
         <!-- Domínio e alcance (Variação) -->
         <rdfs:domain rdf:resource="&dcat;Dataset"/>
+        <rdfs:range rdf:resource="&skos;Concept"/>
         <rdfs:range rdf:resource="&dcterms;Frequency"/>
     </rdf:Description>
 
@@ -230,17 +232,19 @@
         <rdfs:label xml:lang="en">Spatial / Geographical Coverage</rdfs:label>
 
         <vann:usageNote xml:lang="pt-BR">
-            Deve indicar a área geográfica coberta pelo conjunto de dados,
-            representando a extensão territorial à qual os dados se referem.
+            Deve indicar a cobertura espacial como IRI do vocabulário VCR-CE
+            (prefixo VC: → https://dcat-br.github.io/vcr-br/VCR-CE/).
+            Exemplo (portal): dct:spatial VC:INTERNACIONAL .
             (Selo de Qualidade: Ouro)
         </vann:usageNote>
 
         <rdfs:comment xml:lang="pt-BR">
-            A área geográfica coberta pelo conjunto de dados.
+            Cobertura geográfica como conceito do vocabulário controlado VCR-CE.
         </rdfs:comment>
 
         <!-- Domínio e alcance (Variação) -->
         <rdfs:domain rdf:resource="&dcat;Dataset"/>
+        <rdfs:range rdf:resource="&skos;Concept"/>
         <rdfs:range rdf:resource="&dcterms;Location"/>
     </rdf:Description>
     
@@ -315,15 +319,18 @@
         <rdfs:label xml:lang="en">Access Rights</rdfs:label>
 
         <vann:usageNote xml:lang="pt-BR">
-            Deve indicar se o conjunto de dados é público, restrito ou privado.
+            Deve indicar a observância legal como IRI do vocabulário SEI
+            (prefixo SEI: → https://dcat-br.github.io/vcr-br/SEI/).
+            Exemplo (portal): dct:accessRights SEI:1 .
         </vann:usageNote>
 
         <rdfs:comment xml:lang="pt-BR">
-            Deve indicar se o conjunto de dados é público, restrito ou privado.
+            Observância legal / direitos de acesso como conceito do vocabulário controlado SEI.
         </rdfs:comment>
 
         <!-- Domínio e alcance (Variação) -->
         <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <rdfs:range rdf:resource="&skos;Concept"/>
         <rdfs:range rdf:resource="&dcterms;RightsStatement"/>
     </rdf:Description>
 
@@ -335,16 +342,20 @@
         <rdfs:label xml:lang="en">Contact Point</rdfs:label>
 
         <vann:usageNote xml:lang="pt-BR">
-            Deve indicar o e-mail de contato da área técnica responsável pelo conjunto de dados.
+            Deve indicar o e-mail de contato da área técnica responsável pelo conjunto de dados,
+            como vcard:Organization com vcard:fn (nome da área) e vcard:hasEmail (IRI mailto:).
+            Exemplo (formato portal dados.gov.br):
+            dcat:contactPoint [ a vcard:Organization ; vcard:fn "cgtec" ;
+                vcard:hasEmail &lt;mailto:cgtec@cgu.gov.br&gt; ] .
         </vann:usageNote>
 
         <rdfs:comment xml:lang="pt-BR">
-            Deve indicar o e-mail de contato da área técnica responsável pelo conjunto de dados.
+            Ponto de contato da área técnica responsável, serializado como vcard:Organization.
         </rdfs:comment>
 
         <!-- Domínio e alcance (Variação) -->
         <rdfs:domain rdf:resource="&dcat;Resource"/>
-        <rdfs:range rdf:resource="&vcard;Kind"/>
+        <rdfs:range rdf:resource="&vcard;Organization"/>
     </rdf:Description>
 
     <!-- Organização -->
@@ -1355,17 +1366,17 @@
         <rdfs:label xml:lang="en">Checksum Value</rdfs:label>
 
         <vann:usageNote xml:lang="pt-BR">
-            Deve indicar um valor de resumo (checksum) codificado em hexadecimal minúsculo,
-            produzido usando um algoritmo específico.
+            Deve indicar um valor de resumo (checksum) como literal de texto,
+            associado ao algoritmo informado em spdx:algorithm.
         </vann:usageNote>
 
         <rdfs:comment xml:lang="pt-BR">
-            Valor do checksum em hexadecimal (minúsculo) associado ao algoritmo informado.
+            Valor do checksum como literal de texto (serialização do portal dados.gov.br).
         </rdfs:comment>
 
         <!-- Domínio e alcance (Variação) -->
         <rdfs:domain rdf:resource="&spdx;Checksum"/>
-        <rdfs:range rdf:resource="&xsd;hexBinary"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
     </rdf:Description>
 
     <!-- ============ -->
@@ -1398,14 +1409,17 @@
         <rdfs:label xml:lang="en">Sustainable Development Goals (SDGs)</rdfs:label>
 
         <vann:usageNote xml:lang="pt-BR">
-            Caso o conjunto de dados seja relacionado a ODS, deve indicar um ou mais ODS associados.
+            Quando dcatbr:relacionadoODS é true, indicar um ou mais ODS associados.
+            Na serialização do portal, usa-se literal de texto com o nome do ODS
+            (ex.: "Ação contra a Mudança Global do Clima"); também aceita IRI skos:Concept.
         </vann:usageNote>
 
         <rdfs:comment xml:lang="pt-BR">
-            Lista de ODS associados ao conjunto de dados (recomenda-se vocabulário controlado SKOS).
+            ODS associados ao conjunto de dados: literal (portal) ou conceito SKOS.
         </rdfs:comment>
 
         <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
         <rdfs:range rdf:resource="&skos;Concept"/>
     </rdf:Description>
 
@@ -1452,19 +1466,68 @@
         <dct:identifier>dcat:spatialResolutionInMeters</dct:identifier>
 
         <rdfs:label xml:lang="pt-BR">Granularidade Espacial</rdfs:label>
-        <rdfs:label xml:lang="en">Spatial Resolution (Meters)</rdfs:label>
+        <rdfs:label xml:lang="en">Spatial Granularity</rdfs:label>
 
         <vann:usageNote xml:lang="pt-BR">
-            Deve indicar o nível de granularidade espacial do conjunto de dados.
-            Refere-se ao nível de detalhamento/resolução com que áreas geográficas são representadas (em metros).
+            Deve indicar o nível de granularidade espacial do conjunto de dados
+            (ex.: MUNICIPAL, ESTADUAL, NACIONAL, INTERNACIONAL).
+            Na serialização do portal dados.gov.br, usa-se literal de texto
+            (dct:spatialResolutionInMeters) ou IRI de conceito do vocabulário VCR-CE.
+            (Selo de Qualidade: Ouro)
         </vann:usageNote>
 
         <rdfs:comment xml:lang="pt-BR">
-            Resolução espacial expressa em metros.
+            Nível administrativo de detalhamento geográfico dos dados.
+            Formatos aceitos: literal (portal), conceito SKOS (VCR-CE) ou xsd:decimal (DCAT).
         </rdfs:comment>
 
         <rdfs:domain rdf:resource="&dcat;Resource"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+        <rdfs:range rdf:resource="&skos;Concept"/>
         <rdfs:range rdf:resource="&xsd;decimal"/>
+    </rdf:Description>
+
+    <!-- Granularidade Espacial — serialização portal (alias) -->
+    <rdf:Description rdf:about="&dct;spatialResolutionInMeters">
+        <dct:identifier>dcterms:spatialResolutionInMeters</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Granularidade Espacial (serialização portal)</rdfs:label>
+        <rdfs:label xml:lang="en">Spatial Granularity (portal serialization)</rdfs:label>
+
+        <owl:equivalentProperty rdf:resource="&dcat;spatialResolutionInMeters"/>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Propriedade usada na serialização RDF do portal dados.gov.br para granularidade espacial.
+            Equivalente a dcat:spatialResolutionInMeters. Valor tipicamente literal (ex.: "ESTADUAL").
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Alias de serialização do portal para dcat:spatialResolutionInMeters.
+        </rdfs:comment>
+
+        <rdfs:domain rdf:resource="&dcat;Dataset"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+        <rdfs:range rdf:resource="&skos;Concept"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </rdf:Description>
+
+    <!-- Data de criação do registro no catálogo (portal) -->
+    <rdf:Description rdf:about="&dct;created">
+        <dct:identifier>dcterms:created</dct:identifier>
+
+        <rdfs:label xml:lang="pt-BR">Data de Criação do Registro</rdfs:label>
+        <rdfs:label xml:lang="en">Record Creation Date</rdfs:label>
+
+        <vann:usageNote xml:lang="pt-BR">
+            Data e hora de criação do registro de metadados no catálogo (serialização do portal).
+        </vann:usageNote>
+
+        <rdfs:comment xml:lang="pt-BR">
+            Momento em que o conjunto de dados foi registrado no catálogo.
+        </rdfs:comment>
+
+        <rdfs:domain rdf:resource="&dcat;Dataset"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
     </rdf:Description>
     
 </rdf:RDF>

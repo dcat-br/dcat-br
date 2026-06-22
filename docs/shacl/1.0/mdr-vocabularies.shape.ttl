@@ -47,7 +47,7 @@
     rdfs:label "Restrição de Tema"@pt-BR ;
     rdfs:label "Theme Restriction"@en ;
     sh:property [
-        sh:hasValue <https://dcat-br.github.io/dcat-br/docs/vocabularies/themes/> ;
+        sh:hasValue <https://dcat-br.github.io/vcr-br/temas/> ;
         sh:minCount 1 ;
         sh:nodeKind sh:IRI ;
         sh:path skos:inScheme
@@ -61,35 +61,7 @@
     rdfs:label "Restrição de Tipo de Recurso"@pt-BR ;
     rdfs:label "Resource Type Restriction"@en ;
     sh:property [
-        sh:hasValue <https://dcat-br.github.io/dcat-br/docs/vocabularies/tipo-recurso/> ;
-        sh:minCount 1 ;
-        sh:nodeKind sh:IRI ;
-        sh:path skos:inScheme
-    ] .
-
-# Cobertura Espacial (dct:spatial) - VCR-CE
-:SpatialRestriction
-    a sh:NodeShape ;
-    rdfs:comment "Restrição de cobertura espacial"@pt-BR ;
-    rdfs:comment "Spatial restriction"@en ;
-    rdfs:label "Restrição de Cobertura Espacial"@pt-BR ;
-    rdfs:label "Spatial Restriction"@en ;
-    sh:property [
-        sh:hasValue <https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-CE/> ;
-        sh:minCount 1 ;
-        sh:nodeKind sh:IRI ;
-        sh:path skos:inScheme
-    ] .
-
-# Periodicidade de Atualização (dct:accrualPeriodicity) - VCR-FR
-:PeriodicityRestriction
-    a sh:NodeShape ;
-    rdfs:comment "Restrição de periodicidade de atualização"@pt-BR ;
-    rdfs:comment "Accrual periodicity restriction"@en ;
-    rdfs:label "Restrição de Periodicidade"@pt-BR ;
-    rdfs:label "Periodicity Restriction"@en ;
-    sh:property [
-        sh:hasValue <https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-FR> ;
+        sh:hasValue <https://dcat-br.github.io/vcr-br/tipo-recurso/> ;
         sh:minCount 1 ;
         sh:nodeKind sh:IRI ;
         sh:path skos:inScheme
@@ -98,16 +70,53 @@
 # Observância Legal / Direitos de Acesso (dct:accessRights) - SEI
 :AccessRightRestriction
     a sh:NodeShape ;
-    rdfs:comment "Restrição de observância legal / direitos de acesso"@pt-BR ;
-    rdfs:comment "Access rights restriction"@en ;
+    rdfs:comment "Restrição de observância legal / direitos de acesso (IRI SEI)"@pt-BR ;
+    rdfs:comment "Access rights restriction (SEI IRI)"@en ;
     rdfs:label "Restrição de Observância Legal"@pt-BR ;
     rdfs:label "Access Rights Restriction"@en ;
-    sh:property [
-        sh:hasValue <https://dcat-br.github.io/dcat-br/docs/vocabularies/SEI/esquema> ;
-        sh:minCount 1 ;
-        sh:nodeKind sh:IRI ;
-        sh:path skos:inScheme
-    ] .
+    sh:or (
+        [ sh:node :SEI_VocabularyIRI_Shape ]
+        [ sh:property [
+            sh:hasValue <https://dcat-br.github.io/vcr-br/SEI/esquema> ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path skos:inScheme
+        ] ]
+    ) .
+
+# Periodicidade (dct:accrualPeriodicity) - VCR-FR
+:PeriodicityRestriction
+    a sh:NodeShape ;
+    rdfs:comment "Restrição de periodicidade (IRI VCR-FR)"@pt-BR ;
+    rdfs:comment "Accrual periodicity restriction (VCR-FR IRI)"@en ;
+    rdfs:label "Restrição de Periodicidade"@pt-BR ;
+    rdfs:label "Periodicity Restriction"@en ;
+    sh:or (
+        [ sh:node :VCRFR_VocabularyIRI_Shape ]
+        [ sh:property [
+            sh:hasValue <https://dcat-br.github.io/vcr-br/VCR-FR> ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path skos:inScheme
+        ] ]
+    ) .
+
+# Cobertura Espacial (dct:spatial) - VCR-CE
+:SpatialRestriction
+    a sh:NodeShape ;
+    rdfs:comment "Restrição de cobertura espacial (IRI VCR-CE)"@pt-BR ;
+    rdfs:comment "Spatial restriction (VCR-CE IRI)"@en ;
+    rdfs:label "Restrição de Cobertura Espacial"@pt-BR ;
+    rdfs:label "Spatial Restriction"@en ;
+    sh:or (
+        [ sh:node :VCRCE_VocabularyIRI_Shape ]
+        [ sh:property [
+            sh:hasValue <https://dcat-br.github.io/vcr-br/VCR-CE/> ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path skos:inScheme
+        ] ]
+    ) .
 
 # Formato de Arquivo (dct:format) - Vocabulário DCAT-BR
 :FormatRestriction
@@ -117,7 +126,7 @@
     rdfs:label "Restrição de Formato"@pt-BR ;
     rdfs:label "Format Restriction"@en ;
     sh:property [
-        sh:hasValue <https://dcat-br.github.io/dcat-br/docs/vocabularies/formato/esquema> ;
+        sh:hasValue <https://dcat-br.github.io/vcr-br/formato/esquema> ;
         sh:minCount 1 ;
         sh:nodeKind sh:IRI ;
         sh:path skos:inScheme
@@ -131,7 +140,7 @@
     rdfs:label "Restrição de Licença de Uso"@pt-BR ;
     rdfs:label "License Restriction"@en ;
     sh:property [
-        sh:hasValue <https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-LU/esquema> ;
+        sh:hasValue <https://dcat-br.github.io/vcr-br/VCR-LU/esquema> ;
         sh:minCount 1 ;
         sh:nodeKind sh:IRI ;
         sh:path skos:inScheme
@@ -162,16 +171,44 @@
         sh:node :ThemeRestriction ;
         sh:nodeKind sh:IRI ;
         sh:path dcat:theme ;
-        sh:description "Múltiplos temas podem ser usados, mas pelo menos um conceito de <https://dcat-br.github.io/dcat-br/docs/vocabularies/themes/> deve estar presente."@pt-BR ;
-        sh:description "Multiple themes can be used but at least one concept of <https://dcat-br.github.io/dcat-br/docs/vocabularies/themes/> should be present."@en ;
+        sh:description "Múltiplos temas podem ser usados, mas pelo menos um conceito de <https://dcat-br.github.io/vcr-br/temas/> deve estar presente."@pt-BR ;
+        sh:description "Multiple themes can be used but at least one concept of <https://dcat-br.github.io/vcr-br/temas/> should be present."@en ;
         sh:severity sh:Warning
     ], [
         sh:node :ResourceTypeRestriction ;
         sh:nodeKind sh:IRI ;
         sh:path dct:type ;
-        sh:description "Múltiplos tipos podem ser usados, mas é recomendado fornecer pelo menos um conceito de <https://dcat-br.github.io/dcat-br/docs/vocabularies/tipo-recurso/>."@pt-BR ;
-        sh:description "Multiple types can be used but it is recommended to also provide at least one concept of <https://dcat-br.github.io/dcat-br/docs/vocabularies/tipo-recurso/> should be present."@en ;
+        sh:description "Múltiplos tipos podem ser usados, mas é recomendado fornecer pelo menos um conceito de <https://dcat-br.github.io/vcr-br/tipo-recurso/>."@pt-BR ;
+        sh:description "Multiple types can be used but it is recommended to also provide at least one concept of <https://dcat-br.github.io/vcr-br/tipo-recurso/> should be present."@en ;
         sh:severity sh:Warning
+    ], [
+        sh:node :SpatialRestriction ;
+        sh:nodeKind sh:IRI ;
+        sh:path dct:spatial ;
+        sh:description "A cobertura espacial deve usar um conceito do vocabulário VCR-CE de cobertura espacial."@pt-BR ;
+        sh:description "Spatial coverage should use a concept from the VCR-CE spatial coverage vocabulary."@en ;
+        sh:severity sh:Warning
+    ], [
+        sh:node :SpatialRestriction ;
+        sh:nodeKind sh:IRI ;
+        sh:path dcat:spatialResolutionInMeters ;
+        sh:description "Recomendado: granularidade espacial como conceito IRI do vocabulário VCR-CE (o portal também aceita literal, ex.: ESTADUAL)."@pt-BR ;
+        sh:description "Recommended: spatial granularity as VCR-CE concept IRI (portal also accepts literal, e.g. ESTADUAL)."@en ;
+        sh:severity sh:Info
+    ], [
+        sh:node :SpatialRestriction ;
+        sh:nodeKind sh:IRI ;
+        sh:path dct:spatialResolutionInMeters ;
+        sh:description "Recomendado: usar IRI VCR-CE em vez de literal na propriedade dct:spatialResolutionInMeters."@pt-BR ;
+        sh:description "Recommended: use VCR-CE IRI instead of literal for dct:spatialResolutionInMeters."@en ;
+        sh:severity sh:Info
+    ], [
+        sh:node :LicenseRestriction ;
+        sh:nodeKind sh:IRI ;
+        sh:path dct:license ;
+        sh:description "Recomenda-se usar um conceito do vocabulário VCR-LU; IRIs Creative Commons (ex.: CC BY 4.0) também são aceitos."@pt-BR ;
+        sh:description "A concept from VCR-LU is recommended; Creative Commons IRIs (e.g. CC BY 4.0) are also accepted."@en ;
+        sh:severity sh:Info
     ] ;
     sh:targetClass dcat:Dataset .
 

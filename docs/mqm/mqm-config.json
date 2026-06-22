@@ -113,7 +113,7 @@
             "description": "Verifica se algum dos temas utilizados pertence ao VCR (Vocabulário Controlado de Referência). Princípios FAIR: F4, I2.",
             "weight": 30,
             "vocabularies": [
-              "https://dcat-br.github.io/dcat-br/docs/vocabularies/themes/themes.csv"
+              "https://dcat-br.github.io/vcr-br/temas/themes.csv"
             ]
           }
         ]
@@ -134,7 +134,7 @@
               "minCount": 1
             },
             "vocabularies": [
-              "https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-CE/cobertura-espacial.csv"
+              "https://dcat-br.github.io/vcr-br/VCR-CE/cobertura-espacial.csv"
             ]
           }
         ]
@@ -202,7 +202,7 @@
             "description": "Formato pertence ao vocabulário controlado (ex: lista IANA). Princípios FAIR: I1, I2.",
             "weight": 15,
             "vocabularies": [
-              "https://dcat-br.github.io/dcat-br/docs/vocabularies/formato/formatos.csv"
+              "https://dcat-br.github.io/vcr-br/formato/formatos.csv"
             ]
           },
           {
@@ -212,7 +212,7 @@
             "description": "Classificação por VCR (não proprietário). Princípios FAIR: I1.",
             "weight": 40,
             "vocabularies": [
-              "https://dcat-br.github.io/dcat-br/docs/vocabularies/formato/non_proprietary_formats.csv"
+              "https://dcat-br.github.io/vcr-br/formato/non_proprietary_formats.csv"
             ]
           },
           {
@@ -222,7 +222,7 @@
             "description": "Classificação por VCR (machine-readable). Princípios FAIR: I1.",
             "weight": 40,
             "vocabularies": [
-              "https://dcat-br.github.io/dcat-br/docs/vocabularies/formato/machine_readable_formats.csv"
+              "https://dcat-br.github.io/vcr-br/formato/machine_readable_formats.csv"
             ]
           }
         ]
@@ -240,7 +240,7 @@
             "description": "Formato em VCR com mapeamento consistente para mediaType (ex.: CSV→text/csv). Penaliza divergências (ex.: format=CSV + mediaType=application/pdf). Princípios FAIR: I1, I2.",
             "weight": 15,
             "vocabularies": [
-              "https://dcat-br.github.io/dcat-br/docs/vocabularies/formato/formatos.csv"
+              "https://dcat-br.github.io/vcr-br/formato/formatos.csv"
             ]
           }
         ]
@@ -260,7 +260,7 @@
             "description": "Licença em vocabulário controlado. Princípios FAIR: R1.1.",
             "weight": 30,
             "vocabularies": [
-              "https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-LU/licensa-uso.csv"
+              "https://dcat-br.github.io/vcr-br/VCR-LU/licensa-uso.csv"
             ]
           }
         ]
@@ -278,7 +278,7 @@
             "description": "Valor em vocabulário controlado (SEI). Princípios FAIR: R1.1, R1.",
             "weight": 15,
             "vocabularies": [
-              "https://dcat-br.github.io/dcat-br/docs/vocabularies/SEI/sei.csv"
+              "https://dcat-br.github.io/vcr-br/SEI/sei.csv"
             ]
           }
         ]
@@ -337,7 +337,7 @@
               "minCount": 1
             },
             "vocabularies": [
-              "https://dcat-br.github.io/dcat-br/docs/vocabularies/VCR-CE/cobertura-espacial.csv"
+              "https://dcat-br.github.io/vcr-br/VCR-CE/cobertura-espacial.csv"
             ]
           }
         ]
