@@ -488,11 +488,10 @@
     ], [
         sh:path dct:accessRights ;
         sh:minCount 1 ;
-        sh:maxCount 1 ;
         sh:node :SEI_VocabularyIRI_Shape ;
         sh:severity sh:Violation ;
-        sh:message "dct:accessRights é obrigatório e deve ser um IRI do vocabulário SEI (ex.: SEI:1 → …/SEI/1)."@pt-BR ;
-        sh:message "dct:accessRights is required and must be an SEI vocabulary IRI (e.g. SEI:1 → …/SEI/1)."@en
+        sh:message "dct:accessRights é obrigatório e deve ser um IRI do vocabulário SEI (ex.: SEI:1 → …/SEI/1). Pode haver mais de um valor SEI."@pt-BR ;
+        sh:message "dct:accessRights is required and must be an SEI vocabulary IRI (e.g. SEI:1 → …/SEI/1). Multiple SEI values are allowed."@en
     ], [
         sh:path dct:accrualPeriodicity ;
         sh:minCount 1 ;

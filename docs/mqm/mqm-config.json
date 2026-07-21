@@ -249,7 +249,7 @@
     "reutilizabilidade": [
       {
         "id": "dct_license_vocabulary",
-        "property": "dct:license",
+        "property": "dcterms:license",
         "dimension": "reutilizabilidade",
         "evaluateOn": "dataset",
         "validations": [
