@@ -47,7 +47,7 @@
     rdfs:label "Restrição de Tema"@pt-BR ;
     rdfs:label "Theme Restriction"@en ;
     sh:property [
-        sh:hasValue <https://dcat-br.github.io/vcr-br/temas/> ;
+        sh:hasValue <https://dcat-br.github.io/vcr-br/themes/> ;
         sh:minCount 1 ;
         sh:nodeKind sh:IRI ;
         sh:path skos:inScheme
@@ -132,19 +132,35 @@
         sh:path skos:inScheme
     ] .
 
-# Licença de Uso (dct:license) - VCR-LU
+# Licença de Uso (dct:license) - VCR-LU (IRI externo CC/ODC ou conceito tipado)
 :LicenseRestriction
     a sh:NodeShape ;
     rdfs:comment "Restrição de licença de uso"@pt-BR ;
     rdfs:comment "License restriction"@en ;
     rdfs:label "Restrição de Licença de Uso"@pt-BR ;
     rdfs:label "License Restriction"@en ;
-    sh:property [
-        sh:hasValue <https://dcat-br.github.io/vcr-br/VCR-LU/esquema> ;
-        sh:minCount 1 ;
-        sh:nodeKind sh:IRI ;
-        sh:path skos:inScheme
-    ] .
+    sh:or (
+        [ sh:sparql [
+            a sh:SPARQLConstraint ;
+            sh:message "O valor deve ser um IRI de licença do VCR-LU (ex.: Creative Commons ou Open Data Commons)."@pt-BR ;
+            sh:message "Value must be a VCR-LU license IRI (e.g. Creative Commons or Open Data Commons)."@en ;
+            sh:select """
+                SELECT $this
+                WHERE {
+                    FILTER (
+                        !REGEX(STR($this), "^https://creativecommons\\\\.org/")
+                        && !REGEX(STR($this), "^https://opendatacommons\\\\.org/")
+                    )
+                }
+            """
+        ] ]
+        [ sh:property [
+            sh:hasValue <https://dcat-br.github.io/vcr-br/VCR-LU/esquema> ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path skos:inScheme
+        ] ]
+    ) .
 
 
 #-------------------------------------------------------------------------
@@ -171,8 +187,8 @@
         sh:node :ThemeRestriction ;
         sh:nodeKind sh:IRI ;
         sh:path dcat:theme ;
-        sh:description "Múltiplos temas podem ser usados, mas pelo menos um conceito de <https://dcat-br.github.io/vcr-br/temas/> deve estar presente."@pt-BR ;
-        sh:description "Multiple themes can be used but at least one concept of <https://dcat-br.github.io/vcr-br/temas/> should be present."@en ;
+        sh:description "Múltiplos temas podem ser usados, mas pelo menos um conceito de <https://dcat-br.github.io/vcr-br/themes/> deve estar presente."@pt-BR ;
+        sh:description "Multiple themes can be used but at least one concept of <https://dcat-br.github.io/vcr-br/themes/> should be present."@en ;
         sh:severity sh:Warning
     ], [
         sh:node :ResourceTypeRestriction ;
